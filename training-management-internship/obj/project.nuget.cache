@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "GJpxf0Ix5h/zY07GKZfWEPP/jH4g9LtkqA2rwSHWTRzqWwSOYpPX/STfWhUjTwi2BKY++uT5eBZKcyS4+h4Y/w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Dien\\Desktop\\training-management-internship\\training-management-internship\\training-management-internship.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dien\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.6\\microsoft.visualstudio.azure.containers.tools.targets.1.19.6.nupkg.sha512"
+  ],
+  "logs": []
+}
