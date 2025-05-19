@@ -11,11 +11,12 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("19419f78-41dd-4fc3-9804-26cff6815974")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("training-management-internship")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02caeffe248681188d22652e9bb1fb5cd0b96431")]
 [assembly: System.Reflection.AssemblyProductAttribute("training-management-internship")]
 [assembly: System.Reflection.AssemblyTitleAttribute("training-management-internship")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
