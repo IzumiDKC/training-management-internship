@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dien\\Desktop\\training-management-internship\\training-management-internship\\training-management-internship.csproj": {}
+    "F:\\training-management-internship\\training-management-internship\\training-management-internship.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dien\\Desktop\\training-management-internship\\training-management-internship\\training-management-internship.csproj": {
+    "F:\\training-management-internship\\training-management-internship\\training-management-internship.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dien\\Desktop\\training-management-internship\\training-management-internship\\training-management-internship.csproj",
+        "projectUniqueName": "F:\\training-management-internship\\training-management-internship\\training-management-internship.csproj",
         "projectName": "training-management-internship",
-        "projectPath": "C:\\Users\\Dien\\Desktop\\training-management-internship\\training-management-internship\\training-management-internship.csproj",
+        "projectPath": "F:\\training-management-internship\\training-management-internship\\training-management-internship.csproj",
         "packagesPath": "C:\\Users\\Dien\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dien\\Desktop\\training-management-internship\\training-management-internship\\obj\\",
+        "outputPath": "F:\\training-management-internship\\training-management-internship\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dien\\AppData\\Roaming\\NuGet\\NuGet.Config",

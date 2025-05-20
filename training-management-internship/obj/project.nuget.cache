@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PMnZP/0jmptW2dhhiUHybHMW5T2r+ceKvcvxqzmKkn+0SP5Kx182glqFgCgXJdOHihGqVUFatRpJuVIky6lHrQ==",
+  "dgSpecHash": "CJ2GAc63k75srh9TVLRWlr7rbMlThBtHUGisuowQKZ277XHnp6HaNUmKix+ZZ+hhXHqrnR+k148aZsETNdb4aw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dien\\Desktop\\training-management-internship\\training-management-internship\\training-management-internship.csproj",
+  "projectFilePath": "F:\\training-management-internship\\training-management-internship\\training-management-internship.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dien\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Dien\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
