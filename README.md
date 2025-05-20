@@ -1,1 +1,3 @@
-20/5: Add Models
+20/5: 
+- Add, edit Models
+- Add Reposibility
