@@ -11,3 +11,4 @@
 
   - Add Identity
   - Add Migration (Azure->DBlocal)
+  - Add RazerPage (UI -> Account)
