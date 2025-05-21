@@ -185,10 +185,6 @@ F:\training-management-internship\training-management-internship\bin\Debug\net8.
 F:\training-management-internship\training-management-internship\bin\Debug\net8.0\appsettings.json
 F:\training-management-internship\training-management-internship\bin\Debug\net8.0\training-management-internship.staticwebassets.runtime.json
 F:\training-management-internship\training-management-internship\bin\Debug\net8.0\training-management-internship.exe
-F:\training-management-internship\training-management-internship\bin\Debug\net8.0\training-management-internship.deps.json
-F:\training-management-internship\training-management-internship\bin\Debug\net8.0\training-management-internship.runtimeconfig.json
-F:\training-management-internship\training-management-internship\bin\Debug\net8.0\training-management-internship.dll
-F:\training-management-internship\training-management-internship\bin\Debug\net8.0\training-management-internship.pdb
 F:\training-management-internship\training-management-internship\bin\Debug\net8.0\Azure.Core.dll
 F:\training-management-internship\training-management-internship\bin\Debug\net8.0\Azure.Identity.dll
 F:\training-management-internship\training-management-internship\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
@@ -478,5 +474,9 @@ F:\training-management-internship\training-management-internship\obj\Debug\net8.
 F:\training-management-internship\training-management-internship\obj\Debug\net8.0\training-management-internship.dll
 F:\training-management-internship\training-management-internship\obj\Debug\net8.0\refint\training-management-internship.dll
 F:\training-management-internship\training-management-internship\obj\Debug\net8.0\training-management-internship.pdb
+F:\training-management-internship\training-management-internship\bin\Debug\net8.0\training-management-internship.deps.json
+F:\training-management-internship\training-management-internship\bin\Debug\net8.0\training-management-internship.runtimeconfig.json
+F:\training-management-internship\training-management-internship\bin\Debug\net8.0\training-management-internship.dll
+F:\training-management-internship\training-management-internship\bin\Debug\net8.0\training-management-internship.pdb
 F:\training-management-internship\training-management-internship\obj\Debug\net8.0\training-management-internship.genruntimeconfig.cache
 F:\training-management-internship\training-management-internship\obj\Debug\net8.0\ref\training-management-internship.dll
