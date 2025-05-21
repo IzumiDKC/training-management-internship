@@ -186,6 +186,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/training-management-internship/training-management-internship/Views/HocVien/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9jVmllblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/training-management-internship/training-management-internship/Views/HocVien/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9jVmllblxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/training-management-internship/training-management-internship/Views/HocVien/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9jVmllblxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/training-management-internship/training-management-internship/Views/HocVien/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9jVmllblxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/training-management-internship/training-management-internship/Views/HocVien/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9jVmllblxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/training-management-internship/training-management-internship/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
