@@ -1,0 +1,37 @@
+﻿@model IEnumerable<training_management_internship.Models.HocVien>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Danh sách học viên</h1>
+
+<p>
+    <a asp-action="Create">Tạo mới</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayName("Họ tên")</th>
+            <th>@Html.DisplayNameFor(model => model.NgaySinh)</th>
+            <th>@Html.DisplayNameFor(model => model.TongKhoaHoc)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.User.HoTen)</td>
+                <td>@Html.DisplayFor(modelItem => item.NgaySinh)</td>
+                <td>@Html.DisplayFor(modelItem => item.TongKhoaHoc)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.HocVienId">Sửa</a> |
+                    <a asp-action="Details" asp-route-id="@item.HocVienId">Chi tiết</a> |
+                    <a asp-action="Delete" asp-route-id="@item.HocVienId">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

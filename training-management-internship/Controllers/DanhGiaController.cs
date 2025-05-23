@@ -9,24 +9,23 @@ using training_management_internship.Models;
 
 namespace training_management_internship.Controllers
 {
-    public class HocViensController : Controller
+    public class DanhGiaController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public HocViensController(ApplicationDbContext context)
+        public DanhGiaController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: HocViens
+        // GET: DanhGias
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.HocViens.Include(h => h.User);
+            var applicationDbContext = _context.DanhGias.Include(d => d.DangKyKhoaHoc);
             return View(await applicationDbContext.ToListAsync());
         }
 
-
-        // GET: HocViens/Details/5
+        // GET: DanhGias/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +33,42 @@ namespace training_management_internship.Controllers
                 return NotFound();
             }
 
-            var hocVien = await _context.HocViens
-                .Include(h => h.User)
-                .FirstOrDefaultAsync(m => m.HocVienId == id);
-            if (hocVien == null)
+            var danhGia = await _context.DanhGias
+                .Include(d => d.DangKyKhoaHoc)
+                .FirstOrDefaultAsync(m => m.DanhGiaId == id);
+            if (danhGia == null)
             {
                 return NotFound();
             }
 
-            return View(hocVien);
+            return View(danhGia);
         }
 
-        // GET: HocViens/Create
+        // GET: DanhGias/Create
         public IActionResult Create()
         {
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
+            ViewData["DangKyKhoaHocId"] = new SelectList(_context.DangKyKhoaHocs, "DangKyKhoaHocId", "DangKyKhoaHocId");
             return View();
         }
 
-        // POST: HocViens/Create
+        // POST: DanhGias/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("HocVienId,NgaySinh,TongKhoaHoc,UserId")] HocVien hocVien)
+        public async Task<IActionResult> Create([Bind("DanhGiaId,DangKyKhoaHocId,NoiDung,Diem,NgayDanhGia")] DanhGia danhGia)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(hocVien);
+                _context.Add(danhGia);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", hocVien.UserId);
-            return View(hocVien);
+            ViewData["DangKyKhoaHocId"] = new SelectList(_context.DangKyKhoaHocs, "DangKyKhoaHocId", "DangKyKhoaHocId", danhGia.DangKyKhoaHocId);
+            return View(danhGia);
         }
 
-        // GET: HocViens/Edit/5
+        // GET: DanhGias/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +76,23 @@ namespace training_management_internship.Controllers
                 return NotFound();
             }
 
-            var hocVien = await _context.HocViens.FindAsync(id);
-            if (hocVien == null)
+            var danhGia = await _context.DanhGias.FindAsync(id);
+            if (danhGia == null)
             {
                 return NotFound();
             }
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", hocVien.UserId);
-            return View(hocVien);
+            ViewData["DangKyKhoaHocId"] = new SelectList(_context.DangKyKhoaHocs, "DangKyKhoaHocId", "DangKyKhoaHocId", danhGia.DangKyKhoaHocId);
+            return View(danhGia);
         }
 
-        // POST: HocViens/Edit/5
+        // POST: DanhGias/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("HocVienId,NgaySinh,TongKhoaHoc,UserId")] HocVien hocVien)
+        public async Task<IActionResult> Edit(int id, [Bind("DanhGiaId,DangKyKhoaHocId,NoiDung,Diem,NgayDanhGia")] DanhGia danhGia)
         {
-            if (id != hocVien.HocVienId)
+            if (id != danhGia.DanhGiaId)
             {
                 return NotFound();
             }
@@ -102,12 +101,12 @@ namespace training_management_internship.Controllers
             {
                 try
                 {
-                    _context.Update(hocVien);
+                    _context.Update(danhGia);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!HocVienExists(hocVien.HocVienId))
+                    if (!DanhGiaExists(danhGia.DanhGiaId))
                     {
                         return NotFound();
                     }
@@ -118,11 +117,11 @@ namespace training_management_internship.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", hocVien.UserId);
-            return View(hocVien);
+            ViewData["DangKyKhoaHocId"] = new SelectList(_context.DangKyKhoaHocs, "DangKyKhoaHocId", "DangKyKhoaHocId", danhGia.DangKyKhoaHocId);
+            return View(danhGia);
         }
 
-        // GET: HocViens/Delete/5
+        // GET: DanhGias/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,35 +129,35 @@ namespace training_management_internship.Controllers
                 return NotFound();
             }
 
-            var hocVien = await _context.HocViens
-                .Include(h => h.User)
-                .FirstOrDefaultAsync(m => m.HocVienId == id);
-            if (hocVien == null)
+            var danhGia = await _context.DanhGias
+                .Include(d => d.DangKyKhoaHoc)
+                .FirstOrDefaultAsync(m => m.DanhGiaId == id);
+            if (danhGia == null)
             {
                 return NotFound();
             }
 
-            return View(hocVien);
+            return View(danhGia);
         }
 
-        // POST: HocViens/Delete/5
+        // POST: DanhGias/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var hocVien = await _context.HocViens.FindAsync(id);
-            if (hocVien != null)
+            var danhGia = await _context.DanhGias.FindAsync(id);
+            if (danhGia != null)
             {
-                _context.HocViens.Remove(hocVien);
+                _context.DanhGias.Remove(danhGia);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool HocVienExists(int id)
+        private bool DanhGiaExists(int id)
         {
-            return _context.HocViens.Any(e => e.HocVienId == id);
+            return _context.DanhGias.Any(e => e.DanhGiaId == id);
         }
     }
 }
