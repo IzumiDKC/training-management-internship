@@ -12,3 +12,6 @@
   - Add Identity
   - Add Migration (Azure->DBlocal)
   - Add RazerPage (UI -> Account)
+
+22/5:
+- Identity Config (not push yet)
