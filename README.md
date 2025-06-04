@@ -1,6 +1,6 @@
 # 📘 Project Weekly Progress Report
 
-This document outlines the weekly progress and key milestones of our project development.
+This document outlines the weekly progress and key milestones of my project development.
 
 ---
 
