@@ -1,0 +1,66 @@
+﻿@model training_management_internship.Models.Lop
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Lop</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TenLop" class="control-label"></label>
+                <input asp-for="TenLop" class="form-control" />
+                <span asp-validation-for="TenLop" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NgayBatDauDuKien" class="control-label"></label>
+                <input asp-for="NgayBatDauDuKien" class="form-control" />
+                <span asp-validation-for="NgayBatDauDuKien" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NgayKetThucDuKien" class="control-label"></label>
+                <input asp-for="NgayKetThucDuKien" class="form-control" />
+                <span asp-validation-for="NgayKetThucDuKien" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoGio" class="control-label"></label>
+                <input asp-for="SoGio" class="form-control" />
+                <span asp-validation-for="SoGio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoGioQuyDoi" class="control-label"></label>
+                <input asp-for="SoGioQuyDoi" class="form-control" />
+                <span asp-validation-for="SoGioQuyDoi" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CoDanhSachHocVien" /> @Html.DisplayNameFor(model => model.CoDanhSachHocVien)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="KhoaHocId" class="control-label"></label>
+                <select asp-for="KhoaHocId" class ="form-control" asp-items="ViewBag.KhoaHocId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="LoaiLopId" class="control-label"></label>
+                <select asp-for="LoaiLopId" class ="form-control" asp-items="ViewBag.LoaiLopId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

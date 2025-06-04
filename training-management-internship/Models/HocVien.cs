@@ -3,7 +3,6 @@
     public class HocVien
     {
         public int HocVienId { get; set; }
-        public DateTime NgaySinh { get; set; }
         public int TongKhoaHoc { get; set; }
 
         public string? UserId { get; set; }

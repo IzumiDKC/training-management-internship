@@ -182,11 +182,20 @@ namespace training_management_internship.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("HocHamHocVi")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<DateTime>("NgaySinh")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("NoiCongTac")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
@@ -208,6 +217,13 @@ namespace training_management_internship.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("SoCanCuoc")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("ThuocBenhVien")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
@@ -228,6 +244,38 @@ namespace training_management_internship.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("training_management_internship.Models.ChiTietLop", b =>
+                {
+                    b.Property<int>("ChiTietLopId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ChiTietLopId"));
+
+                    b.Property<int?>("GiangVienId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LopId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("NgayHoc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<TimeSpan>("ThoiGianBatDau")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan>("ThoiGianKetThuc")
+                        .HasColumnType("time");
+
+                    b.HasKey("ChiTietLopId");
+
+                    b.HasIndex("GiangVienId");
+
+                    b.HasIndex("LopId");
+
+                    b.ToTable("ChiTietLops");
+                });
+
             modelBuilder.Entity("training_management_internship.Models.ChuongTrinhDaoTao", b =>
                 {
                     b.Property<int>("ChuongTrinhDaoTaoId")
@@ -237,7 +285,6 @@ namespace training_management_internship.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ChuongTrinhDaoTaoId"));
 
                     b.Property<string>("MoTa")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TenChuongTrinh")
@@ -286,8 +333,9 @@ namespace training_management_internship.Migrations
                     b.Property<int>("DangKyKhoaHocId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Diem")
-                        .HasColumnType("int");
+                    b.Property<string>("LoaiDanhGia")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("NgayDanhGia")
                         .HasColumnType("datetime2");
@@ -301,6 +349,61 @@ namespace training_management_internship.Migrations
                     b.HasIndex("DangKyKhoaHocId");
 
                     b.ToTable("DanhGias");
+                });
+
+            modelBuilder.Entity("training_management_internship.Models.DanhSachHocVien", b =>
+                {
+                    b.Property<int>("DanhSachHocVienId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DanhSachHocVienId"));
+
+                    b.Property<int>("HocVienId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LopId")
+                        .HasColumnType("int");
+
+                    b.HasKey("DanhSachHocVienId");
+
+                    b.HasIndex("HocVienId");
+
+                    b.HasIndex("LopId");
+
+                    b.ToTable("DanhSachHocViens");
+                });
+
+            modelBuilder.Entity("training_management_internship.Models.DiemDanh", b =>
+                {
+                    b.Property<int>("DiemDanhId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DiemDanhId"));
+
+                    b.Property<TimeSpan>("CheckIn")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan>("CheckOut")
+                        .HasColumnType("time");
+
+                    b.Property<int>("ChiTietLopId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("HocVienId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("NgayCheck")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("DiemDanhId");
+
+                    b.HasIndex("ChiTietLopId");
+
+                    b.HasIndex("HocVienId");
+
+                    b.ToTable("DiemDanhs");
                 });
 
             modelBuilder.Entity("training_management_internship.Models.GiangVien", b =>
@@ -331,9 +434,6 @@ namespace training_management_internship.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HocVienId"));
 
-                    b.Property<DateTime>("NgaySinh")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("TongKhoaHoc")
                         .HasColumnType("int");
 
@@ -360,14 +460,8 @@ namespace training_management_internship.Migrations
                     b.Property<int>("ChuongTrinhDaoTaoId")
                         .HasColumnType("int");
 
-                    b.Property<int>("GiangVienId")
+                    b.Property<int?>("GiangVienId")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("NgayBatDau")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("NgayKetThuc")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("TenKhoaHoc")
                         .IsRequired()
@@ -380,6 +474,65 @@ namespace training_management_internship.Migrations
                     b.HasIndex("GiangVienId");
 
                     b.ToTable("KhoaHocs");
+                });
+
+            modelBuilder.Entity("training_management_internship.Models.LoaiLop", b =>
+                {
+                    b.Property<int>("LoaiLopId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LoaiLopId"));
+
+                    b.Property<string>("TenLoaiLop")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("LoaiLopId");
+
+                    b.ToTable("LoaiLops");
+                });
+
+            modelBuilder.Entity("training_management_internship.Models.Lop", b =>
+                {
+                    b.Property<int>("LopId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LopId"));
+
+                    b.Property<bool>("CoDanhSachHocVien")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("KhoaHocId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LoaiLopId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("NgayBatDauDuKien")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("NgayKetThucDuKien")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("SoGio")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SoGioQuyDoi")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TenLop")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("LopId");
+
+                    b.HasIndex("KhoaHocId");
+
+                    b.HasIndex("LoaiLopId");
+
+                    b.ToTable("Lops");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -433,6 +586,23 @@ namespace training_management_internship.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("training_management_internship.Models.ChiTietLop", b =>
+                {
+                    b.HasOne("training_management_internship.Models.GiangVien", "GiangVien")
+                        .WithMany()
+                        .HasForeignKey("GiangVienId");
+
+                    b.HasOne("training_management_internship.Models.Lop", "Lop")
+                        .WithMany("ChiTietLops")
+                        .HasForeignKey("LopId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("GiangVien");
+
+                    b.Navigation("Lop");
+                });
+
             modelBuilder.Entity("training_management_internship.Models.DangKyKhoaHoc", b =>
                 {
                     b.HasOne("training_management_internship.Models.HocVien", "HocVien")
@@ -463,6 +633,44 @@ namespace training_management_internship.Migrations
                     b.Navigation("DangKyKhoaHoc");
                 });
 
+            modelBuilder.Entity("training_management_internship.Models.DanhSachHocVien", b =>
+                {
+                    b.HasOne("training_management_internship.Models.HocVien", "HocVien")
+                        .WithMany()
+                        .HasForeignKey("HocVienId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("training_management_internship.Models.Lop", "Lop")
+                        .WithMany("DanhSachHocViens")
+                        .HasForeignKey("LopId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("HocVien");
+
+                    b.Navigation("Lop");
+                });
+
+            modelBuilder.Entity("training_management_internship.Models.DiemDanh", b =>
+                {
+                    b.HasOne("training_management_internship.Models.ChiTietLop", "ChiTietLop")
+                        .WithMany("DiemDanhs")
+                        .HasForeignKey("ChiTietLopId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("training_management_internship.Models.HocVien", "HocVien")
+                        .WithMany()
+                        .HasForeignKey("HocVienId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ChiTietLop");
+
+                    b.Navigation("HocVien");
+                });
+
             modelBuilder.Entity("training_management_internship.Models.GiangVien", b =>
                 {
                     b.HasOne("training_management_internship.Models.ApplicationUser", "User")
@@ -489,15 +697,30 @@ namespace training_management_internship.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("training_management_internship.Models.GiangVien", "GiangVien")
+                    b.HasOne("training_management_internship.Models.GiangVien", null)
                         .WithMany("KhoaHocs")
-                        .HasForeignKey("GiangVienId")
+                        .HasForeignKey("GiangVienId");
+
+                    b.Navigation("ChuongTrinhDaoTao");
+                });
+
+            modelBuilder.Entity("training_management_internship.Models.Lop", b =>
+                {
+                    b.HasOne("training_management_internship.Models.KhoaHoc", "KhoaHoc")
+                        .WithMany("Lops")
+                        .HasForeignKey("KhoaHocId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("ChuongTrinhDaoTao");
+                    b.HasOne("training_management_internship.Models.LoaiLop", "LoaiLop")
+                        .WithMany("Lops")
+                        .HasForeignKey("LoaiLopId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("GiangVien");
+                    b.Navigation("KhoaHoc");
+
+                    b.Navigation("LoaiLop");
                 });
 
             modelBuilder.Entity("training_management_internship.Models.ApplicationUser", b =>
@@ -505,6 +728,11 @@ namespace training_management_internship.Migrations
                     b.Navigation("GiangVien");
 
                     b.Navigation("HocVien");
+                });
+
+            modelBuilder.Entity("training_management_internship.Models.ChiTietLop", b =>
+                {
+                    b.Navigation("DiemDanhs");
                 });
 
             modelBuilder.Entity("training_management_internship.Models.ChuongTrinhDaoTao", b =>
@@ -530,6 +758,20 @@ namespace training_management_internship.Migrations
             modelBuilder.Entity("training_management_internship.Models.KhoaHoc", b =>
                 {
                     b.Navigation("DangKyKhoaHocs");
+
+                    b.Navigation("Lops");
+                });
+
+            modelBuilder.Entity("training_management_internship.Models.LoaiLop", b =>
+                {
+                    b.Navigation("Lops");
+                });
+
+            modelBuilder.Entity("training_management_internship.Models.Lop", b =>
+                {
+                    b.Navigation("ChiTietLops");
+
+                    b.Navigation("DanhSachHocViens");
                 });
 #pragma warning restore 612, 618
         }

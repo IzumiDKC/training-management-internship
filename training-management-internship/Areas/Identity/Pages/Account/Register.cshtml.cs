@@ -33,6 +33,7 @@ namespace training_management_internship.Areas.Identity.Pages.Account
         private readonly IEmailSender _emailSender;
 
         private readonly ApplicationDbContext _context;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
@@ -41,7 +42,9 @@ namespace training_management_internship.Areas.Identity.Pages.Account
             ILogger<RegisterModel> logger,
             IEmailSender emailSender,
 
-            ApplicationDbContext context)
+            ApplicationDbContext context,
+            RoleManager<IdentityRole> roleManager) 
+
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -51,6 +54,8 @@ namespace training_management_internship.Areas.Identity.Pages.Account
             _emailSender = emailSender;
 
             _context = context;
+            _roleManager = roleManager;
+
         }
 
         /// <summary>
@@ -103,6 +108,12 @@ namespace training_management_internship.Areas.Identity.Pages.Account
             [Display(Name = "Loại tài khoản")]
             public string Role { get; set; }
 
+            [Required(ErrorMessage = "Vui lòng nhập số căn cước.")]
+            [StringLength(12, MinimumLength = 12, ErrorMessage = "Số căn cước phải gồm đúng 12 chữ số.")]
+            [RegularExpression(@"^\d{12}$", ErrorMessage = "Số căn cước phải là 12 chữ số.")]
+            [Display(Name = "Số căn cước")]
+            public string SoCanCuoc { get; set; }
+
         }
 
 
@@ -116,10 +127,26 @@ namespace training_management_internship.Areas.Identity.Pages.Account
         {
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+
             if (ModelState.IsValid)
             {
+                var allowedRoles = new[] { "HocVien", "GiangVien" };
+                if (!allowedRoles.Contains(Input.Role))
+                {
+                    ModelState.AddModelError("Input.Role", "Vai trò không hợp lệ.");
+                    return Page();
+                }
+
+                if (_context.Users.Any(u => u.SoCanCuoc == Input.SoCanCuoc))
+                {
+                    ModelState.AddModelError("Input.SoCanCuoc", "Số căn cước này đã tồn tại trong hệ thống.");
+                    return Page();
+                }
+
                 var user = CreateUser();
+
                 user.HoTen = Input.HoTen;
+                user.SoCanCuoc = Input.SoCanCuoc;
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
@@ -130,13 +157,19 @@ namespace training_management_internship.Areas.Identity.Pages.Account
                     _logger.LogInformation("User created a new account with password.");
 
                     var userId = await _userManager.GetUserIdAsync(user);
+
+                    if (!await _roleManager.RoleExistsAsync(Input.Role))
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole(Input.Role));
+                    }
+
                     await _userManager.AddToRoleAsync(user, Input.Role);
+
                     if (Input.Role == "HocVien")
                     {
                         var hocVien = new HocVien
                         {
                             UserId = user.Id,
-                            // Gán thêm thông tin nếu bạn có
                         };
                         _context.HocViens.Add(hocVien);
                     }
@@ -145,7 +178,6 @@ namespace training_management_internship.Areas.Identity.Pages.Account
                         var giangVien = new GiangVien
                         {
                             UserId = user.Id,
-                            // Gán thêm thông tin nếu bạn có
                         };
                         _context.GiangViens.Add(giangVien);
                     }
@@ -173,15 +205,15 @@ namespace training_management_internship.Areas.Identity.Pages.Account
                         return LocalRedirect(returnUrl);
                     }
                 }
+
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
             }
-
-            // If we got this far, something failed, redisplay form
             return Page();
         }
+
 
         private ApplicationUser CreateUser()
         {
