@@ -186,24 +186,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/training-management-internship/training-management-internship/Views/DanhGia/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuaEdpYVxDcmVhdGUuY3NodG1s
+[F:/training-management-internship/training-management-internship/Views/ChuongTrinhDaoTao/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2h1b25nVHJpbmhEYW9UYW9cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/training-management-internship/training-management-internship/Views/DanhGia/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuaEdpYVxEZWxldGUuY3NodG1s
+[F:/training-management-internship/training-management-internship/Views/ChuongTrinhDaoTao/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2h1b25nVHJpbmhEYW9UYW9cRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/training-management-internship/training-management-internship/Views/DanhGia/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuaEdpYVxEZXRhaWxzLmNzaHRtbA==
+[F:/training-management-internship/training-management-internship/Views/ChuongTrinhDaoTao/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2h1b25nVHJpbmhEYW9UYW9cRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/training-management-internship/training-management-internship/Views/DanhGia/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuaEdpYVxFZGl0LmNzaHRtbA==
+[F:/training-management-internship/training-management-internship/Views/ChuongTrinhDaoTao/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2h1b25nVHJpbmhEYW9UYW9cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/training-management-internship/training-management-internship/Views/DanhGia/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuaEdpYVxJbmRleC5jc2h0bWw=
+[F:/training-management-internship/training-management-internship/Views/ChuongTrinhDaoTao/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2h1b25nVHJpbmhEYW9UYW9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/training-management-internship/training-management-internship/Views/GiangVien/Create.cshtml]
@@ -226,36 +226,60 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lhbmdWaWVuXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/training-management-internship/training-management-internship/Views/HocVien/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9jVmllblxDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[F:/training-management-internship/training-management-internship/Views/HocVien/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9jVmllblxEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[F:/training-management-internship/training-management-internship/Views/HocVien/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9jVmllblxEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[F:/training-management-internship/training-management-internship/Views/HocVien/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9jVmllblxFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[F:/training-management-internship/training-management-internship/Views/HocVien/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9jVmllblxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[F:/training-management-internship/training-management-internship/Views/HocVien/List.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9jVmllblxMaXN0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [F:/training-management-internship/training-management-internship/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/training-management-internship/training-management-internship/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/training-management-internship/training-management-internship/Views/KhoaHoc/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hvYUhvY1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/training-management-internship/training-management-internship/Views/KhoaHoc/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hvYUhvY1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/training-management-internship/training-management-internship/Views/KhoaHoc/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hvYUhvY1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/training-management-internship/training-management-internship/Views/KhoaHoc/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hvYUhvY1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/training-management-internship/training-management-internship/Views/KhoaHoc/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hvYUhvY1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/training-management-internship/training-management-internship/Views/KhoaHoc/Indexx.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hvYUhvY1xJbmRleHguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/training-management-internship/training-management-internship/Views/Lop/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9wXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/training-management-internship/training-management-internship/Views/Lop/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9wXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/training-management-internship/training-management-internship/Views/Lop/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9wXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/training-management-internship/training-management-internship/Views/Lop/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9wXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/training-management-internship/training-management-internship/Views/Lop/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9wXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/training-management-internship/training-management-internship/Views/Lop/Indexx.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9wXEluZGV4eC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/training-management-internship/training-management-internship/Views/Shared/Error.cshtml]
@@ -268,6 +292,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [F:/training-management-internship/training-management-internship/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/training-management-internship/training-management-internship/Views/Users/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/training-management-internship/training-management-internship/Views/_ViewImports.cshtml]

@@ -7,9 +7,16 @@ namespace training_management_internship.Models
     {
         [Required]
         public string? HoTen { get; set; }
+        public string? NoiCongTac { get; set; }
+        public DateTime NgaySinh { get; set; }
 
-        // Navigation properties - excep: Admin
+        [Required]
+        public string SoCanCuoc { get; set; }
+        public string? HocHamHocVi { get; set; }
+        public bool ThuocBenhVien { get; set; }
+
         public HocVien? HocVien { get; set; }
         public GiangVien? GiangVien { get; set; }
     }
+
 }

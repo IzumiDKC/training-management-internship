@@ -1,0 +1,49 @@
+﻿@model List<training_management_internship.Models.ApplicationUser>
+
+<h2>Danh sách người dùng</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Họ tên</th>
+            <th>Số CCCD</th>
+            <th>Ngày sinh</th>
+            <th>Vai trò</th>
+            <th>Thông tin thêm</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.HoTen</td>
+                <td>@user.SoCanCuoc</td>
+                <td>@user.NgaySinh.ToString("dd/MM/yyyy")</td>
+                <td>
+                    @if (user.GiangVien != null)
+                    {
+                        <span>Giảng viên</span>
+                    }
+                    else if (user.HocVien != null)
+                    {
+                        <span>Học viên</span>
+                    }
+                    else
+                    {
+                        <span>Khác</span>
+                    }
+                </td>
+                <td>
+                    @if (user.GiangVien != null)
+                    {
+                        <span>ID: @user.GiangVien.GiangVienId</span>
+                    }
+                    else if (user.HocVien != null)
+                    {
+                        <span>Tổng khóa học: @user.HocVien.TongKhoaHoc</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

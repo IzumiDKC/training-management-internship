@@ -27,22 +27,10 @@ namespace training_management_internship.Areas.Identity.Pages.Account
             _sender = sender;
         }
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
         public string Email { get; set; }
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
         public bool DisplayConfirmAccountLink { get; set; }
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
         public string EmailConfirmationUrl { get; set; }
 
         public async Task<IActionResult> OnGetAsync(string email, string returnUrl = null)
@@ -51,7 +39,8 @@ namespace training_management_internship.Areas.Identity.Pages.Account
             {
                 return RedirectToPage("/Index");
             }
-            returnUrl = returnUrl ?? Url.Content("~/");
+
+            returnUrl ??= Url.Content("~/");
 
             var user = await _userManager.FindByEmailAsync(email);
             if (user == null)
@@ -60,21 +49,39 @@ namespace training_management_internship.Areas.Identity.Pages.Account
             }
 
             Email = email;
-            // Once you add a real email sender, you should remove this code that lets you confirm the account
-            DisplayConfirmAccountLink = true;
-            if (DisplayConfirmAccountLink)
-            {
-                var userId = await _userManager.GetUserIdAsync(user);
-                var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
-                EmailConfirmationUrl = Url.Page(
-                    "/Account/ConfirmEmail",
-                    pageHandler: null,
-                    values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
-                    protocol: Request.Scheme);
-            }
+
+            var userId = await _userManager.GetUserIdAsync(user);
+            var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+            var callbackUrl = Url.Page(
+                "/Account/ConfirmEmail",
+                pageHandler: null,
+                values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
+                protocol: Request.Scheme);
+
+            await _sender.SendEmailAsync(email, "Xác nhận đăng ký tài khoản - Hệ thống đào tạo",
+                $@"
+                    <p>Xin chào,</p>
+
+                    <p>Cảm ơn bạn đã đăng ký tài khoản tại <strong>Hệ thống Quản lý Đào tạo</strong>.</p>
+
+                    <p>Để hoàn tất quá trình đăng ký, vui lòng xác nhận địa chỉ email của bạn bằng cách nhấn vào liên kết dưới đây:</p>
+
+                    <p><a href='{callbackUrl}' target='_blank' style='color: #1a73e8;'>Xác nhận tài khoản</a></p>
+
+                    <p>Nếu bạn không thực hiện hành động này, vui lòng bỏ qua email này.</p>
+
+                    <br/>
+                    <p>Trân trọng,</p>
+                    <p><strong>Ban quản trị Hệ thống Đào tạo</strong></p>
+                    
+                ");
+
+            // KHÔNG hiển thị link xác nhận trên giao diện nữa
+            DisplayConfirmAccountLink = false;
 
             return Page();
         }
+
     }
 }

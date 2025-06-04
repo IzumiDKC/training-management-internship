@@ -1,20 +1,27 @@
-﻿namespace training_management_internship.Models
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
+
+namespace training_management_internship.Models
 {
     public class KhoaHoc
     {
         public int KhoaHocId { get; set; }
+        [Required]
         public string TenKhoaHoc { get; set; }
-        public DateTime NgayBatDau { get; set; }
-        public DateTime NgayKetThuc { get; set; }
 
-        // Foreign Keys
-        public int GiangVienId { get; set; }
         public int ChuongTrinhDaoTaoId { get; set; }
+        [ValidateNever]
 
-        // Navigation
-        public virtual GiangVien GiangVien { get; set; }
         public virtual ChuongTrinhDaoTao ChuongTrinhDaoTao { get; set; }
-        public virtual ICollection<DangKyKhoaHoc> DangKyKhoaHocs { get; set; }
+
+        public virtual ICollection<Lop> Lops { get; set; }
+        public virtual ICollection<DangKyKhoaHoc> DangKyKhoaHocs { get; set; } // 1->n
+
+        public KhoaHoc()
+        {
+            Lops = new List<Lop>();
+            DangKyKhoaHocs = new List<DangKyKhoaHoc>();
+        }
     }
 
 }
