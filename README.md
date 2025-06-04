@@ -1,17 +1,53 @@
-19/5:
+# 📘 Project Weekly Progress Report
 
-- Design DB (demo)
+This document outlines the weekly progress and key milestones of our project development.
 
-20/5:
-  
-- Add, edit Models
-- Add Reposibility
-  
-21/5:
+---
 
-  - Add Identity
-  - Add Migration (Azure->DBlocal)
-  - Add RazerPage (UI -> Account)
+## 🗓️ Week 1: Project Kickoff
 
-22/5:
-- Identity Config (not push yet)
+- Attended project briefing meetings.
+- Received official project assignment.
+- Team structure established:
+  - ✅ Appointed **Team Leader**
+  - ✅ Appointed **Deputy Team Leader**
+
+---
+
+## 🗓️ Week 2: Planning & Initial Setup
+
+- Organized online team meetings for planning.
+- Reached consensus on the technologies and tools to be used.
+- Distributed tasks among team members based on skill sets.
+
+### 🔧 System Setup Tasks:
+
+- Created and updated core **Models**.
+- Implemented **Responsibility pattern** to manage responsibilities clearly.
+- Integrated **ASP.NET Identity** for authentication and user management.
+- Applied **Entity Framework Migrations** (from Azure DB to local DB).
+- Developed **Razor Pages (UI)** for account-related features.
+- Configured **Identity services and options**.
+- Built a basic **view demo page** to validate UI integration.
+
+---
+
+## 🗓️ Week 3: Requirement Changes & Redesign
+
+- Received new project requirements conflicting with the existing system design.
+- Identified major issues in:
+  - Entity relationships
+  - Business logic
+  - Key constraints (primary/foreign)
+
+### 🛠️ Solution:
+
+- Decided to **rebuild the system** from the ground up, including:
+  - Redesigning data relationships
+  - Refactoring core logic
+  - Adjusting keys and constraints for consistency
+  - Updating database migrations
+
+---
+
+> 📌 *This README summarizes weekly progress, technical decisions, and structural changes in the project.*
