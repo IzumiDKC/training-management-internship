@@ -22,20 +22,30 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenChuongTrinh)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MoTa)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ChuongTrinhDaoTaoId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ChuongTrinhDaoTaoId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ChuongTrinhDaoTaoId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenChuongTrinh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoTa)
+                </td>
+                <td>
+                    <ul>
+                        @foreach (var khoaHoc in item.KhoaHocs)
+                        {
+                            <li>@khoaHoc.TenKhoaHoc</li>
+                        }
+                    </ul>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ChuongTrinhDaoTaoId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ChuongTrinhDaoTaoId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ChuongTrinhDaoTaoId">Delete</a>
+                </td>
+            </tr>
+        }
+
     </tbody>
 </table>
