@@ -21,8 +21,13 @@ namespace training_management_internship.Controllers
         // GET: ChuongTrinhDaoTao
         public async Task<IActionResult> Index()
         {
-            return View(await _context.ChuongTrinhDaoTaos.ToListAsync());
+            var danhSach = await _context.ChuongTrinhDaoTaos
+                .Include(ct => ct.KhoaHocs) 
+                .ToListAsync();
+
+            return View(danhSach);
         }
+
 
         // GET: ChuongTrinhDaoTao/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -61,7 +66,6 @@ namespace training_management_internship.Controllers
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("❌ Lỗi khi lưu ChuongTrinhDaoTao:");
                     Console.WriteLine($"Message: {ex.Message}");
                     if (ex.InnerException != null)
                         Console.WriteLine($"Inner: {ex.InnerException.Message}");
@@ -69,7 +73,6 @@ namespace training_management_internship.Controllers
             }
             else
             {
-                Console.WriteLine("⚠️ ModelState không hợp lệ:");
                 foreach (var key in ModelState.Keys)
                 {
                     var errors = ModelState[key].Errors;
