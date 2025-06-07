@@ -2,7 +2,7 @@
 
 namespace training_management_internship.Models
 {
-    public class AdminDashboardViewModel
+    public class AdminDashboard
     {
         public IEnumerable<ChuongTrinhDaoTao> ChuongTrinhDaoTaos { get; set; }
         public IEnumerable<KhoaHoc> KhoaHocs { get; set; }
