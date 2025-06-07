@@ -53,9 +53,6 @@ namespace training_management_internship.Controllers
             return View();
         }
 
-        // POST: Lop/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("LopId,TenLop,NgayBatDauDuKien,NgayKetThucDuKien,SoGio,SoGioQuyDoi,CoDanhSachHocVien,KhoaHocId,LoaiLopId")] Lop lop)
@@ -66,10 +63,21 @@ namespace training_management_internship.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
+            foreach (var key in ModelState.Keys)
+            {
+                var state = ModelState[key];
+                foreach (var error in state.Errors)
+                {
+                    Console.WriteLine($"ModelState Error - Field: {key}, Error: {error.ErrorMessage}");
+                }
+            }
+
             ViewData["KhoaHocId"] = new SelectList(_context.KhoaHocs, "KhoaHocId", "TenKhoaHoc", lop.KhoaHocId);
             ViewData["LoaiLopId"] = new SelectList(_context.LoaiLops, "LoaiLopId", "TenLoaiLop", lop.LoaiLopId);
             return View(lop);
         }
+
 
         // GET: Lop/Edit/5
         public async Task<IActionResult> Edit(int? id)
