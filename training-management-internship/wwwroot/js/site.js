@@ -2,3 +2,8 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+$(function () {
+    if ($('.admin-dashboard').length) {
+        $('.admin-dashboard .card').hide().fadeIn(800);
+    }
+});
