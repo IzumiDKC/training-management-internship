@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "V7qoY/Qiuu8supAMJrRZRkstbS7rcVbmryz3EE9ORxM=",
+  "Hash": "O+6OMckiTnEgisIv0RAPmo0Y/xBKWvHf3FyJydaaROI=",
   "Source": "training-management-internship",
   "BasePath": "_content/training-management-internship",
   "Mode": "Default",
@@ -1193,6 +1193,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "F:\\training-management-internship\\training-management-internship\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\training-management-internship.bundle.scp.css"
+    },
+    {
+      "Identity": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\admin-dashboard.css",
+      "SourceId": "training-management-internship",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\training-management-internship\\training-management-internship\\wwwroot\\",
+      "BasePath": "_content/training-management-internship",
+      "RelativePath": "css/admin-dashboard.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\admin-dashboard.css"
     },
     {
       "Identity": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\site.css",

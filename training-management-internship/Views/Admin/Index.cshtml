@@ -1,0 +1,203 @@
+﻿@model training_management_internship.Models.AdminDashboardViewModel
+@{
+    ViewData["Title"] = "Admin Dashboard";
+    ViewData["BodyClass"] = "admin-dashboard-bg";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/admin-dashboard.css" asp-append-version="true" />
+}
+
+<div class="admin-dashboard">
+    <h1 class="mb-4">Admin Dashboard</h1>
+
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header">
+                    <strong>Chương Trình Đào Tạo</strong>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-sm mb-0">
+                        <thead>
+                            <tr>
+                                <th>Tên chương trình</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ChuongTrinhDaoTaos)
+                            {
+                                <tr>
+                                    <td>@item.TenChuongTrinh</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-end">
+                    <a asp-controller="ChuongTrinhDaoTao" asp-action="Index">Xem tất cả</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header">
+                    <strong>Khóa Học</strong>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-sm mb-0">
+                        <thead>
+                            <tr>
+                                <th>Tên khóa học</th>
+                                <th>Chương trình</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.KhoaHocs)
+                            {
+                                <tr>
+                                    <td>@item.TenKhoaHoc</td>
+                                    <td>@item.ChuongTrinhDaoTao?.TenChuongTrinh</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-end">
+                    <a asp-controller="KhoaHoc" asp-action="Index">Xem tất cả</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header">
+                    <strong>Lớp</strong>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-sm mb-0">
+                        <thead>
+                            <tr>
+                                <th>Tên lớp</th>
+                                <th>Khóa học</th>
+                                <th>Loại lớp</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Lops)
+                            {
+                                <tr>
+                                    <td>@item.TenLop</td>
+                                    <td>@item.KhoaHoc?.TenKhoaHoc</td>
+                                    <td>@item.LoaiLop?.TenLoaiLop</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-end">
+                    <a asp-controller="Lop" asp-action="Index">Xem tất cả</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header">
+                    <strong>Loại Lớp</strong>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-sm mb-0">
+                        <thead>
+                            <tr>
+                                <th>Tên loại lớp</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.LoaiLops)
+                            {
+                                <tr>
+                                    <td>@item.TenLoaiLop</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-end">
+                    <a asp-controller="LoaiLop" asp-action="Index">Xem tất cả</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header">
+                    <strong>Giảng Viên</strong>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-sm mb-0">
+                        <thead>
+                            <tr>
+                                <th>Họ tên</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.GiangViens)
+                            {
+                                <tr>
+                                    <td>@item.User?.HoTen</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-end">
+                    <a asp-controller="GiangVien" asp-action="Index">Xem tất cả</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header">
+                    <strong>Người Dùng</strong>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-sm mb-0">
+                        <thead>
+                            <tr>
+                                <th>Họ tên</th>
+                                <th>Vai trò</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var user in Model.Users)
+                            {
+                                <tr>
+                                    <td>@user.HoTen</td>
+                                    <td>
+                                        @if (user.GiangVien != null)
+                                        {
+                                            <span>Giảng viên</span>
+                                        }
+                                        else if (user.HocVien != null)
+                                        {
+                                            <span>Học viên</span>
+                                        }
+                                        else
+                                        {
+                                            <span>Khác</span>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-end">
+                    <a asp-controller="Users" asp-action="Index">Xem tất cả</a>
+                </div>
+            </div>
+        </div>
+    </div>
