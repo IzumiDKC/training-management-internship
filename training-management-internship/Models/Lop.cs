@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace training_management_internship.Models
@@ -15,12 +16,19 @@ namespace training_management_internship.Models
         public bool CoDanhSachHocVien { get; set; }
        // [ForeignKey("KhoaHoc")]
         public int KhoaHocId { get; set; }
+
+        [ValidateNever]
         public virtual KhoaHoc KhoaHoc { get; set; }
 
         public int LoaiLopId { get; set; }
+
+        [ValidateNever]
         public virtual LoaiLop LoaiLop { get; set; } // 1 lop -> 1 loai lop
 
+        [ValidateNever]
         public virtual ICollection<ChiTietLop> ChiTietLops { get; set; }
+
+        [ValidateNever]
         public virtual ICollection<DanhSachHocVien> DanhSachHocViens { get; set; }
     }
 
