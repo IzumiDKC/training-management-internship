@@ -17,7 +17,7 @@ namespace training_management_internship.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var viewModel = new AdminDashboardViewModel
+            var viewModel = new AdminDashboard
             {
                 ChuongTrinhDaoTaos = await _context.ChuongTrinhDaoTaos
                     .OrderByDescending(c => c.ChuongTrinhDaoTaoId)
