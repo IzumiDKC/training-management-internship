@@ -1,0 +1,25 @@
+﻿@model List<HocVienSelectorViewModel>
+@{
+    ViewData["Title"] = "Chọn học viên";
+    var lopId = ViewBag.LopId;
+}
+
+<form asp-action="ThemHocVienVaoLop" method="post">
+    <input type="hidden" name="lopId" value="@lopId" />
+    <table class="table">
+        <thead><tr><th></th><th>Họ tên</th></tr></thead>
+        <tbody>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" asp-for="@Model[i].IsSelected" />
+                        <input type="hidden" asp-for="@Model[i].UserId" />
+                    </td>
+                    <td>@Model[i].HoTen</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-success">Thêm vào lớp</button>
+</form>
