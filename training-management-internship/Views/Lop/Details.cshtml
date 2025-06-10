@@ -1,66 +1,91 @@
 ﻿@model training_management_internship.Models.Lop
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi tiết lớp học";
 }
 
-<h1>Details</h1>
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Thông tin lớp học</h4>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Tên lớp:</strong> @Model.TenLop
+                </div>
+                <div class="col-md-6">
+                    <strong>Khóa học:</strong> @Model.KhoaHoc?.TenKhoaHoc
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Ngày bắt đầu:</strong> @Model.NgayBatDauDuKien.ToString("dd/MM/yyyy")
+                </div>
+                <div class="col-md-6">
+                    <strong>Ngày kết thúc:</strong> @Model.NgayKetThucDuKien.ToString("dd/MM/yyyy")
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Số giờ:</strong> @Model.SoGio
+                </div>
+                <div class="col-md-6">
+                    <strong>Số giờ quy đổi:</strong> @Model.SoGioQuyDoi
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Loại lớp:</strong> @Model.LoaiLop?.TenLoaiLop
+                </div>
+                <div class="col-md-6">
+                    <strong>Danh sách học viên:</strong> @(Model.CoDanhSachHocVien ? "Có" : "Không")
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div>
-    <h4>Lop</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TenLop)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TenLop)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NgayBatDauDuKien)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NgayBatDauDuKien)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NgayKetThucDuKien)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NgayKetThucDuKien)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SoGio)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SoGio)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SoGioQuyDoi)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SoGioQuyDoi)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CoDanhSachHocVien)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CoDanhSachHocVien)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.KhoaHoc)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.KhoaHoc.TenKhoaHoc)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LoaiLop)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.LoaiLop.TenLoaiLop)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.LopId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div class="card mt-4 shadow">
+        <div class="card-header bg-success text-white">
+            <h4 class="mb-0">Danh sách học viên</h4>
+        </div>
+        <div class="card-body">
+            @if (Model.DanhSachHocViens != null && Model.DanhSachHocViens.Any())
+            {
+                <table class="table table-striped table-hover">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>STT</th>
+                            <th>Họ tên</th>
+                            <th>Số CCCD</th>
+                            <th>Ngày sinh</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.DanhSachHocViens.Count; i++)
+                        {
+                            var hocVien = Model.DanhSachHocViens.ElementAt(i).HocVien;
+                            <tr>
+                                <td>@(i + 1)</td>
+                                <td>@hocVien?.User?.HoTen</td>
+                                <td>@hocVien?.User?.SoCanCuoc</td>
+                                <td>@hocVien?.User?.NgaySinh.ToString("dd/MM/yyyy")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div class="alert alert-warning">
+                    <i class="fas fa-info-circle"></i> Chưa có học viên nào được thêm vào lớp này.
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a asp-action="Edit" asp-route-id="@Model.LopId" class="btn btn-warning">Chỉnh sửa</a>
+        <a asp-action="Index" class="btn btn-secondary ml-2">Quay lại danh sách</a>
+    </div>
 </div>

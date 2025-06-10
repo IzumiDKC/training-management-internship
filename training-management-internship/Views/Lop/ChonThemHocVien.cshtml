@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Thêm học viên?";
+    var lopId = TempData["LopIdVuaTao"];
+}
+
+<div class="alert alert-info">
+    <h4>Bạn muốn thêm học viên vào lớp ngay bây giờ?</h4>
+    <p>Hoặc bạn có thể thêm sau từ trang quản lý lớp.</p>
+
+    <a asp-action="Index" asp-controller="Lop" class="btn btn-secondary">Thêm sau</a>
+    <a asp-action="ChonHocVien" asp-route-lopId="@lopId" class="btn btn-primary">Thêm ngay</a>
+</div>

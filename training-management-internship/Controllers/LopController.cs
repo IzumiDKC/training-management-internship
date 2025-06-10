@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,10 +13,12 @@ namespace training_management_internship.Controllers
     public class LopController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public LopController(ApplicationDbContext context)
+        public LopController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Lop
@@ -36,7 +39,11 @@ namespace training_management_internship.Controllers
             var lop = await _context.Lops
                 .Include(l => l.KhoaHoc)
                 .Include(l => l.LoaiLop)
+                .Include(l => l.DanhSachHocViens)                    
+                    .ThenInclude(ds => ds.HocVien)
+                    .ThenInclude(hv => hv.User)
                 .FirstOrDefaultAsync(m => m.LopId == id);
+
             if (lop == null)
             {
                 return NotFound();
@@ -44,6 +51,7 @@ namespace training_management_internship.Controllers
 
             return View(lop);
         }
+
 
         // GET: Lop/Create
         public IActionResult Create()
@@ -61,9 +69,14 @@ namespace training_management_internship.Controllers
             {
                 _context.Add(lop);
                 await _context.SaveChangesAsync();
+
+                if (lop.CoDanhSachHocVien)
+                {
+                    TempData["LopIdVuaTao"] = lop.LopId;
+                    return RedirectToAction("ChonThemHocVien", "Lop"); // → đi đến bước popup
+                }
                 return RedirectToAction(nameof(Index));
             }
-
             foreach (var key in ModelState.Keys)
             {
                 var state = ModelState[key];
@@ -72,12 +85,58 @@ namespace training_management_internship.Controllers
                     Console.WriteLine($"ModelState Error - Field: {key}, Error: {error.ErrorMessage}");
                 }
             }
-
             ViewData["KhoaHocId"] = new SelectList(_context.KhoaHocs, "KhoaHocId", "TenKhoaHoc", lop.KhoaHocId);
             ViewData["LoaiLopId"] = new SelectList(_context.LoaiLops, "LoaiLopId", "TenLoaiLop", lop.LoaiLopId);
             return View(lop);
         }
 
+        [HttpGet]
+        public IActionResult ChonThemHocVien()
+        {
+            if (TempData["LopIdVuaTao"] == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            ViewBag.LopId = TempData["LopIdVuaTao"];
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ChonHocVien(int lopId)
+        {
+            var hocViens = await _userManager.GetUsersInRoleAsync("HocVien");
+            var model = hocViens.Select(u => new HocVienSelectorViewModel
+            {
+                UserId = u.Id,
+                HoTen = u.HoTen,
+                IsSelected = false
+            }).ToList();
+
+            ViewBag.LopId = lopId;
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ThemHocVienVaoLop(List<HocVienSelectorViewModel> model, int lopId)
+        {
+            foreach (var item in model.Where(m => m.IsSelected))
+            {
+                var hocVien = await _context.HocViens.FirstOrDefaultAsync(h => h.UserId == item.UserId);
+                if (hocVien != null)
+                {
+                    var danhSach = new DanhSachHocVien
+                    {
+                        LopId = lopId,
+                        HocVienId = hocVien.HocVienId
+                    };
+                    _context.DanhSachHocViens.Add(danhSach);
+                }
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Details", "Lop", new { id = lopId });
+        }
 
         // GET: Lop/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -97,9 +156,7 @@ namespace training_management_internship.Controllers
             return View(lop);
         }
 
-        // POST: Lop/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("LopId,TenLop,NgayBatDauDuKien,NgayKetThucDuKien,SoGio,SoGioQuyDoi,CoDanhSachHocVien,KhoaHocId,LoaiLopId")] Lop lop)
