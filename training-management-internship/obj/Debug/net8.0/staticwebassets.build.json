@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "O+6OMckiTnEgisIv0RAPmo0Y/xBKWvHf3FyJydaaROI=",
+  "Hash": "HvwbzLN5jGx0fdJ4eimXAmR+jq1I4OJayWGj40DZISw=",
   "Source": "training-management-internship",
   "BasePath": "_content/training-management-internship",
   "Mode": "Default",
@@ -1231,6 +1231,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\users.css",
+      "SourceId": "training-management-internship",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\training-management-internship\\training-management-internship\\wwwroot\\",
+      "BasePath": "_content/training-management-internship",
+      "RelativePath": "css/users.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\users.css"
     },
     {
       "Identity": "F:\\training-management-internship\\training-management-internship\\wwwroot\\favicon.ico",

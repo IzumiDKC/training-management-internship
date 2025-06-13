@@ -35,7 +35,6 @@ namespace training_management_internship.Controllers
             {
                 return NotFound();
             }
-
             var lop = await _context.Lops
                 .Include(l => l.KhoaHoc)
                 .Include(l => l.LoaiLop)
@@ -43,7 +42,6 @@ namespace training_management_internship.Controllers
                     .ThenInclude(ds => ds.HocVien)
                     .ThenInclude(hv => hv.User)
                 .FirstOrDefaultAsync(m => m.LopId == id);
-
             if (lop == null)
             {
                 return NotFound();
@@ -51,7 +49,6 @@ namespace training_management_internship.Controllers
 
             return View(lop);
         }
-
 
         // GET: Lop/Create
         public IActionResult Create()
@@ -73,7 +70,7 @@ namespace training_management_internship.Controllers
                 if (lop.CoDanhSachHocVien)
                 {
                     TempData["LopIdVuaTao"] = lop.LopId;
-                    return RedirectToAction("ChonThemHocVien", "Lop"); // → đi đến bước popup
+                    return RedirectToAction("ChonThemHocVien", "Lop"); // Popup
                 }
                 return RedirectToAction(nameof(Index));
             }
@@ -97,7 +94,6 @@ namespace training_management_internship.Controllers
             {
                 return RedirectToAction(nameof(Index));
             }
-
             ViewBag.LopId = TempData["LopIdVuaTao"];
             return View();
         }
@@ -156,7 +152,6 @@ namespace training_management_internship.Controllers
             return View(lop);
         }
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("LopId,TenLop,NgayBatDauDuKien,NgayKetThucDuKien,SoGio,SoGioQuyDoi,CoDanhSachHocVien,KhoaHocId,LoaiLopId")] Lop lop)
@@ -165,7 +160,6 @@ namespace training_management_internship.Controllers
             {
                 return NotFound();
             }
-
             if (ModelState.IsValid)
             {
                 try
@@ -198,7 +192,6 @@ namespace training_management_internship.Controllers
             {
                 return NotFound();
             }
-
             var lop = await _context.Lops
                 .Include(l => l.KhoaHoc)
                 .Include(l => l.LoaiLop)
@@ -207,7 +200,6 @@ namespace training_management_internship.Controllers
             {
                 return NotFound();
             }
-
             return View(lop);
         }
 
@@ -225,7 +217,6 @@ namespace training_management_internship.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
         private bool LopExists(int id)
         {
             return _context.Lops.Any(e => e.LopId == id);

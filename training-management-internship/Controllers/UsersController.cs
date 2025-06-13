@@ -12,15 +12,35 @@ namespace training_management_internship.Controllers
             _context = context;
         }
         // GET: UsersController
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string roleFilter = "", string searchName = "")
         {
-            var users = await _context.Users
+            var usersQuery = _context.Users
                 .Include(u => u.HocVien)
                 .Include(u => u.GiangVien)
-                .ToListAsync();
+                .AsQueryable();
 
+            if (!string.IsNullOrEmpty(roleFilter))
+            {
+                if (roleFilter == "HocVien")
+                    usersQuery = usersQuery.Where(u => u.HocVien != null);
+                else if (roleFilter == "GiangVien")
+                    usersQuery = usersQuery.Where(u => u.GiangVien != null);
+                else if (roleFilter == "Khac")
+                    usersQuery = usersQuery.Where(u => u.HocVien == null && u.GiangVien == null);
+            }
+
+            if (!string.IsNullOrEmpty(searchName))
+            {
+                usersQuery = usersQuery.Where(u => u.HoTen.Contains(searchName));
+            }
+
+            ViewData["CurrentRoleFilter"] = roleFilter;
+            ViewData["CurrentSearchName"] = searchName;
+
+            var users = await usersQuery.ToListAsync();
             return View(users);
         }
+
 
 
         // GET: UsersController/Details/5

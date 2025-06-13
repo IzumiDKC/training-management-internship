@@ -1,41 +1,54 @@
 ﻿@model IEnumerable<training_management_internship.Models.KhoaHoc>
-
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh sách Khóa học";
 }
 
-<h1>Index</h1>
+<h2 class="mb-4">📚 Danh sách khóa học</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">➕ Tạo khóa học</a>
 </p>
-<table class="table">
-    <thead>
+
+<table class="table table-bordered table-hover shadow-sm">
+    <thead class="thead-dark">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TenKhoaHoc)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ChuongTrinhDaoTao)
-            </th>
-            <th></th>
+            <th>Tên khóa học</th>
+            <th>Chương trình đào tạo</th>
+            <th>Các lớp thuộc khóa học</th>
+            <th>Hành động</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenKhoaHoc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ChuongTrinhDaoTao.ChuongTrinhDaoTaoId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.KhoaHocId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.KhoaHocId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.KhoaHocId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TenKhoaHoc</td>
+                <td>@item.ChuongTrinhDaoTao?.TenChuongTrinh</td>
+                <td>
+                    @if (item.Lops != null && item.Lops.Any())
+                    {
+                        <ul class="pl-3 mb-0">
+                            @foreach (var lop in item.Lops)
+                            {
+                                <li>
+                                    <strong>@lop.TenLop</strong>
+                                    (<span>@lop.NgayBatDauDuKien.ToString("dd/MM/yyyy")</span> -
+                                    <span>@lop.NgayKetThucDuKien.ToString("dd/MM/yyyy")</span>)
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <span class="text-muted">Chưa có lớp</span>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.KhoaHocId" class="btn btn-sm btn-warning">Sửa</a>
+                    <a asp-action="Details" asp-route-id="@item.KhoaHocId" class="btn btn-sm btn-info">Chi tiết</a>
+                    <a asp-action="Delete" asp-route-id="@item.KhoaHocId" class="btn btn-sm btn-danger">Xóa</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

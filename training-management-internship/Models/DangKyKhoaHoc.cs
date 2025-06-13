@@ -20,6 +20,12 @@ namespace training_management_internship.Models
 
         [ValidateNever]
         public virtual ICollection<DanhGia> DanhGias { get; set; }
+
+        public int? LopId { get; set; }
+
+        [ValidateNever]
+        public virtual Lop? Lop { get; set; }
+
     }
 
 }

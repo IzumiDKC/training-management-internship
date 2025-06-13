@@ -4,29 +4,60 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Đăng ký khóa học</h1>
 
-<h4>DangKyKhoaHoc</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
-                <label asp-for="KhoaHocId" class="control-label"></label>
-                <select asp-for="KhoaHocId" class ="form-control" asp-items="ViewBag.KhoaHocId"></select>
+                <label asp-for="KhoaHocId" class="control-label">Khóa học</label>
+                <select asp-for="KhoaHocId" class="form-control" asp-items="ViewBag.KhoaHocId" id="KhoaHocId">
+                    <option value="">-- Chọn khóa học --</option>
+                </select>
             </div>
+
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label asp-for="LopId" class="control-label">Chọn lớp</label>
+                <select asp-for="LopId" class="form-control" id="LopId">
+                    <option value="">-- Vui lòng chọn lớp --</option>
+                </select>
             </div>
+
+            <button type="submit" class="btn btn-primary">Đăng ký</button>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        document.getElementById("KhoaHocId").addEventListener("change", function () {
+            var khoaHocId = this.value;
+            var lopSelect = document.getElementById("LopId");
+
+            if (!khoaHocId) {
+                lopSelect.innerHTML = '<option value="">-- Vui lòng chọn lớp --</option>';
+                return;
+            }
+
+            lopSelect.innerHTML = '<option>Đang tải...</option>';
+
+            fetch(`/DangKyKhoaHoc/GetLopByKhoaHoc?khoaHocId=${khoaHocId}`)
+                .then(response => response.json())
+                .then(data => {
+                    lopSelect.innerHTML = '<option value="">-- Vui lòng chọn lớp --</option>';
+                    data.forEach(lop => {
+                        lopSelect.innerHTML += `<option value="${lop.lopId}">${lop.tenLop}</option>`;
+                    });
+                })
+                .catch(error => {
+                    lopSelect.innerHTML = '<option>Lỗi khi tải lớp</option>';
+                    console.error('Lỗi khi fetch lớp:', error);
+                });
+        });
+    </script>
 }
