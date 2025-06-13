@@ -30,6 +30,65 @@ namespace training_management_internship.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
+        public IActionResult Create()
+        {
+            ViewData["KhoaHocId"] = new SelectList(_context.KhoaHocs, "KhoaHocId", "TenKhoaHoc");
+            ViewData["LopId"] = new SelectList(Enumerable.Empty<Lop>(), "LopId", "TenLop"); // empty initially
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("KhoaHocId")] DangKyKhoaHoc dangKyKhoaHoc, int LopId)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return Unauthorized();
+
+            var hocVien = await _context.HocViens.FirstOrDefaultAsync(h => h.UserId == user.Id);
+            if (hocVien == null)
+            {
+                ModelState.AddModelError("", "Không tìm thấy học viên.");
+                return View();
+            }
+
+            dangKyKhoaHoc.HocVienId = hocVien.HocVienId;
+            dangKyKhoaHoc.NgayDangKy = DateTime.Now;
+
+            if (ModelState.IsValid)
+            {
+                _context.DangKyKhoaHocs.Add(dangKyKhoaHoc);
+                await _context.SaveChangesAsync();
+
+                // Thêm học viên vào lớp
+                var dsHocVien = new DanhSachHocVien
+                {
+                    LopId = LopId,
+                    HocVienId = hocVien.HocVienId
+                };
+
+                _context.DanhSachHocViens.Add(dsHocVien);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            ViewData["KhoaHocId"] = new SelectList(_context.KhoaHocs, "KhoaHocId", "TenKhoaHoc", dangKyKhoaHoc.KhoaHocId);
+            return View(dangKyKhoaHoc);
+        }
+
+
+
+        // AJAX: Trả danh sách lớp theo Khóa học
+        [HttpGet]
+        public async Task<JsonResult> GetLopByKhoaHoc(int khoaHocId)
+        {
+            var lops = await _context.Lops
+                .Where(l => l.KhoaHocId == khoaHocId)
+                .Select(l => new { l.LopId, l.TenLop })
+                .ToListAsync();
+
+            return Json(lops);
+        }
+
         // GET: DangKyKhoaHoc/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -49,51 +108,7 @@ namespace training_management_internship.Controllers
 
             return View(dangKyKhoaHoc);
         }
-
-        // GET: DangKyKhoaHoc/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DangKyKhoaHocId,KhoaHocId,NgayDangKy")] DangKyKhoaHoc dangKyKhoaHoc)
-        {
-            var user = await _userManager.GetUserAsync(User);
-            if (user == null)
-            {
-                return Unauthorized();
-            }
-
-            var hocVien = await _context.HocViens.FirstOrDefaultAsync(h => h.UserId == user.Id);
-            if (hocVien == null)
-            {
-                ModelState.AddModelError("", "Không tìm thấy thông tin học viên.");
-            }
-            else
-            {
-                dangKyKhoaHoc.HocVienId = hocVien.HocVienId;
-                dangKyKhoaHoc.NgayDangKy = DateTime.Now;
-            }
-
-            // IN RA LỖI MODEL STATE (nếu có)
-            foreach (var key in ModelState.Keys)
-            {
-                var state = ModelState[key];
-                foreach (var error in state.Errors)
-                {
-                    Console.WriteLine($"ModelState Error - Field: {key}, Error: {error.ErrorMessage}");
-                }
-            }
-
-            if (ModelState.IsValid)
-            {
-                _context.Add(dangKyKhoaHoc);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-
-            ViewData["KhoaHocId"] = new SelectList(_context.KhoaHocs, "KhoaHocId", "TenKhoaHoc", dangKyKhoaHoc.KhoaHocId);
-            return View(dangKyKhoaHoc);
-        }
-
-
+        
         // GET: DangKyKhoaHoc/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -113,11 +128,7 @@ namespace training_management_internship.Controllers
         }
 
         // GET: DangKyKhoaHoc/Create
-        public IActionResult Create()
-        {
-            ViewData["KhoaHocId"] = new SelectList(_context.KhoaHocs, "KhoaHocId", "TenKhoaHoc");
-            return View();
-        }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]

@@ -21,7 +21,9 @@ namespace training_management_internship.Controllers
         // GET: KhoaHocs
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.KhoaHocs.Include(k => k.ChuongTrinhDaoTao);
+            var applicationDbContext = _context.KhoaHocs
+                .Include(k => k.ChuongTrinhDaoTao)
+                .Include(k => k.Lops);
             return View(await applicationDbContext.ToListAsync());
         }
 

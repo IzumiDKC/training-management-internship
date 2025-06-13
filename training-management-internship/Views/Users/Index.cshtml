@@ -1,49 +1,94 @@
 ﻿@model List<training_management_internship.Models.ApplicationUser>
+@{
+    ViewData["Title"] = "Quản lý người dùng";
+    var currentRole = ViewData["CurrentRoleFilter"]?.ToString();
+    var currentSearch = ViewData["CurrentSearchName"]?.ToString();
+}
 
-<h2>Danh sách người dùng</h2>
+<div class="container mt-4">
+    <h2 class="mb-4 text-primary">📋 Quản lý người dùng</h2>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Họ tên</th>
-            <th>Số CCCD</th>
-            <th>Ngày sinh</th>
-            <th>Vai trò</th>
-            <th>Thông tin thêm</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var user in Model)
-        {
+    <!-- Bộ lọc tìm kiếm -->
+    <form method="get" class="form-inline mb-4 p-3 border rounded bg-light shadow-sm">
+        <div class="form-group mr-3">
+            <label class="font-weight-bold mr-2">Lọc theo vai trò:</label>
+            <select name="roleFilter" class="form-control">
+                <option value="">-- Tất cả --</option>
+                <option value="HocVien" selected="@(currentRole == "HocVien")">Học viên</option>
+                <option value="GiangVien" selected="@(currentRole == "GiangVien")">Giảng viên</option>
+            </select>
+        </div>
+
+        <div class="form-group mr-3">
+            <label class="font-weight-bold mr-2">Tìm theo tên:</label>
+            <input type="text" name="searchName" class="form-control" value="@currentSearch" placeholder="Nhập họ tên..." />
+        </div>
+
+        <button type="submit" class="btn btn-primary">🔍 Lọc</button>
+        <a asp-action="Index" class="btn btn-secondary ml-2">🔄 Đặt lại</a>
+    </form>
+
+    <!-- Bảng người dùng -->
+    <table class="table table-bordered table-hover shadow-sm">
+        <thead class="thead-dark">
             <tr>
-                <td>@user.HoTen</td>
-                <td>@user.SoCanCuoc</td>
-                <td>@user.NgaySinh.ToString("dd/MM/yyyy")</td>
-                <td>
-                    @if (user.GiangVien != null)
-                    {
-                        <span>Giảng viên</span>
-                    }
-                    else if (user.HocVien != null)
-                    {
-                        <span>Học viên</span>
-                    }
-                    else
-                    {
-                        <span>Khác</span>
-                    }
-                </td>
-                <td>
-                    @if (user.GiangVien != null)
-                    {
-                        <span>ID: @user.GiangVien.GiangVienId</span>
-                    }
-                    else if (user.HocVien != null)
-                    {
-                        <span>Tổng khóa học: @user.HocVien.TongKhoaHoc</span>
-                    }
-                </td>
+                <th>#</th>
+                <th>Họ tên</th>
+                <th>Số CCCD</th>
+                <th>Ngày sinh</th>
+                <th>Vai trò</th>
+                <th>Thông tin thêm</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                int index = 1;
+                foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@(index++)</td>
+                        <td>@user.HoTen</td>
+                        <td>@user.SoCanCuoc</td>
+                        <td>@user.NgaySinh.ToString("dd/MM/yyyy")</td>
+                        <td>
+                            @if (user.GiangVien != null)
+                            {
+                                <span class="badge bg-success text-white">Giảng viên</span>
+                            }
+                            else if (user.HocVien != null)
+                            {
+                                <span class="badge bg-primary text-white">Học viên</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-warning text-dark">Khác</span>
+                            }
+                        </td>
+
+                        <td>
+                            @if (user.GiangVien != null)
+                            {
+                                <div><strong>ID:</strong> @user.GiangVien.GiangVienId</div>
+                            }
+                            else if (user.HocVien != null)
+                            {
+                                <div><strong>Tổng khóa học:</strong> @user.HocVien.TongKhoaHoc</div>
+                            }
+                            else
+                            {
+                                <em>Không có dữ liệu</em>
+                            }
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="6" class="text-center text-muted">Không có người dùng nào phù hợp.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
