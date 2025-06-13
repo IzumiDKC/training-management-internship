@@ -50,4 +50,23 @@ This document outlines the weekly progress and key milestones of my project deve
 
 ---
 
+## 🗓️ Week 4: Model Fixes & Admin Interface
+
+- Fixed required navigation property issues.
+- Validated navigation properties in models.
+- Created an **Admin Interface** to manage data more effectively.
+- Applied **ValidateNever** to the **DangKyKhoaHoc** model.
+- Fixed bugs in the **DangKyKhoaHoc Controller**.
+
+---
+
+## 🗓️ Week 5: Restructuring & Registration Updates
+
+- Restructured the **Lop** model and related views (Detail, Create, etc.).
+- Updated the **DangKyKhoaHoc** system:
+  - Allowed class selection during registration.
+  - Auto-added users to the **DanhSachHocVien** upon registration.
+
+---
+
 > 📌 *This README summarizes weekly progress, technical decisions, and structural changes in the project.*
