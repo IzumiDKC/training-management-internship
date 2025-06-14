@@ -1,0 +1,30 @@
+﻿@model training_management_internship.Models.ChiTietLop
+
+@{
+    ViewData["Title"] = "Chi tiết buổi học";
+}
+
+<h2>📖 Chi tiết buổi học</h2>
+
+<div class="card mt-3 shadow">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Ngày học:</dt>
+            <dd class="col-sm-9">@Model.NgayHoc.ToString("dd/MM/yyyy")</dd>
+
+            <dt class="col-sm-3">Giờ bắt đầu:</dt>
+            <dd class="col-sm-9">@Model.ThoiGianBatDau</dd>
+
+            <dt class="col-sm-3">Giờ kết thúc:</dt>
+            <dd class="col-sm-9">@Model.ThoiGianKetThuc</dd>
+
+            <dt class="col-sm-3">Giảng viên:</dt>
+            <dd class="col-sm-9">@Model.GiangVien?.User?.HoTen</dd>
+
+            <dt class="col-sm-3">Lớp:</dt>
+            <dd class="col-sm-9">@Model.Lop?.TenLop</dd>
+        </dl>
+        <a asp-action="Edit" asp-route-id="@Model.ChiTietLopId" class="btn btn-warning">✏️ Chỉnh sửa</a>
+        <a asp-action="Index" asp-route-lopId="@Model.LopId" class="btn btn-secondary">⬅️ Quay lại danh sách</a>
+    </div>
+</div>

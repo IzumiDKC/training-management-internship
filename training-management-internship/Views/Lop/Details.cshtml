@@ -83,6 +83,9 @@
             }
         </div>
     </div>
+    <a asp-controller="ChiTietLop" asp-action="Index" asp-route-lopId="@Model.LopId" class="btn btn-info">
+        📅 Xem buổi học
+    </a>
 
     <div class="mt-4">
         <a asp-action="Edit" asp-route-id="@Model.LopId" class="btn btn-warning">Chỉnh sửa</a>
