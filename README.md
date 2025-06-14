@@ -60,12 +60,17 @@ This document outlines the weekly progress and key milestones of my project deve
 
 ---
 
-## 🗓️ Week 5: Restructuring & Registration Updates
+## 🗓️ Week 5: Restructuring, Registration Updates, and New Features
 
 - Restructured the **Lop** model and related views (Detail, Create, etc.).
 - Updated the **DangKyKhoaHoc** system:
   - Allowed class selection during registration.
   - Auto-added users to the **DanhSachHocVien** upon registration.
+- Dropped validation navigation properties in the **ChiTietLop** table.
+- Added the **ChiTietLopController** which operates within the **Lop** context:
+  - **Lop** is required.
+  - The controller does not operate at `/ChiTietLop/index` but at `/ChiTietLop?lop{id}`.
+- Updated **UI/UX** for **ChiTietLop** to improve user experience and visual design.
 
 ---
 
