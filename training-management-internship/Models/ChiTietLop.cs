@@ -1,4 +1,6 @@
-﻿namespace training_management_internship.Models
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+
+namespace training_management_internship.Models
 {
     public class ChiTietLop
     {
@@ -8,10 +10,16 @@
         public TimeSpan ThoiGianKetThuc { get; set; }
 
         public int LopId { get; set; }
+
+        [ValidateNever]
         public virtual Lop Lop { get; set; }
 
         public int? GiangVienId { get; set; }
+
+        [ValidateNever]
         public GiangVien? GiangVien { get; set; }
+
+        [ValidateNever]
         public virtual ICollection<DiemDanh> DiemDanhs { get; set; }
     }
 

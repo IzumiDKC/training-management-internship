@@ -1,0 +1,34 @@
+﻿@model training_management_internship.Models.ChiTietLop
+
+<h2>Thêm buổi học cho lớp</h2>
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <input type="hidden" asp-for="LopId" />
+
+    <div class="form-group">
+        <label asp-for="NgayHoc" class="control-label"></label>
+        <input asp-for="NgayHoc" class="form-control" type="date" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ThoiGianBatDau" class="control-label"></label>
+        <input asp-for="ThoiGianBatDau" class="form-control" type="time" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ThoiGianKetThuc" class="control-label"></label>
+        <input asp-for="ThoiGianKetThuc" class="form-control" type="time" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="GiangVienId" class="control-label">Giảng viên</label>
+        <select asp-for="GiangVienId" class="form-control" asp-items="ViewBag.GiangVienId">
+            <option value="">-- Chọn giảng viên --</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Lưu</button>
+    <a asp-action="Index" asp-route-lopId="@Model.LopId" class="btn btn-secondary">Quay lại</a>
+</form>
