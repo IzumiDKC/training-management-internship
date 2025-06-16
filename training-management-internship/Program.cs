@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 using training_management_internship.Models;
 using training_management_internship.Services;
-//using training_management_internship.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 // var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
@@ -34,9 +33,19 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
 
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy => policy
+            .WithOrigins("http://localhost:3000")
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+});
+
+builder.Services.AddControllers();
+
 var app = builder.Build();
-
-
 
 if (!app.Environment.IsDevelopment())
 {
@@ -49,9 +58,12 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseCors("AllowFrontend");
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapControllers();
 
 app.MapRazorPages(); 
 
