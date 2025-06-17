@@ -12,8 +12,8 @@ using training_management_internship.Models;
 namespace training_management_internship.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250613174011_AddLopIdToDangKyKhoaHoc_RequiredFix")]
-    partial class AddLopIdToDangKyKhoaHoc_RequiredFix
+    [Migration("20250617092046_FixLopForeignKeyConstraints")]
+    partial class FixLopForeignKeyConstraints
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -313,7 +313,7 @@ namespace training_management_internship.Migrations
                     b.Property<int>("KhoaHocId")
                         .HasColumnType("int");
 
-                    b.Property<int>("LopId")
+                    b.Property<int?>("LopId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("NgayDangKy")
@@ -543,6 +543,31 @@ namespace training_management_internship.Migrations
                     b.ToTable("Lops");
                 });
 
+            modelBuilder.Entity("training_management_internship.Services.QRCodeTemp", b =>
+                {
+                    b.Property<int>("QRCodeTempId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("QRCodeTempId"));
+
+                    b.Property<int>("ChiTietLopId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("Token")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.HasKey("QRCodeTempId");
+
+                    b.ToTable("QRCodeTemps");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -603,7 +628,7 @@ namespace training_management_internship.Migrations
                     b.HasOne("training_management_internship.Models.Lop", "Lop")
                         .WithMany("ChiTietLops")
                         .HasForeignKey("LopId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("GiangVien");
@@ -628,8 +653,7 @@ namespace training_management_internship.Migrations
                     b.HasOne("training_management_internship.Models.Lop", "Lop")
                         .WithMany()
                         .HasForeignKey("LopId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("HocVien");
 
@@ -660,7 +684,7 @@ namespace training_management_internship.Migrations
                     b.HasOne("training_management_internship.Models.Lop", "Lop")
                         .WithMany("DanhSachHocViens")
                         .HasForeignKey("LopId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("HocVien");

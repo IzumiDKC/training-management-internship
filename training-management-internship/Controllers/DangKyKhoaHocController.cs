@@ -129,7 +129,6 @@ namespace training_management_internship.Controllers
 
         // GET: DangKyKhoaHoc/Create
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("DangKyKhoaHocId,HocVienId,KhoaHocId,NgayDangKy")] DangKyKhoaHoc dangKyKhoaHoc)

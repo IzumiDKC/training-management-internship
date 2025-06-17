@@ -8,7 +8,10 @@
 <div class="container mt-4">
     <h2 class="mb-4 text-primary">📋 Quản lý người dùng</h2>
 
-    <!-- Bộ lọc tìm kiếm -->
+    <form asp-action="DeleteAll" method="post" onsubmit="return confirm('Bạn chắc chắn muốn xóa toàn bộ người dùng?');">
+        <button type="submit" class="btn btn-danger mb-3">🗑️ Xóa tất cả người dùng</button>
+    </form>
+
     <form method="get" class="form-inline mb-4 p-3 border rounded bg-light shadow-sm">
         <div class="form-group mr-3">
             <label class="font-weight-bold mr-2">Lọc theo vai trò:</label>
@@ -28,7 +31,6 @@
         <a asp-action="Index" class="btn btn-secondary ml-2">🔄 Đặt lại</a>
     </form>
 
-    <!-- Bảng người dùng -->
     <table class="table table-bordered table-hover shadow-sm">
         <thead class="thead-dark">
             <tr>

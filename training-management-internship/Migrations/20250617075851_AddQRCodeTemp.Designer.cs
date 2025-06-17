@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using training_management_internship.Models;
 
@@ -11,9 +12,11 @@ using training_management_internship.Models;
 namespace training_management_internship.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250617075851_AddQRCodeTemp")]
+    partial class AddQRCodeTemp
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -625,7 +628,7 @@ namespace training_management_internship.Migrations
                     b.HasOne("training_management_internship.Models.Lop", "Lop")
                         .WithMany("ChiTietLops")
                         .HasForeignKey("LopId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("GiangVien");
@@ -649,8 +652,7 @@ namespace training_management_internship.Migrations
 
                     b.HasOne("training_management_internship.Models.Lop", "Lop")
                         .WithMany()
-                        .HasForeignKey("LopId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("LopId");
 
                     b.Navigation("HocVien");
 
@@ -681,7 +683,7 @@ namespace training_management_internship.Migrations
                     b.HasOne("training_management_internship.Models.Lop", "Lop")
                         .WithMany("DanhSachHocViens")
                         .HasForeignKey("LopId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("HocVien");
