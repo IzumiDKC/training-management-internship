@@ -1,0 +1,107 @@
+﻿@using training_management_internship.Models
+@model object
+
+@{
+    ViewData["Title"] = "Điểm danh buổi học";
+    var chiTiet = ViewBag.ChiTietLop as ChiTietLop;
+    var danhSach = chiTiet.Lop.DanhSachHocViens;
+    var daDiemDanh = ViewBag.DiemDanhs as List<DiemDanh>;
+}
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-success text-white">
+            <h4>📋 Điểm danh - Buổi học: @chiTiet.NgayHoc.ToString("dd/MM/yyyy")</h4>
+        </div>
+        <div class="card-body">
+
+            <div class="text-center mb-3">
+                <button class="btn btn-primary" onclick="generateQR('checkin')">🔓 Tạo mã Check-in</button>
+                <button class="btn btn-secondary" onclick="generateQR('checkout')">🔒 Tạo mã Check-out</button>
+            </div>
+
+            <div id="qr-container" class="text-center mt-4" style="display: none;">
+                <img id="qr-image" src="" class="img-fluid border rounded" style="max-width: 300px;" />
+                <div id="countdown" class="text-danger mt-2"></div>
+            </div>
+
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Học viên</th>
+                        <th>Số CCCD</th>
+                        <th>Check-in</th>
+                        <th>Check-out</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var hv in danhSach)
+                    {
+                        var dd = daDiemDanh.FirstOrDefault(d => d.HocVienId == hv.HocVienId);
+                        <tr>
+                            <td>@hv.HocVien.User.HoTen</td>
+                            <td>@hv.HocVien.User.SoCanCuoc</td>
+                            <td>@(dd?.CheckIn.ToString(@"hh\:mm") ?? "--")</td>
+                            <td>@(dd?.CheckOut.ToString(@"hh\:mm") ?? "--")</td>
+                            <td>
+                                <form asp-action="DiemDanhSubmit" method="post" class="d-inline">
+                                    <input type="hidden" name="chiTietLopId" value="@chiTiet.ChiTietLopId" />
+                                    <input type="hidden" name="hocVienId" value="@hv.HocVienId" />
+                                    <input type="hidden" name="type" value="checkin" />
+                                    <button type="submit" class="btn btn-sm btn-outline-success">✅ Check-in</button>
+                                </form>
+
+                                <form asp-action="DiemDanhSubmit" method="post" class="d-inline">
+                                    <input type="hidden" name="chiTietLopId" value="@chiTiet.ChiTietLopId" />
+                                    <input type="hidden" name="hocVienId" value="@hv.HocVienId" />
+                                    <input type="hidden" name="type" value="checkout" />
+                                    <button type="submit" class="btn btn-sm btn-outline-info">🔁 Check-out</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <a asp-controller="ChiTietLop" asp-action="Index" asp-route-lopId="@chiTiet.LopId" class="btn btn-secondary mt-3">
+                ⬅️ Quay lại danh sách buổi học
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        let countdownInterval;
+
+        function generateQR(type) {
+            const qrContainer = document.getElementById("qr-container");
+            const qrImage = document.getElementById("qr-image");
+            const countdownText = document.getElementById("countdown");
+            const chiTietLopId = '@ViewBag.ChiTietLop.ChiTietLopId';
+
+            fetch(`/DiemDanh/GenerateQRBase64?chiTietLopId=${chiTietLopId}&type=${type}`)
+                .then(res => res.json())
+                .then(data => {
+                    qrImage.src = data.image;
+                    qrContainer.style.display = "block";
+
+                    let remaining = 120;
+                    clearInterval(countdownInterval);
+                    countdownText.textContent = `⏳ Mã có hiệu lực trong ${remaining}s`;
+
+                    countdownInterval = setInterval(() => {
+                        remaining--;
+                        if (remaining <= 0) {
+                            clearInterval(countdownInterval);
+                            countdownText.textContent = "⛔ Mã đã hết hạn. Vui lòng tạo lại.";
+                            qrImage.src = "";
+                        } else {
+                            countdownText.textContent = `⏳ Mã có hiệu lực trong ${remaining}s`;
+                        }
+                    }, 1000);
+                });
+        }
+    </script>
+}

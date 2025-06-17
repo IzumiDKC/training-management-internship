@@ -111,5 +111,24 @@ namespace training_management_internship.Controllers
                 return View();
             }
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteAll()
+        {
+            var giangViens = await _context.GiangViens.ToListAsync();
+            _context.GiangViens.RemoveRange(giangViens);
+
+            var hocViens = await _context.HocViens.ToListAsync();
+            _context.HocViens.RemoveRange(hocViens);
+
+            var users = await _context.Users.ToListAsync();
+            _context.Users.RemoveRange(users);
+
+            await _context.SaveChangesAsync();
+            TempData["Message"] = "🗑️ Đã xóa tất cả user thành công!";
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }

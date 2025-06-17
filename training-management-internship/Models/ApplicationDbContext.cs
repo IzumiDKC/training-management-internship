@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using training_management_internship.Services;
 
 namespace training_management_internship.Models
 {
@@ -20,6 +21,29 @@ namespace training_management_internship.Models
         public DbSet<ChiTietLop> ChiTietLops { get; set; }
         public DbSet<DiemDanh> DiemDanhs { get; set; }
         public DbSet<DanhSachHocVien> DanhSachHocViens { get; set; }
+        public DbSet<QRCodeTemp> QRCodeTemps { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<DangKyKhoaHoc>()
+                .HasOne(d => d.Lop)
+                .WithMany()
+                .HasForeignKey(d => d.LopId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<ChiTietLop>()
+                .HasOne(c => c.Lop)
+                .WithMany(l => l.ChiTietLops)
+                .HasForeignKey(c => c.LopId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<DanhSachHocVien>()
+                .HasOne(ds => ds.Lop)
+                .WithMany(l => l.DanhSachHocViens)
+                .HasForeignKey(ds => ds.LopId)
+                .OnDelete(DeleteBehavior.Restrict);
+        }
     }
 }

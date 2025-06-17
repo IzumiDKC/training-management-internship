@@ -53,6 +53,12 @@
                                     <a asp-action="Edit" asp-route-id="@item.ChiTietLopId" class="btn btn-sm btn-warning">✏️ Sửa</a>
                                     <a asp-action="Details" asp-route-id="@item.ChiTietLopId" class="btn btn-sm btn-info">🔍 Xem</a>
                                     <a asp-action="Delete" asp-route-id="@item.ChiTietLopId" class="btn btn-sm btn-danger" onclick="return confirm('Xóa buổi học này?');">🗑️ Xóa</a>
+                                    <a asp-controller="DiemDanh"
+                                       asp-action="DiemDanh"
+                                       asp-route-chiTietLopId="@item.ChiTietLopId"
+                                       class="btn btn-sm btn-success mt-1">
+                                        📋 Điểm danh
+                                    </a>
                                 </td>
                             </tr>
                         }
