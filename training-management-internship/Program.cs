@@ -65,7 +65,13 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.MapRazorPages(); 
+app.MapRazorPages();
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    await DbInitializer.SeedAdminAsync(services);
+}
 
 app.MapControllerRoute(
     name: "default",

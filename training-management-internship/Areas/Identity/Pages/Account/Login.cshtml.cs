@@ -105,37 +105,62 @@ namespace training_management_internship.Areas.Identity.Pages.Account
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");
-
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
 
             if (ModelState.IsValid)
             {
-                // This doesn't count login failures towards account lockout
-                // To enable password failures to trigger account lockout, set lockoutOnFailure: true
+                // Tìm user theo email
+                var user = await _signInManager.UserManager.FindByEmailAsync(Input.Email);
+
+                if (user == null)
+                {
+                    Console.WriteLine("❌ Không tìm thấy người dùng với email: " + Input.Email);
+                    ModelState.AddModelError(string.Empty, "Tài khoản không tồn tại.");
+                    return Page();
+                }
+
+                if (!user.EmailConfirmed)
+                {
+                    Console.WriteLine("❌ Email chưa được xác nhận cho: " + Input.Email);
+                    ModelState.AddModelError(string.Empty, "Email chưa được xác nhận.");
+                    return Page();
+                }
+
+                var passwordCorrect = await _signInManager.UserManager.CheckPasswordAsync(user, Input.Password);
+                if (!passwordCorrect)
+                {
+                    Console.WriteLine("❌ Sai mật khẩu cho email: " + Input.Email);
+                    ModelState.AddModelError(string.Empty, "Mật khẩu không đúng.");
+                    return Page();
+                }
+
+                // Đăng nhập
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+
                 if (result.Succeeded)
                 {
+                    Console.WriteLine("✅ Đăng nhập thành công cho: " + Input.Email);
                     _logger.LogInformation("User logged in.");
                     return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
                 {
-                    return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
+                    return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, Input.RememberMe });
                 }
                 if (result.IsLockedOut)
                 {
+                    Console.WriteLine("❌ Tài khoản bị khóa: " + Input.Email);
                     _logger.LogWarning("User account locked out.");
                     return RedirectToPage("./Lockout");
                 }
-                else
-                {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-                    return Page();
-                }
+
+                Console.WriteLine("❌ Đăng nhập thất bại không rõ lý do cho: " + Input.Email);
+                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                return Page();
             }
 
-            // If we got this far, something failed, redisplay form
             return Page();
         }
+
     }
 }

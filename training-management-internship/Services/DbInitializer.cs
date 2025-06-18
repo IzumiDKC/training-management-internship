@@ -1,46 +1,56 @@
-﻿/* using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Threading.Tasks;
 using training_management_internship.Models;
 
 namespace training_management_internship.Services
 {
     public static class DbInitializer
     {
-        public static async Task SeedRolesAndAdminAsync(IServiceProvider serviceProvider)
+        public static async Task SeedAdminAsync(IServiceProvider serviceProvider)
         {
-            var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
             var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-            var configuration = serviceProvider.GetRequiredService<IConfiguration>();
+            var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-            string[] roleNames = { "Admin", "GiangVien", "HocVien" };
-
-            foreach (var roleName in roleNames)
+            if (!await roleManager.RoleExistsAsync("Admin"))
             {
-                if (!await roleManager.RoleExistsAsync(roleName))
-                {
-                    await roleManager.CreateAsync(new IdentityRole(roleName));
-                }
+                await roleManager.CreateAsync(new IdentityRole("Admin"));
             }
 
-            string adminEmail = configuration["AdminUser:Email"];
-            string adminPassword = configuration["AdminUser:Password"];
-
+            var adminEmail = "huudien111@gmail.com";
             var adminUser = await userManager.FindByEmailAsync(adminEmail);
+
             if (adminUser == null)
             {
-                var newAdmin = new ApplicationUser
+                adminUser = new ApplicationUser
                 {
                     UserName = adminEmail,
                     Email = adminEmail,
+                    HoTen = "Administrator",
+                    SoCanCuoc = "000000000000",
                     EmailConfirmed = true
                 };
 
-                var result = await userManager.CreateAsync(newAdmin, adminPassword);
+                var result = await userManager.CreateAsync(adminUser, "Administrator@123");
                 if (result.Succeeded)
                 {
-                    await userManager.AddToRoleAsync(newAdmin, "Admin");
+                    await userManager.AddToRoleAsync(adminUser, "Admin");
+                }
+            }
+            else
+            {
+                if (!adminUser.EmailConfirmed)
+                {
+                    adminUser.EmailConfirmed = true;
+                    await userManager.UpdateAsync(adminUser);
+                }
+
+                if (!await userManager.IsInRoleAsync(adminUser, "Admin"))
+                {
+                    await userManager.AddToRoleAsync(adminUser, "Admin");
                 }
             }
         }
     }
 }
-    */
