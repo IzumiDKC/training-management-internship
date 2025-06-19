@@ -3,6 +3,7 @@
     ViewData["Title"] = "Quản lý người dùng";
     var currentRole = ViewData["CurrentRoleFilter"]?.ToString();
     var currentSearch = ViewData["CurrentSearchName"]?.ToString();
+    var userRoles = ViewData["UserRoles"] as Dictionary<string, string>;
 }
 
 <div class="container mt-4">
@@ -19,6 +20,7 @@
                 <option value="">-- Tất cả --</option>
                 <option value="HocVien" selected="@(currentRole == "HocVien")">Học viên</option>
                 <option value="GiangVien" selected="@(currentRole == "GiangVien")">Giảng viên</option>
+                <option value="Admin" selected="@(currentRole == "Admin")">Admin</option>
             </select>
         </div>
 
@@ -28,7 +30,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary">🔍 Lọc</button>
-        <a asp-action="Index" class="btn btn-secondary ml-2">🔄 Đặt lại</a>
+        <a asp-action="Users" class="btn btn-secondary ml-2">🔄 Đặt lại</a>
     </form>
 
     <table class="table table-bordered table-hover shadow-sm">
@@ -48,28 +50,37 @@
                 int index = 1;
                 foreach (var user in Model)
                 {
+                    string roleName = userRoles != null && userRoles.TryGetValue(user.Id, out var foundRole)
+                    ? foundRole
+                    : "Khác";
                     <tr>
                         <td>@(index++)</td>
                         <td>@user.HoTen</td>
                         <td>@user.SoCanCuoc</td>
                         <td>@user.NgaySinh.ToString("dd/MM/yyyy")</td>
                         <td>
-                            @if (user.GiangVien != null)
+                            @switch (roleName)
                             {
-                                <span class="badge bg-success text-white">Giảng viên</span>
-                            }
-                            else if (user.HocVien != null)
-                            {
-                                <span class="badge bg-primary text-white">Học viên</span>
-                            }   
-                            else
-                            {
-                                <span class="badge bg-info text-dark">Khác</span>
+                                case "Admin":
+                                    <span class="badge bg-dark text-white">Admin</span>
+                                    break;
+                                case "GiangVien":
+                                    <span class="badge bg-success text-white">Giảng viên</span>
+                                    break;
+                                case "HocVien":
+                                    <span class="badge bg-primary text-white">Học viên</span>
+                                    break;
+                                default:
+                                    <span class="badge bg-warning text-dark">Khác</span>
+                                    break;
                             }
                         </td>
-
                         <td>
-                            @if (user.GiangVien != null)
+                            @if (roleName == "Admin")
+                            {
+                                <em>Tài khoản quản trị</em>
+                            }
+                            else if (user.GiangVien != null)
                             {
                                 <div><strong>ID:</strong> @user.GiangVien.GiangVienId</div>
                             }
@@ -82,6 +93,15 @@
                                 <em>Không có dữ liệu</em>
                             }
                         </td>
+                        <td>
+                            @if (roleName == "HocVien" || roleName == "GiangVien")
+                            {
+                                <a asp-action="ChangeRole" asp-route-userId="@user.Id" class="btn btn-sm btn-outline-warning">
+                                    🔁 Chuyển vai trò
+                                </a>
+                            }
+                        </td>
+
                     </tr>
                 }
             }

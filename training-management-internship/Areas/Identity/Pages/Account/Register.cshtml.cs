@@ -106,7 +106,9 @@ namespace training_management_internship.Areas.Identity.Pages.Account
 
             [Required]
             [Display(Name = "Loại tài khoản")]
-            public string Role { get; set; }
+            /*            public string Role { get; set; }
+            */
+            public string Role { get; set; } = "HocVien";
 
             [Required(ErrorMessage = "Vui lòng nhập số căn cước.")]
             [StringLength(12, MinimumLength = 12, ErrorMessage = "Số căn cước phải gồm đúng 12 chữ số.")]
@@ -130,12 +132,12 @@ namespace training_management_internship.Areas.Identity.Pages.Account
 
             if (ModelState.IsValid)
             {
-                var allowedRoles = new[] { "HocVien", "GiangVien" };
+/*                var allowedRoles = new[] { "HocVien", "GiangVien" };
                 if (!allowedRoles.Contains(Input.Role))
                 {
                     ModelState.AddModelError("Input.Role", "Vai trò không hợp lệ.");
                     return Page();
-                }
+                }*/
 
                 if (_context.Users.Any(u => u.SoCanCuoc == Input.SoCanCuoc))
                 {
