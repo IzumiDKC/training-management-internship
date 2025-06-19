@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Chuyển vai trò người dùng";
+    var currentRole = ViewData["CurrentRole"]?.ToString();
+    var userId = ViewData["UserId"]?.ToString();
+    var userName = ViewData["UserName"]?.ToString();
+    var targetRole = currentRole == "HocVien" ? "GiangVien" : "HocVien";
+    var currentRoleDisplay = GetRoleDisplayName(currentRole);
+    var targetRoleDisplay = GetRoleDisplayName(targetRole);
+}
+
+@functions {
+    public string GetRoleDisplayName(string role)
+    {
+        return role switch
+        {
+            "HocVien" => "Học viên",
+            "GiangVien" => "Giảng viên",
+        };
+    }
+}
+
+<div class="container mt-4">
+    <h3 class="text-primary">🔁 Chuyển vai trò người dùng</h3>
+
+    <div class="alert alert-info mt-3">
+        <strong>@userName</strong> hiện đang có vai trò <strong>@currentRoleDisplay</strong>.
+        <br />
+        Bạn có chắc muốn chuyển sang <strong>@targetRoleDisplay</strong>?
+    </div>
+
+    <form asp-action="ChangeRoleConfirmed" method="post">
+        <input type="hidden" name="userId" value="@userId" />
+        <button type="submit" class="btn btn-warning">🔄 Chuyển sang @targetRoleDisplay</button>
+        <a asp-action="Users" class="btn btn-secondary ml-2">⬅️ Hủy</a>
+    </form>
+</div>
