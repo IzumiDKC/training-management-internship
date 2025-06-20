@@ -3,12 +3,64 @@
   "WorkspaceRootPath": "F:\\training-management-internship\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\views\\admin\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\views\\admin\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|f:\\training-management-internship\\training-management-internship\\models\\chuongtrinhdaotao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\models\\chuongtrinhdaotao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\controllersapi\\khoahocapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\controllersapi\\khoahocapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\models\\khoahoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\models\\khoahoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\dtos\\khoahocdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\dtos\\khoahocdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\dtos\\chuongtrinhdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\dtos\\chuongtrinhdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\dtos\\khoahocdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\dtos\\khoahocdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\controllersapi\\chuongtrinhdaotaoapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\controllersapi\\chuongtrinhdaotaoapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\controllers\\khoahoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\controllers\\khoahoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\controllers\\chuongtrinhdaotaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\controllers\\chuongtrinhdaotaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\controllers\\dangkykhoahoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\controllers\\dangkykhoahoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\views\\khoahoc\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\views\\khoahoc\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\views\\khoahoc\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\views\\khoahoc\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\views\\admin\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\views\\admin\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,7 +71,7 @@
       "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|f:\\training-management-internship\\training-management-internship\\views\\admin\\changerole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\views\\admin\\changerole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\views\\admin\\changerole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -31,7 +83,7 @@
       "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\models\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|f:\\training-management-internship\\training-management-internship\\services\\qrcodetemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\services\\qrcodetemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\services\\qrcodetemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -51,16 +103,8 @@
       "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\controllers\\diemdanhcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\controllers\\diemdanhcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\controllers\\dangkykhoahoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\controllers\\dangkykhoahoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\controllers\\lopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -183,18 +227,6 @@
       "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\extensions\\sessionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\dtos\\khoahocdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\dtos\\khoahocdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\controllersapi\\khoahoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\controllersapi\\khoahoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\controllers\\khoahoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\controllers\\khoahoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\views\\lop\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\views\\lop\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -239,10 +271,6 @@
       "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\views\\dangkykhoahoc\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\views\\khoahoc\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\views\\khoahoc\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\controllers\\giangviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\controllers\\giangviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -255,16 +283,8 @@
       "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\views\\dangkykhoahoc\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\views\\khoahoc\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\views\\khoahoc\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\models\\loailop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\models\\loailop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\models\\khoahoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\models\\khoahoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -285,10 +305,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\controllers\\danhsachhocviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\controllers\\danhsachhocviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\controllers\\chuongtrinhdaotaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\controllers\\chuongtrinhdaotaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\repositories\\entity framework\\efdanhsachhocvienrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -317,10 +333,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\areas\\identity\\pages\\account\\registerconfirmation.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\areas\\identity\\pages\\account\\registerconfirmation.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\models\\chuongtrinhdaotao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|solutionrelative:training-management-internship\\models\\chuongtrinhdaotao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDAAF646-E9F4-4628-9892-46B201EBAA69}|training-management-internship\\training-management-internship.csproj|F:\\training-management-internship\\training-management-internship\\views\\chuongtrinhdaotao\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -479,7 +491,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -503,72 +515,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "QRCodeTemp.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Services\\QRCodeTemp.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Services\\QRCodeTemp.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Services\\QRCodeTemp.cs",
-              "RelativeToolTip": "training-management-internship\\Services\\QRCodeTemp.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAA5wAkAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "KhoaHocAPIController.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\ControllersAPI\\KhoaHocAPIController.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\ControllersAPI\\KhoaHocAPIController.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\ControllersAPI\\KhoaHocAPIController.cs",
+              "RelativeToolTip": "training-management-internship\\ControllersAPI\\KhoaHocAPIController.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAmwCgAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T07:53:47.42Z",
+              "WhenOpened": "2025-06-20T14:28:36.654Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AdminDashboard.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\AdminDashboard.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Models\\AdminDashboard.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\AdminDashboard.cs",
-              "RelativeToolTip": "training-management-internship\\Models\\AdminDashboard.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T07:13:34.487Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Admin\\Index.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Views\\Admin\\Index.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\Admin\\Index.cshtml",
-              "RelativeToolTip": "training-management-internship\\Views\\Admin\\Index.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACcAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-07T07:03:03.179Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Users.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Admin\\Users.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Views\\Admin\\Users.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\Admin\\Users.cshtml",
-              "RelativeToolTip": "training-management-internship\\Views\\Admin\\Users.cshtml",
-              "ViewState": "AQIAAFQAAAAAAAAAAAAkwFwAAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-18T15:01:58.646Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Register.cshtml.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "RelativeToolTip": "training-management-internship\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ViewState": "AQIAAHwAAAAAAAAAAAAuwIYAAABGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T08:47:22.381Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 16,
               "Title": "Register.cshtml",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "training-management-internship\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
@@ -576,710 +536,48 @@
               "RelativeToolTip": "training-management-internship\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "ViewState": "AQIAAEsAAAAAAAAAAAAkwFYAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-21T08:47:20.495Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T08:47:20.495Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Controllers\\AdminController.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "training-management-internship\\Controllers\\AdminController.cs",
-              "ViewState": "AQIAAKIAAAAAAAAAAAAUwJwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T07:01:51.652Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ChangeRole.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Admin\\ChangeRole.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Views\\Admin\\ChangeRole.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\Admin\\ChangeRole.cshtml",
-              "RelativeToolTip": "training-management-internship\\Views\\Admin\\ChangeRole.cshtml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-19T13:46:03.71Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Controllers\\UsersController.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "training-management-internship\\Controllers\\UsersController.cs",
-              "ViewState": "AQIAAHMAAAAAAAAAAAAYwIYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T15:20:32.827Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Login.cshtml.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
-              "RelativeToolTip": "training-management-internship\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
-              "ViewState": "AQIAAFQAAAAAAAAAAAAkwIwAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T15:13:01.854Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "RelativeToolTip": "training-management-internship\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "ViewState": "AQIAADMAAAAAAAAAAAAkwE0AAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-22T15:12:57.857Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DbInitializer.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Services\\DbInitializer.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Services\\DbInitializer.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Services\\DbInitializer.cs",
-              "RelativeToolTip": "training-management-internship\\Services\\DbInitializer.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACgAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T15:30:49.425Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Program.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Program.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Program.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Program.cs",
-              "RelativeToolTip": "training-management-internship\\Program.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAAkwFAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T08:44:56.121Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "DiemDanhController.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\DiemDanhController.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Controllers\\DiemDanhController.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Controllers\\DiemDanhController.cs",
-              "RelativeToolTip": "training-management-internship\\Controllers\\DiemDanhController.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAwwEcAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T07:31:23.684Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "DangKyKhoaHocController.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\DangKyKhoaHocController.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Controllers\\DangKyKhoaHocController.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Controllers\\DangKyKhoaHocController.cs",
-              "RelativeToolTip": "training-management-internship\\Controllers\\DangKyKhoaHocController.cs",
-              "ViewState": "AQIAAHUAAAAAAAAAAAAmwMMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T18:43:46.286Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "LopController.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\LopController.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Controllers\\LopController.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Controllers\\LopController.cs",
-              "RelativeToolTip": "training-management-internship\\Controllers\\LopController.cs",
-              "ViewState": "AQIAAM8AAAAAAAAAAAAAwOEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T18:45:43.928Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Models\\ApplicationDbContext.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\ApplicationDbContext.cs",
-              "RelativeToolTip": "training-management-internship\\Models\\ApplicationDbContext.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAYwB0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T19:45:36.477Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "DiemDanh.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\DiemDanh\\DiemDanh.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Views\\DiemDanh\\DiemDanh.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\DiemDanh\\DiemDanh.cshtml",
-              "RelativeToolTip": "training-management-internship\\Views\\DiemDanh\\DiemDanh.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAkwC8AAABHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-17T07:36:18.353Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\ChiTietLop\\Create.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Views\\ChiTietLop\\Create.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\ChiTietLop\\Create.cshtml",
-              "RelativeToolTip": "training-management-internship\\Views\\ChiTietLop\\Create.cshtml",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAkwBwAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-14T09:56:54.964Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "DiemDanh.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\DiemDanh.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Models\\DiemDanh.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\DiemDanh.cs",
-              "RelativeToolTip": "training-management-internship\\Models\\DiemDanh.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T16:05:19.824Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\ChiTietLop\\Details.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Views\\ChiTietLop\\Details.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\ChiTietLop\\Details.cshtml",
-              "RelativeToolTip": "training-management-internship\\Views\\ChiTietLop\\Details.cshtml",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABUAAABDAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-14T13:27:17.692Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\ChiTietLop\\Index.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Views\\ChiTietLop\\Index.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\ChiTietLop\\Index.cshtml",
-              "RelativeToolTip": "training-management-internship\\Views\\ChiTietLop\\Index.cshtml",
-              "ViewState": "AQIAACsAAAAAAAAAAAAkwDsAAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-14T08:37:37.451Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "20250617092046_FixLopForeignKeyConstraints.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Migrations\\20250617092046_FixLopForeignKeyConstraints.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Migrations\\20250617092046_FixLopForeignKeyConstraints.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Migrations\\20250617092046_FixLopForeignKeyConstraints.cs",
-              "RelativeToolTip": "training-management-internship\\Migrations\\20250617092046_FixLopForeignKeyConstraints.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T09:20:46.969Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "20250527152338_Initial.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Migrations\\20250527152338_Initial.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Migrations\\20250527152338_Initial.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Migrations\\20250527152338_Initial.cs",
-              "RelativeToolTip": "training-management-internship\\Migrations\\20250527152338_Initial.cs",
-              "ViewState": "AQIAACUCAAAAAAAAAAAkwFQCAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T15:23:38.938Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "20250613172548_AddLopIdToDangKyKhoaHoc.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Migrations\\20250613172548_AddLopIdToDangKyKhoaHoc.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Migrations\\20250613172548_AddLopIdToDangKyKhoaHoc.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Migrations\\20250613172548_AddLopIdToDangKyKhoaHoc.cs",
-              "RelativeToolTip": "training-management-internship\\Migrations\\20250613172548_AddLopIdToDangKyKhoaHoc.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAYwBEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T17:25:49.027Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "20250617075851_AddQRCodeTemp.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Migrations\\20250617075851_AddQRCodeTemp.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Migrations\\20250617075851_AddQRCodeTemp.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Migrations\\20250617075851_AddQRCodeTemp.cs",
-              "RelativeToolTip": "training-management-internship\\Migrations\\20250617075851_AddQRCodeTemp.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T07:58:51.359Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Lop.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\Lop.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Models\\Lop.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\Lop.cs",
-              "RelativeToolTip": "training-management-internship\\Models\\Lop.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAcwB4AAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T15:36:35.978Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "DangKyKhoaHoc.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\DangKyKhoaHoc.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Models\\DangKyKhoaHoc.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\DangKyKhoaHoc.cs",
-              "RelativeToolTip": "training-management-internship\\Models\\DangKyKhoaHoc.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAcwB8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T06:57:52.031Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Success.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\DiemDanh\\Success.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Views\\DiemDanh\\Success.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\DiemDanh\\Success.cshtml",
-              "RelativeToolTip": "training-management-internship\\Views\\DiemDanh\\Success.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-17T08:08:26.849Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "training-management-internship\\appsettings.Development.json",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\appsettings.Development.json",
-              "RelativeToolTip": "training-management-internship\\appsettings.Development.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-21T18:05:06.391Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "ChiTietLopController.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\ChiTietLopController.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Controllers\\ChiTietLopController.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Controllers\\ChiTietLopController.cs",
-              "RelativeToolTip": "training-management-internship\\Controllers\\ChiTietLopController.cs",
-              "ViewState": "AQIAAMgAAAAAAAAAAAAzwNsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T08:31:18.529Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\ChuongTrinhDaoTao\\Details.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Views\\ChuongTrinhDaoTao\\Details.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\ChuongTrinhDaoTao\\Details.cshtml",
-              "RelativeToolTip": "training-management-internship\\Views\\ChuongTrinhDaoTao\\Details.cshtml",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAkwB4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-17T07:38:18.579Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "ApplicationUser.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\ApplicationUser.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Models\\ApplicationUser.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\ApplicationUser.cs",
-              "RelativeToolTip": "training-management-internship\\Models\\ApplicationUser.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAA5wBEAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T19:44:59.07Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "site.css",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "training-management-internship\\wwwroot\\css\\site.css",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "training-management-internship\\wwwroot\\css\\site.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-07T13:43:22.001Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "admin-dashboard.css",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\admin-dashboard.css",
-              "RelativeDocumentMoniker": "training-management-internship\\wwwroot\\css\\admin-dashboard.css",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\admin-dashboard.css",
-              "RelativeToolTip": "training-management-internship\\wwwroot\\css\\admin-dashboard.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-07T13:43:23.637Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "users.css",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\users.css",
-              "RelativeDocumentMoniker": "training-management-internship\\wwwroot\\css\\users.css",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\users.css",
-              "RelativeToolTip": "training-management-internship\\wwwroot\\css\\users.css",
-              "ViewState": "AQIAADsAAAAAAAAAAAAYwEsAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-10T17:28:54.02Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "HocVienSelectorViewModel.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\HocVienSelectorViewModel.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Models\\HocVienSelectorViewModel.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\HocVienSelectorViewModel.cs",
-              "RelativeToolTip": "training-management-internship\\Models\\HocVienSelectorViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T19:53:26.932Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "EmailSender.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Services\\EmailSender.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Services\\EmailSender.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Services\\EmailSender.cs",
-              "RelativeToolTip": "training-management-internship\\Services\\EmailSender.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T06:01:40.78Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "_LoginPartial.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Views\\Shared\\_LoginPartial.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeToolTip": "training-management-internship\\Views\\Shared\\_LoginPartial.cshtml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-09T20:20:12.186Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\appsettings.json",
-              "RelativeDocumentMoniker": "training-management-internship\\appsettings.json",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\appsettings.json",
-              "RelativeToolTip": "training-management-internship\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-18T08:45:21.044Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "EFDangKyRepository.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Entity Framework\\EFDangKyRepository.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Entity Framework\\EFDangKyRepository.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Repositories\\Entity Framework\\EFDangKyRepository.cs",
-              "RelativeToolTip": "training-management-internship\\Repositories\\Entity Framework\\EFDangKyRepository.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAIwCMAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T07:55:54.605Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "IChuongTrinhRepository.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Interfaces\\IChuongTrinhRepository.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Interfaces\\IChuongTrinhRepository.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Repositories\\Interfaces\\IChuongTrinhRepository.cs",
-              "RelativeToolTip": "training-management-internship\\Repositories\\Interfaces\\IChuongTrinhRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T07:50:18.486Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "IChiTietLopRepository.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Interfaces\\IChiTietLopRepository.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Interfaces\\IChiTietLopRepository.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Repositories\\Interfaces\\IChiTietLopRepository.cs",
-              "RelativeToolTip": "training-management-internship\\Repositories\\Interfaces\\IChiTietLopRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T16:25:47.13Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "EFChiTietLopRepository.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Entity Framework\\EFChiTietLopRepository.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Entity Framework\\EFChiTietLopRepository.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Repositories\\Entity Framework\\EFChiTietLopRepository.cs",
-              "RelativeToolTip": "training-management-internship\\Repositories\\Entity Framework\\EFChiTietLopRepository.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABQAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T16:24:38.471Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "SessionExtensions.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Extensions\\SessionExtensions.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Extensions\\SessionExtensions.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Extensions\\SessionExtensions.cs",
-              "RelativeToolTip": "training-management-internship\\Extensions\\SessionExtensions.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T17:26:13.033Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 5,
               "Title": "KhoaHocDto.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Dtos\\KhoaHocDto.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Dtos\\KhoaHocDto.cs",
               "ToolTip": "F:\\training-management-internship\\training-management-internship\\Dtos\\KhoaHocDto.cs",
               "RelativeToolTip": "training-management-internship\\Dtos\\KhoaHocDto.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAxwAgAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-16T07:03:41.124Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "KhoaHocController.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\ControllersAPI\\KhoaHocController.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\ControllersAPI\\KhoaHocController.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\ControllersAPI\\KhoaHocController.cs",
-              "RelativeToolTip": "training-management-internship\\ControllersAPI\\KhoaHocController.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAowCkAAAAAAAAA",
+              "DocumentIndex": 8,
+              "Title": "ChuongTrinhDaoTaoController.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\ChuongTrinhDaoTaoController.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Controllers\\ChuongTrinhDaoTaoController.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Controllers\\ChuongTrinhDaoTaoController.cs",
+              "RelativeToolTip": "training-management-internship\\Controllers\\ChuongTrinhDaoTaoController.cs",
+              "ViewState": "AQIAAKEAAAAAAAAAAAAAwLMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T06:37:41.054Z"
+              "WhenOpened": "2025-05-30T05:57:37.892Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Lop\\Index.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Views\\Lop\\Index.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\Lop\\Index.cshtml",
-              "RelativeToolTip": "training-management-internship\\Views\\Lop\\Index.cshtml",
-              "ViewState": "AQIAADkAAAAAAAAAAAAkwE0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-13T06:22:24.899Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "KhoaHocController.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\KhoaHocController.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Controllers\\KhoaHocController.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Controllers\\KhoaHocController.cs",
-              "RelativeToolTip": "training-management-internship\\Controllers\\KhoaHocController.cs",
-              "ViewState": "AQIAAJ8AAAAAAAAAAAAAwLEAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "ChuongTrinhDaoTao.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\ChuongTrinhDaoTao.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Models\\ChuongTrinhDaoTao.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\ChuongTrinhDaoTao.cs",
+              "RelativeToolTip": "training-management-internship\\Models\\ChuongTrinhDaoTao.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T13:15:13.409Z"
+              "WhenOpened": "2025-05-19T06:57:22.136Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "LoaiLopController.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\LoaiLopController.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Controllers\\LoaiLopController.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Controllers\\LoaiLopController.cs",
-              "RelativeToolTip": "training-management-internship\\Controllers\\LoaiLopController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEcAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T10:59:12.655Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "ChiTietLop.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\ChiTietLop.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Models\\ChiTietLop.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\ChiTietLop.cs",
-              "RelativeToolTip": "training-management-internship\\Models\\ChiTietLop.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAA1wA0AAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T16:04:53.581Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\ChiTietLop\\Delete.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Views\\ChiTietLop\\Delete.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\ChiTietLop\\Delete.cshtml",
-              "RelativeToolTip": "training-management-internship\\Views\\ChiTietLop\\Delete.cshtml",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAkwCoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-14T13:56:37.285Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 54,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\ChuongTrinhDaoTao\\Index.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Views\\ChuongTrinhDaoTao\\Index.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\ChuongTrinhDaoTao\\Index.cshtml",
-              "RelativeToolTip": "training-management-internship\\Views\\ChuongTrinhDaoTao\\Index.cshtml",
-              "ViewState": "AQIAAAYAAAAAAAAAAADwvxQAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T05:59:34.859Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Lop\\Details.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Views\\Lop\\Details.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\Lop\\Details.cshtml",
-              "RelativeToolTip": "training-management-internship\\Views\\Lop\\Details.cshtml",
-              "ViewState": "AQIAAEQAAAAAAAAAAAAkwFgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-09T20:00:41.595Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 52,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\ChiTietLop\\Edit.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Views\\ChiTietLop\\Edit.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\ChiTietLop\\Edit.cshtml",
-              "RelativeToolTip": "training-management-internship\\Views\\ChiTietLop\\Edit.cshtml",
-              "ViewState": "AQIAABEAAAAAAAAAAAAkwBwAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-14T13:22:46.416Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Views\\Home\\Index.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "training-management-internship\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-19T20:04:04.754Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 56,
-              "Title": "DanhSachHocVien.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\DanhSachHocVien.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Models\\DanhSachHocVien.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\DanhSachHocVien.cs",
-              "RelativeToolTip": "training-management-internship\\Models\\DanhSachHocVien.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T16:06:17.347Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 57,
-              "Title": "ApplicationDbContextModelSnapshot.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "RelativeToolTip": "training-management-internship\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAqwA4AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T15:34:12.794Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 58,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\DangKyKhoaHoc\\Create.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Views\\DangKyKhoaHoc\\Create.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\DangKyKhoaHoc\\Create.cshtml",
-              "RelativeToolTip": "training-management-internship\\Views\\DangKyKhoaHoc\\Create.cshtml",
-              "ViewState": "AQIAACUAAAAAAAAAAAAkwDAAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-07T18:49:02.322Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 61,
-              "Title": "DanhGia.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\DanhGia.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Models\\DanhGia.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\DanhGia.cs",
-              "RelativeToolTip": "training-management-internship\\Models\\DanhGia.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAwwBIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T06:58:08.217Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 59,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\KhoaHoc\\Create.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Views\\KhoaHoc\\Create.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\KhoaHoc\\Create.cshtml",
-              "RelativeToolTip": "training-management-internship\\Views\\KhoaHoc\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-13T17:30:52.566Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 62,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\DangKyKhoaHoc\\Index.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Views\\DangKyKhoaHoc\\Index.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\DangKyKhoaHoc\\Index.cshtml",
-              "RelativeToolTip": "training-management-internship\\Views\\DangKyKhoaHoc\\Index.cshtml",
-              "ViewState": "AQIAABsAAAAAAAAAAAAkwCkAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-07T18:46:23.591Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 60,
-              "Title": "GiangVienController.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\GiangVienController.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Controllers\\GiangVienController.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Controllers\\GiangVienController.cs",
-              "RelativeToolTip": "training-management-internship\\Controllers\\GiangVienController.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAqwBYAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T19:47:06.757Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 63,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\KhoaHoc\\Index.cshtml",
-              "RelativeDocumentMoniker": "training-management-internship\\Views\\KhoaHoc\\Index.cshtml",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\KhoaHoc\\Index.cshtml",
-              "RelativeToolTip": "training-management-internship\\Views\\KhoaHoc\\Index.cshtml",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAkwBgAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-05T17:15:30.685Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 2,
               "Title": "KhoaHoc.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\KhoaHoc.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Models\\KhoaHoc.cs",
@@ -1291,7 +589,775 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Program.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Program.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Program.cs",
+              "RelativeToolTip": "training-management-internship\\Program.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAADkAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T08:44:56.121Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "KhoaHocDetailDto.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Dtos\\KhoaHocDetailDto.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Dtos\\KhoaHocDetailDto.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Dtos\\KhoaHocDetailDto.cs",
+              "RelativeToolTip": "training-management-internship\\Dtos\\KhoaHocDetailDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T14:38:53.745Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ChuongTrinhDto.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Dtos\\ChuongTrinhDto.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Dtos\\ChuongTrinhDto.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Dtos\\ChuongTrinhDto.cs",
+              "RelativeToolTip": "training-management-internship\\Dtos\\ChuongTrinhDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T13:43:57.612Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ChuongTrinhDaoTaoAPIController.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\ControllersAPI\\ChuongTrinhDaoTaoAPIController.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\ControllersAPI\\ChuongTrinhDaoTaoAPIController.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\ControllersAPI\\ChuongTrinhDaoTaoAPIController.cs",
+              "RelativeToolTip": "training-management-internship\\ControllersAPI\\ChuongTrinhDaoTaoAPIController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T13:40:13.733Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "KhoaHocController.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\KhoaHocController.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Controllers\\KhoaHocController.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Controllers\\KhoaHocController.cs",
+              "RelativeToolTip": "training-management-internship\\Controllers\\KhoaHocController.cs",
+              "ViewState": "AQIAAJwAAAAAAAAAAAAAwK4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T13:15:13.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Controllers\\AdminController.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "training-management-internship\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAAJEAAAAAAAAAAADwv5wAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T07:01:51.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\KhoaHoc\\Index.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Views\\KhoaHoc\\Index.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\KhoaHoc\\Index.cshtml",
+              "RelativeToolTip": "training-management-internship\\Views\\KhoaHoc\\Index.cshtml",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAkwBgAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T17:15:30.685Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DangKyKhoaHocController.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\DangKyKhoaHocController.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Controllers\\DangKyKhoaHocController.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Controllers\\DangKyKhoaHocController.cs",
+              "RelativeToolTip": "training-management-internship\\Controllers\\DangKyKhoaHocController.cs",
+              "ViewState": "AQIAAHUAAAAAAAAAAAAmwIEAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T18:43:46.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\KhoaHoc\\Create.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Views\\KhoaHoc\\Create.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\KhoaHoc\\Create.cshtml",
+              "RelativeToolTip": "training-management-internship\\Views\\KhoaHoc\\Create.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-13T17:30:52.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Register.cshtml.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeToolTip": "training-management-internship\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ViewState": "AQIAAHwAAAAAAAAAAAAuwIYAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T08:47:22.381Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Users.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Admin\\Users.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Views\\Admin\\Users.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\Admin\\Users.cshtml",
+              "RelativeToolTip": "training-management-internship\\Views\\Admin\\Users.cshtml",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAkwFwAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-18T15:01:58.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "training-management-internship\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAACcAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-07T07:03:03.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AdminDashboard.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\AdminDashboard.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Models\\AdminDashboard.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\AdminDashboard.cs",
+              "RelativeToolTip": "training-management-internship\\Models\\AdminDashboard.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T07:13:34.487Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "QRCodeTemp.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Services\\QRCodeTemp.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Services\\QRCodeTemp.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Services\\QRCodeTemp.cs",
+              "RelativeToolTip": "training-management-internship\\Services\\QRCodeTemp.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAA5wAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T07:53:47.42Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ChangeRole.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Admin\\ChangeRole.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Views\\Admin\\ChangeRole.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\Admin\\ChangeRole.cshtml",
+              "RelativeToolTip": "training-management-internship\\Views\\Admin\\ChangeRole.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-19T13:46:03.71Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Controllers\\UsersController.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "training-management-internship\\Controllers\\UsersController.cs",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAYwIYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:20:32.827Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Login.cshtml.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeToolTip": "training-management-internship\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAkwIwAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T15:13:01.854Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeToolTip": "training-management-internship\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ViewState": "AQIAADMAAAAAAAAAAAAkwE0AAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-22T15:12:57.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DbInitializer.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Services\\DbInitializer.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Services\\DbInitializer.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Services\\DbInitializer.cs",
+              "RelativeToolTip": "training-management-internship\\Services\\DbInitializer.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAACgAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T15:30:49.425Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "DiemDanhController.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\DiemDanhController.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Controllers\\DiemDanhController.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Controllers\\DiemDanhController.cs",
+              "RelativeToolTip": "training-management-internship\\Controllers\\DiemDanhController.cs",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAwwEcAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T07:31:23.684Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "LopController.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\LopController.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Controllers\\LopController.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Controllers\\LopController.cs",
+              "RelativeToolTip": "training-management-internship\\Controllers\\LopController.cs",
+              "ViewState": "AQIAAM8AAAAAAAAAAAAAwOEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T18:45:43.928Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Models\\ApplicationDbContext.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\ApplicationDbContext.cs",
+              "RelativeToolTip": "training-management-internship\\Models\\ApplicationDbContext.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAYwB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T19:45:36.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "DiemDanh.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\DiemDanh\\DiemDanh.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Views\\DiemDanh\\DiemDanh.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\DiemDanh\\DiemDanh.cshtml",
+              "RelativeToolTip": "training-management-internship\\Views\\DiemDanh\\DiemDanh.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAkwC8AAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-17T07:36:18.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\ChiTietLop\\Create.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Views\\ChiTietLop\\Create.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\ChiTietLop\\Create.cshtml",
+              "RelativeToolTip": "training-management-internship\\Views\\ChiTietLop\\Create.cshtml",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAkwBwAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-14T09:56:54.964Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "DiemDanh.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\DiemDanh.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Models\\DiemDanh.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\DiemDanh.cs",
+              "RelativeToolTip": "training-management-internship\\Models\\DiemDanh.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T16:05:19.824Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\ChiTietLop\\Details.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Views\\ChiTietLop\\Details.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\ChiTietLop\\Details.cshtml",
+              "RelativeToolTip": "training-management-internship\\Views\\ChiTietLop\\Details.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABUAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-14T13:27:17.692Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\ChiTietLop\\Index.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Views\\ChiTietLop\\Index.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\ChiTietLop\\Index.cshtml",
+              "RelativeToolTip": "training-management-internship\\Views\\ChiTietLop\\Index.cshtml",
+              "ViewState": "AQIAACsAAAAAAAAAAAAkwDsAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-14T08:37:37.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "20250617092046_FixLopForeignKeyConstraints.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Migrations\\20250617092046_FixLopForeignKeyConstraints.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Migrations\\20250617092046_FixLopForeignKeyConstraints.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Migrations\\20250617092046_FixLopForeignKeyConstraints.cs",
+              "RelativeToolTip": "training-management-internship\\Migrations\\20250617092046_FixLopForeignKeyConstraints.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T09:20:46.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "20250527152338_Initial.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Migrations\\20250527152338_Initial.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Migrations\\20250527152338_Initial.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Migrations\\20250527152338_Initial.cs",
+              "RelativeToolTip": "training-management-internship\\Migrations\\20250527152338_Initial.cs",
+              "ViewState": "AQIAACUCAAAAAAAAAAAkwFQCAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T15:23:38.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "20250613172548_AddLopIdToDangKyKhoaHoc.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Migrations\\20250613172548_AddLopIdToDangKyKhoaHoc.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Migrations\\20250613172548_AddLopIdToDangKyKhoaHoc.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Migrations\\20250613172548_AddLopIdToDangKyKhoaHoc.cs",
+              "RelativeToolTip": "training-management-internship\\Migrations\\20250613172548_AddLopIdToDangKyKhoaHoc.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAYwBEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T17:25:49.027Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "20250617075851_AddQRCodeTemp.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Migrations\\20250617075851_AddQRCodeTemp.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Migrations\\20250617075851_AddQRCodeTemp.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Migrations\\20250617075851_AddQRCodeTemp.cs",
+              "RelativeToolTip": "training-management-internship\\Migrations\\20250617075851_AddQRCodeTemp.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T07:58:51.359Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Lop.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\Lop.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Models\\Lop.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\Lop.cs",
+              "RelativeToolTip": "training-management-internship\\Models\\Lop.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAcwB4AAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T15:36:35.978Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "DangKyKhoaHoc.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\DangKyKhoaHoc.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Models\\DangKyKhoaHoc.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\DangKyKhoaHoc.cs",
+              "RelativeToolTip": "training-management-internship\\Models\\DangKyKhoaHoc.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAcwB8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T06:57:52.031Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Success.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\DiemDanh\\Success.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Views\\DiemDanh\\Success.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\DiemDanh\\Success.cshtml",
+              "RelativeToolTip": "training-management-internship\\Views\\DiemDanh\\Success.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-17T08:08:26.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "training-management-internship\\appsettings.Development.json",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\appsettings.Development.json",
+              "RelativeToolTip": "training-management-internship\\appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-21T18:05:06.391Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "ChiTietLopController.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\ChiTietLopController.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Controllers\\ChiTietLopController.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Controllers\\ChiTietLopController.cs",
+              "RelativeToolTip": "training-management-internship\\Controllers\\ChiTietLopController.cs",
+              "ViewState": "AQIAAMgAAAAAAAAAAAAzwNsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T08:31:18.529Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\ChuongTrinhDaoTao\\Details.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Views\\ChuongTrinhDaoTao\\Details.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\ChuongTrinhDaoTao\\Details.cshtml",
+              "RelativeToolTip": "training-management-internship\\Views\\ChuongTrinhDaoTao\\Details.cshtml",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAkwB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-17T07:38:18.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Models\\ApplicationUser.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "training-management-internship\\Models\\ApplicationUser.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAA5wBEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T19:44:59.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "site.css",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "training-management-internship\\wwwroot\\css\\site.css",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "training-management-internship\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-06-07T13:43:22.001Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "admin-dashboard.css",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\admin-dashboard.css",
+              "RelativeDocumentMoniker": "training-management-internship\\wwwroot\\css\\admin-dashboard.css",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\admin-dashboard.css",
+              "RelativeToolTip": "training-management-internship\\wwwroot\\css\\admin-dashboard.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-06-07T13:43:23.637Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "users.css",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\users.css",
+              "RelativeDocumentMoniker": "training-management-internship\\wwwroot\\css\\users.css",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\users.css",
+              "RelativeToolTip": "training-management-internship\\wwwroot\\css\\users.css",
+              "ViewState": "AQIAADsAAAAAAAAAAAAYwEsAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-06-10T17:28:54.02Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "HocVienSelectorViewModel.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\HocVienSelectorViewModel.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Models\\HocVienSelectorViewModel.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\HocVienSelectorViewModel.cs",
+              "RelativeToolTip": "training-management-internship\\Models\\HocVienSelectorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T19:53:26.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "EmailSender.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Services\\EmailSender.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Services\\EmailSender.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Services\\EmailSender.cs",
+              "RelativeToolTip": "training-management-internship\\Services\\EmailSender.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T06:01:40.78Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "training-management-internship\\Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-09T20:20:12.186Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\appsettings.json",
+              "RelativeDocumentMoniker": "training-management-internship\\appsettings.json",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\appsettings.json",
+              "RelativeToolTip": "training-management-internship\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-18T08:45:21.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "EFDangKyRepository.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Entity Framework\\EFDangKyRepository.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Entity Framework\\EFDangKyRepository.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Repositories\\Entity Framework\\EFDangKyRepository.cs",
+              "RelativeToolTip": "training-management-internship\\Repositories\\Entity Framework\\EFDangKyRepository.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAIwCMAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T07:55:54.605Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "IChuongTrinhRepository.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Interfaces\\IChuongTrinhRepository.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Interfaces\\IChuongTrinhRepository.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Repositories\\Interfaces\\IChuongTrinhRepository.cs",
+              "RelativeToolTip": "training-management-internship\\Repositories\\Interfaces\\IChuongTrinhRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T07:50:18.486Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "IChiTietLopRepository.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Interfaces\\IChiTietLopRepository.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Interfaces\\IChiTietLopRepository.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Repositories\\Interfaces\\IChiTietLopRepository.cs",
+              "RelativeToolTip": "training-management-internship\\Repositories\\Interfaces\\IChiTietLopRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T16:25:47.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "EFChiTietLopRepository.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Entity Framework\\EFChiTietLopRepository.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Entity Framework\\EFChiTietLopRepository.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Repositories\\Entity Framework\\EFChiTietLopRepository.cs",
+              "RelativeToolTip": "training-management-internship\\Repositories\\Entity Framework\\EFChiTietLopRepository.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABQAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T16:24:38.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "SessionExtensions.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Extensions\\SessionExtensions.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Extensions\\SessionExtensions.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Extensions\\SessionExtensions.cs",
+              "RelativeToolTip": "training-management-internship\\Extensions\\SessionExtensions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T17:26:13.033Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Lop\\Index.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Views\\Lop\\Index.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\Lop\\Index.cshtml",
+              "RelativeToolTip": "training-management-internship\\Views\\Lop\\Index.cshtml",
+              "ViewState": "AQIAADkAAAAAAAAAAAAkwE0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-13T06:22:24.899Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "LoaiLopController.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\LoaiLopController.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Controllers\\LoaiLopController.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Controllers\\LoaiLopController.cs",
+              "RelativeToolTip": "training-management-internship\\Controllers\\LoaiLopController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T10:59:12.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "ChiTietLop.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\ChiTietLop.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Models\\ChiTietLop.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\ChiTietLop.cs",
+              "RelativeToolTip": "training-management-internship\\Models\\ChiTietLop.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAA1wA0AAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T16:04:53.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\ChiTietLop\\Delete.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Views\\ChiTietLop\\Delete.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\ChiTietLop\\Delete.cshtml",
+              "RelativeToolTip": "training-management-internship\\Views\\ChiTietLop\\Delete.cshtml",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAkwCoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-14T13:56:37.285Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\ChuongTrinhDaoTao\\Index.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Views\\ChuongTrinhDaoTao\\Index.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\ChuongTrinhDaoTao\\Index.cshtml",
+              "RelativeToolTip": "training-management-internship\\Views\\ChuongTrinhDaoTao\\Index.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAADwvxQAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T05:59:34.859Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Lop\\Details.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Views\\Lop\\Details.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\Lop\\Details.cshtml",
+              "RelativeToolTip": "training-management-internship\\Views\\Lop\\Details.cshtml",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAkwFgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-09T20:00:41.595Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\ChiTietLop\\Edit.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Views\\ChiTietLop\\Edit.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\ChiTietLop\\Edit.cshtml",
+              "RelativeToolTip": "training-management-internship\\Views\\ChiTietLop\\Edit.cshtml",
+              "ViewState": "AQIAABEAAAAAAAAAAAAkwBwAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-14T13:22:46.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Views\\Home\\Index.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "training-management-internship\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-19T20:04:04.754Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 64,
+              "Title": "DanhSachHocVien.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\DanhSachHocVien.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Models\\DanhSachHocVien.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\DanhSachHocVien.cs",
+              "RelativeToolTip": "training-management-internship\\Models\\DanhSachHocVien.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T16:06:17.347Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "ApplicationDbContextModelSnapshot.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeToolTip": "training-management-internship\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAqwA4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T15:34:12.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\DangKyKhoaHoc\\Create.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Views\\DangKyKhoaHoc\\Create.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\DangKyKhoaHoc\\Create.cshtml",
+              "RelativeToolTip": "training-management-internship\\Views\\DangKyKhoaHoc\\Create.cshtml",
+              "ViewState": "AQIAACUAAAAAAAAAAAAkwDAAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-07T18:49:02.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "DanhGia.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\DanhGia.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Models\\DanhGia.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\DanhGia.cs",
+              "RelativeToolTip": "training-management-internship\\Models\\DanhGia.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAwwBIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T06:58:08.217Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\DangKyKhoaHoc\\Index.cshtml",
+              "RelativeDocumentMoniker": "training-management-internship\\Views\\DangKyKhoaHoc\\Index.cshtml",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Views\\DangKyKhoaHoc\\Index.cshtml",
+              "RelativeToolTip": "training-management-internship\\Views\\DangKyKhoaHoc\\Index.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAkwCkAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-07T18:46:23.591Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "GiangVienController.cs",
+              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\GiangVienController.cs",
+              "RelativeDocumentMoniker": "training-management-internship\\Controllers\\GiangVienController.cs",
+              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Controllers\\GiangVienController.cs",
+              "RelativeToolTip": "training-management-internship\\Controllers\\GiangVienController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAqwBYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T19:47:06.757Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
               "Title": "LoaiLop.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\LoaiLop.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Models\\LoaiLop.cs",
@@ -1303,7 +1369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 75,
               "Title": "DanhSachHocVienController.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\DanhSachHocVienController.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Controllers\\DanhSachHocVienController.cs",
@@ -1315,7 +1381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 74,
               "Title": "ChonHocVien.cshtml",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Lop\\ChonHocVien.cshtml",
               "RelativeDocumentMoniker": "training-management-internship\\Views\\Lop\\ChonHocVien.cshtml",
@@ -1327,7 +1393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 72,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "training-management-internship\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -1339,7 +1405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 71,
               "Title": "Error.cshtml",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "training-management-internship\\Views\\Shared\\Error.cshtml",
@@ -1351,7 +1417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 73,
               "Title": "ChonThemHocVien.cshtml",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Lop\\ChonThemHocVien.cshtml",
               "RelativeDocumentMoniker": "training-management-internship\\Views\\Lop\\ChonThemHocVien.cshtml",
@@ -1363,19 +1429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
-              "Title": "ChuongTrinhDaoTaoController.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\ChuongTrinhDaoTaoController.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Controllers\\ChuongTrinhDaoTaoController.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Controllers\\ChuongTrinhDaoTaoController.cs",
-              "RelativeToolTip": "training-management-internship\\Controllers\\ChuongTrinhDaoTaoController.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAA1wBgAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T05:57:37.892Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 76,
               "Title": "EFDanhSachHocVienRepository.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Entity Framework\\EFDanhSachHocVienRepository.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Entity Framework\\EFDanhSachHocVienRepository.cs",
@@ -1387,7 +1441,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 77,
               "Title": "Create.cshtml",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Lop\\Create.cshtml",
               "RelativeDocumentMoniker": "training-management-internship\\Views\\Lop\\Create.cshtml",
@@ -1399,7 +1453,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 78,
               "Title": "Dockerfile",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Dockerfile",
               "RelativeDocumentMoniker": "training-management-internship\\Dockerfile",
@@ -1411,7 +1465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 79,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "training-management-internship\\Views\\Shared\\_Layout.cshtml",
@@ -1423,7 +1477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 82,
               "Title": "RegisterConfirmation.cshtml.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml.cs",
@@ -1435,7 +1489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 80,
               "Title": "_Layout.cshtml.css",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\Shared\\_Layout.cshtml.css",
               "RelativeDocumentMoniker": "training-management-internship\\Views\\Shared\\_Layout.cshtml.css",
@@ -1447,7 +1501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 81,
               "Title": "site.js",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "training-management-internship\\wwwroot\\js\\site.js",
@@ -1459,19 +1513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
-              "Title": "ChuongTrinhDaoTao.cs",
-              "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\ChuongTrinhDaoTao.cs",
-              "RelativeDocumentMoniker": "training-management-internship\\Models\\ChuongTrinhDaoTao.cs",
-              "ToolTip": "F:\\training-management-internship\\training-management-internship\\Models\\ChuongTrinhDaoTao.cs",
-              "RelativeToolTip": "training-management-internship\\Models\\ChuongTrinhDaoTao.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAiwAIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T06:57:22.136Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 83,
               "Title": "Create.cshtml",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\ChuongTrinhDaoTao\\Create.cshtml",
               "RelativeDocumentMoniker": "training-management-internship\\Views\\ChuongTrinhDaoTao\\Create.cshtml",
@@ -1483,7 +1525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 84,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "training-management-internship\\Views\\_ViewStart.cshtml",
@@ -1495,7 +1537,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 86,
               "Title": "RegisterConfirmation.cshtml",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
               "RelativeDocumentMoniker": "training-management-internship\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
@@ -1507,7 +1549,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 85,
               "Title": "Create.cshtml",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\LoaiLop\\Create.cshtml",
               "RelativeDocumentMoniker": "training-management-internship\\Views\\LoaiLop\\Create.cshtml",
@@ -1519,7 +1561,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 87,
               "Title": "ConfirmEmail.cshtml.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Areas\\Identity\\Pages\\Account\\ConfirmEmail.cshtml.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Areas\\Identity\\Pages\\Account\\ConfirmEmail.cshtml.cs",
@@ -1531,7 +1573,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 92,
               "Title": "HomeController.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Controllers\\HomeController.cs",
@@ -1543,7 +1585,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 89,
               "Title": "ResendEmailConfirmation.cshtml",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Areas\\Identity\\Pages\\Account\\ResendEmailConfirmation.cshtml",
               "RelativeDocumentMoniker": "training-management-internship\\Areas\\Identity\\Pages\\Account\\ResendEmailConfirmation.cshtml",
@@ -1555,7 +1597,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 88,
               "Title": "ConfirmEmail.cshtml",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Areas\\Identity\\Pages\\Account\\ConfirmEmail.cshtml",
               "RelativeDocumentMoniker": "training-management-internship\\Areas\\Identity\\Pages\\Account\\ConfirmEmail.cshtml",
@@ -1567,7 +1609,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 91,
               "Title": "GiangVien.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\GiangVien.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Models\\GiangVien.cs",
@@ -1579,7 +1621,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 90,
               "Title": "HocVien.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\HocVien.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Models\\HocVien.cs",
@@ -1591,7 +1633,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 117,
+              "DocumentIndex": 120,
               "Title": "Indexx.cshtml",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Views\\KhoaHocs\\Indexx.cshtml",
               "RelativeDocumentMoniker": "training-management-internship\\Views\\KhoaHocs\\Indexx.cshtml",
@@ -1603,7 +1645,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 93,
               "Title": "EFChuongTrinhRepository.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Entity Framework\\EFChuongTrinhRepository.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Entity Framework\\EFChuongTrinhRepository.cs",
@@ -1615,7 +1657,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 94,
               "Title": "EFHocVienRepository.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Entity Framework\\EFHocVienRepository.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Entity Framework\\EFHocVienRepository.cs",
@@ -1627,7 +1669,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 95,
               "Title": "EFGiangVienRepository.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Entity Framework\\EFGiangVienRepository.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Entity Framework\\EFGiangVienRepository.cs",
@@ -1639,7 +1681,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 96,
               "Title": "EFLoaiLopRepository.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Entity Framework\\EFLoaiLopRepository.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Entity Framework\\EFLoaiLopRepository.cs",
@@ -1651,7 +1693,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 97,
               "Title": "EFLopRepository.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Entity Framework\\EFLopRepository.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Entity Framework\\EFLopRepository.cs",
@@ -1663,7 +1705,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 98,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Models\\ErrorViewModel.cs",
@@ -1675,7 +1717,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 99,
               "Title": "DanhGiaTheoNam.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Models\\DanhGiaTheoNam.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Models\\DanhGiaTheoNam.cs",
@@ -1687,7 +1729,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 100,
               "Title": "ILopRepository.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Interfaces\\ILopRepository.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Interfaces\\ILopRepository.cs",
@@ -1699,7 +1741,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
+              "DocumentIndex": 101,
               "Title": "ILoaiLopRepository.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Interfaces\\ILoaiLopRepository.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Interfaces\\ILoaiLopRepository.cs",
@@ -1711,7 +1753,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 99,
+              "DocumentIndex": 102,
               "Title": "20250524180224_Initial.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Migrations\\20250524180224_Initial.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Migrations\\20250524180224_Initial.cs",
@@ -1723,7 +1765,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 100,
+              "DocumentIndex": 103,
               "Title": "20250524174848_Initial.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Migrations\\20250524174848_Initial.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Migrations\\20250524174848_Initial.cs",
@@ -1735,7 +1777,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 101,
+              "DocumentIndex": 104,
               "Title": "EFKhoaHocRepository.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Entity Framework\\EFKhoaHocRepository.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Entity Framework\\EFKhoaHocRepository.cs",
@@ -1747,7 +1789,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 102,
+              "DocumentIndex": 105,
               "Title": "IKhoaHocRepository.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Interfaces\\IKhoaHocRepository.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Interfaces\\IKhoaHocRepository.cs",
@@ -1759,7 +1801,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 103,
+              "DocumentIndex": 106,
               "Title": "EFDanhGiaRepository.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Entity Framework\\EFDanhGiaRepository.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Entity Framework\\EFDanhGiaRepository.cs",
@@ -1771,7 +1813,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 104,
+              "DocumentIndex": 107,
               "Title": "EFDiemDanhRepository.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Entity Framework\\EFDiemDanhRepository.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Entity Framework\\EFDiemDanhRepository.cs",
@@ -1783,7 +1825,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 106,
+              "DocumentIndex": 109,
               "Title": "IDanhSachHocVienRepository.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Interfaces\\IDanhSachHocVienRepository.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Interfaces\\IDanhSachHocVienRepository.cs",
@@ -1795,7 +1837,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 107,
+              "DocumentIndex": 110,
               "Title": "IDangKyRepository.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Interfaces\\IDangKyRepository.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Interfaces\\IDangKyRepository.cs",
@@ -1807,7 +1849,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
+              "DocumentIndex": 108,
               "Title": "IDiemDanhRepository.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Interfaces\\IDiemDanhRepository.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Interfaces\\IDiemDanhRepository.cs",
@@ -1819,7 +1861,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 108,
+              "DocumentIndex": 111,
               "Title": "IDanhGiaRepository.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Interfaces\\IDanhGiaRepository.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Interfaces\\IDanhGiaRepository.cs",
@@ -1831,7 +1873,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 109,
+              "DocumentIndex": 112,
               "Title": "Logout.cshtml",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
               "RelativeDocumentMoniker": "training-management-internship\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
@@ -1843,7 +1885,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 110,
+              "DocumentIndex": 113,
               "Title": "AuthenticationOptions.cs",
               "DocumentMoniker": "C:\\Users\\Dien\\AppData\\Local\\Temp\\.vsdbgsrc\\c419dad7302b3e96c2c38cca4039887fbe745db760d3004f23d2549a94084090\\AuthenticationOptions.cs",
               "ToolTip": "C:\\Users\\Dien\\AppData\\Local\\Temp\\.vsdbgsrc\\c419dad7302b3e96c2c38cca4039887fbe745db760d3004f23d2549a94084090\\AuthenticationOptions.cs [Read Only]",
@@ -1853,7 +1895,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 111,
+              "DocumentIndex": 114,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
@@ -1863,7 +1905,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 112,
+              "DocumentIndex": 115,
               "Title": "training-management-internship",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\training-management-internship.csproj",
               "RelativeDocumentMoniker": "training-management-internship\\training-management-internship.csproj",
@@ -1874,7 +1916,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 114,
+              "DocumentIndex": 117,
               "Title": "IHocVienRepository.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Interfaces\\IHocVienRepository.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Interfaces\\IHocVienRepository.cs",
@@ -1886,7 +1928,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 113,
+              "DocumentIndex": 116,
               "Title": "training-management-internship.csproj",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\training-management-internship.csproj",
               "RelativeDocumentMoniker": "training-management-internship\\training-management-internship.csproj",
@@ -1898,7 +1940,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 115,
+              "DocumentIndex": 118,
               "Title": "IGiangVienRepository.cs",
               "DocumentMoniker": "F:\\training-management-internship\\training-management-internship\\Repositories\\Interfaces\\IGiangVienRepository.cs",
               "RelativeDocumentMoniker": "training-management-internship\\Repositories\\Interfaces\\IGiangVienRepository.cs",
@@ -1910,7 +1952,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 116,
+              "DocumentIndex": 119,
               "Title": "tts.cs",
               "DocumentMoniker": "C:\\Users\\Dien\\Desktop\\training-management-internship\\training-management-internship\\Models\\tts.cs",
               "ToolTip": "C:\\Users\\Dien\\Desktop\\training-management-internship\\training-management-internship\\Models\\tts.cs",
