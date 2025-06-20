@@ -11,5 +11,4 @@ namespace training_management_internship.Models
 
         public virtual ICollection<KhoaHoc> KhoaHocs { get; set; } = new List<KhoaHoc>();
     }
-
-}
+}s

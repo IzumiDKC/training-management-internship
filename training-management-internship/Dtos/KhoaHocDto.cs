@@ -4,6 +4,5 @@
     {
         public int KhoaHocId { get; set; }
         public string TenKhoaHoc { get; set; }
-        public string TenChuongTrinhDaoTao { get; set; }
     }
 }
