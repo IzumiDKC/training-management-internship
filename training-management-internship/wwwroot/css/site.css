@@ -17,6 +17,48 @@ html {
   min-height: 100%;
 }
 
+
+
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 600;
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: #444;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004999;
+    }
+
+hr {
+    border-top: 2px solid #dee2e6;
+}
+
+.shadow {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.img-fluid {
+    max-height: 350px;
+    object-fit: contain;
+}
+
+footer.footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
 }
