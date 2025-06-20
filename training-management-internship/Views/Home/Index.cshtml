@@ -1,8 +1,47 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Trang chủ";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h1 class="display-4 text-primary">👨‍🏫 Hệ thống Quản lý Đào tạo</h1>
+            <p class="lead mt-4">
+                Quản lý chương trình, khóa học, lớp học và học viên một cách hiệu quả và dễ dàng.
+            </p>
+            <p class="mt-3">
+                Bạn có thể theo dõi quá trình học tập, điểm danh, đăng ký khóa học và hơn thế nữa!
+            </p>
+            <a class="btn btn-primary btn-lg mt-3" href="/Identity/Account/Register">
+                🚀 Bắt đầu ngay
+            </a>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="https://cdn.pixabay.com/photo/2014/05/10/19/23/presentation-341444_1280.png"
+                 class="img-fluid rounded shadow"
+                 alt="E-learning concept" />
+
+
+        </div>
+    </div>
+
+    <hr class="my-5" />
+
+    <div class="row text-center">
+        <div class="col-md-4">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" width="80" />
+            <h4 class="mt-3">Quản lý Học viên</h4>
+            <p>Thông tin học viên, lịch học, điểm danh dễ dàng theo dõi và cập nhật.</p>
+        </div>
+        <div class="col-md-4">
+            <img src="https://cdn-icons-png.flaticon.com/512/1904/1904425.png" width="80" />
+            <h4 class="mt-3">Tổ chức Khóa học</h4>
+            <p>Khởi tạo, phân lớp và theo dõi tiến độ khóa học hiệu quả.</p>
+        </div>
+        <div class="col-md-4">
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png" width="80" />
+            <h4 class="mt-3">Báo cáo & Thống kê</h4>
+            <p>Xuất báo cáo học tập, thống kê học viên, giảng viên và lớp học chi tiết.</p>
+        </div>
+    </div>
 </div>

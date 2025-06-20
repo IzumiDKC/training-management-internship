@@ -9,6 +9,14 @@
       "PackagePath": "staticwebassets\\css\\admin-dashboard.css"
     },
     {
+      "Id": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\dark.css",
+      "PackagePath": "staticwebassets\\css\\dark.css"
+    },
+    {
+      "Id": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\light.css",
+      "PackagePath": "staticwebassets\\css\\light.css"
+    },
+    {
       "Id": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
