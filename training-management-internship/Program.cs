@@ -99,4 +99,5 @@ using (var scope = app.Services.CreateScope())
     await DbInitializer.SeedAdminAsync(services);
 }
 
+
 app.Run();
