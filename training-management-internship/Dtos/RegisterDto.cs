@@ -4,6 +4,7 @@ namespace training_management_internship.Dtos
 {
     public class RegisterDto
     {
+        
         [Required]
         [EmailAddress]
         public string Email { get; set; }
