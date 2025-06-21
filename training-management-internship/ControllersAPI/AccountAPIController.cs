@@ -40,7 +40,6 @@ namespace training_management_internship.ControllersAPI
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            // Kiểm tra số căn cước trùng
             if (_context.Users.Any(u => u.SoCanCuoc == model.SoCanCuoc))
             {
                 return BadRequest(new { error = "Số căn cước này đã tồn tại trong hệ thống." });
@@ -52,7 +51,7 @@ namespace training_management_internship.ControllersAPI
                 Email = model.Email,
                 HoTen = model.HoTen,
                 SoCanCuoc = model.SoCanCuoc,
-                EmailConfirmed = false  // bỏ xác nhận thủ công
+                EmailConfirmed = false 
             };
 
             var result = await _userManager.CreateAsync(user, model.Password);
@@ -71,7 +70,6 @@ namespace training_management_internship.ControllersAPI
 
             await _userManager.AddToRoleAsync(user, role);
 
-            // Gắn entity phụ
             if (role == "HocVien")
             {
                 _context.HocViens.Add(new HocVien { UserId = user.Id });
@@ -83,7 +81,7 @@ namespace training_management_internship.ControllersAPI
 
             await _context.SaveChangesAsync();
 
-            //  link xác nhận email
+            // link xác nhận email
             var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
             code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
 
@@ -92,7 +90,6 @@ namespace training_management_internship.ControllersAPI
             await _emailSender.SendEmailAsync(model.Email, "Xác nhận đăng ký",
                 $"Vui lòng xác nhận tài khoản bằng cách nhấn vào link sau: <a href='{callbackUrl}'>Xác nhận</a>");
 
-            // Không tự đăng nhập ngay lập tức
             return Ok(new { message = "Đăng ký thành công. Vui lòng kiểm tra email để xác nhận tài khoản." });
         }
 
@@ -124,9 +121,15 @@ namespace training_management_internship.ControllersAPI
         [HttpGet("me")]
         public async Task<IActionResult> GetCurrentUser()
         {
+            Console.WriteLine($" Identity.Name: {User.Identity?.Name}");
+            Console.WriteLine($" IsAuthenticated: {User.Identity?.IsAuthenticated}");
+
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
+            {
+                Console.WriteLine("❌ Không tìm thấy user từ claims.");
                 return Unauthorized();
+            }
 
             var roles = await _userManager.GetRolesAsync(user);
 
@@ -140,6 +143,7 @@ namespace training_management_internship.ControllersAPI
                 Roles = roles
             });
         }
+
 
 
         [HttpGet("confirm-email")]
