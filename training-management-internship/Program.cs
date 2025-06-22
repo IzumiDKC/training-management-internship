@@ -78,6 +78,8 @@ app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Training Management API V1");
     c.RoutePrefix = "swagger";
+  //  c.RoutePrefix = string.Empty;
+
 });
 
 app.UseCors("AllowFrontend");
@@ -87,6 +89,9 @@ app.UseAuthorization();
 
 app.UseSession();
 
+//
+// app.MapGet("/", () => Results.Redirect("/swagger"));
+//
 app.MapRazorPages();
 app.MapControllers();
 app.MapControllerRoute(

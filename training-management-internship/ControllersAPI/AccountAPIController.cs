@@ -11,7 +11,7 @@ namespace training_management_internship.ControllersAPI
 {
     [Route("api/account")]
     [ApiController]
-    public class AccountApiController : ControllerBase
+    public class AccountAPIController : ControllerBase
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
@@ -19,7 +19,7 @@ namespace training_management_internship.ControllersAPI
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IEmailSender _emailSender;
 
-        public AccountApiController(
+        public AccountAPIController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             ApplicationDbContext context,
@@ -127,7 +127,7 @@ namespace training_management_internship.ControllersAPI
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
-                Console.WriteLine("❌ Không tìm thấy user từ claims.");
+                Console.WriteLine("Không tìm thấy user.");
                 return Unauthorized();
             }
 

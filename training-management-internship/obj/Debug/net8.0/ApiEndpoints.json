@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "training_management_internship.ControllersAPI.AccountApiController",
+    "ContainingType": "training_management_internship.ControllersAPI.AccountAPIController",
     "Method": "ConfirmEmail",
     "RelativePath": "api/account/confirm-email",
     "HttpMethod": "GET",
@@ -21,7 +21,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "training_management_internship.ControllersAPI.AccountApiController",
+    "ContainingType": "training_management_internship.ControllersAPI.AccountAPIController",
     "Method": "Login",
     "RelativePath": "api/account/login",
     "HttpMethod": "POST",
@@ -37,7 +37,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "training_management_internship.ControllersAPI.AccountApiController",
+    "ContainingType": "training_management_internship.ControllersAPI.AccountAPIController",
     "Method": "Logout",
     "RelativePath": "api/account/logout",
     "HttpMethod": "POST",
@@ -47,7 +47,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "training_management_internship.ControllersAPI.AccountApiController",
+    "ContainingType": "training_management_internship.ControllersAPI.AccountAPIController",
     "Method": "GetCurrentUser",
     "RelativePath": "api/account/me",
     "HttpMethod": "GET",
@@ -57,7 +57,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "training_management_internship.ControllersAPI.AccountApiController",
+    "ContainingType": "training_management_internship.ControllersAPI.AccountAPIController",
     "Method": "Register",
     "RelativePath": "api/account/register",
     "HttpMethod": "POST",
@@ -182,7 +182,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "training_management_internship.ControllersAPI.KhoaHocApiController",
+    "ContainingType": "training_management_internship.ControllersAPI.KhoaHocAPIController",
     "Method": "GetAll",
     "RelativePath": "api/KhoaHoc",
     "HttpMethod": "GET",
@@ -202,7 +202,7 @@
     ]
   },
   {
-    "ContainingType": "training_management_internship.ControllersAPI.KhoaHocApiController",
+    "ContainingType": "training_management_internship.ControllersAPI.KhoaHocAPIController",
     "Method": "Create",
     "RelativePath": "api/KhoaHoc",
     "HttpMethod": "POST",
@@ -228,7 +228,7 @@
     ]
   },
   {
-    "ContainingType": "training_management_internship.ControllersAPI.KhoaHocApiController",
+    "ContainingType": "training_management_internship.ControllersAPI.KhoaHocAPIController",
     "Method": "GetById",
     "RelativePath": "api/KhoaHoc/{id}",
     "HttpMethod": "GET",
@@ -254,7 +254,7 @@
     ]
   },
   {
-    "ContainingType": "training_management_internship.ControllersAPI.KhoaHocApiController",
+    "ContainingType": "training_management_internship.ControllersAPI.KhoaHocAPIController",
     "Method": "Update",
     "RelativePath": "api/KhoaHoc/{id}",
     "HttpMethod": "PUT",
@@ -275,7 +275,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "training_management_internship.ControllersAPI.KhoaHocApiController",
+    "ContainingType": "training_management_internship.ControllersAPI.KhoaHocAPIController",
     "Method": "Delete",
     "RelativePath": "api/KhoaHoc/{id}",
     "HttpMethod": "DELETE",
@@ -286,6 +286,162 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.Controllers.LopAPIController",
+    "Method": "GetLops",
+    "RelativePath": "api/Lop",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[training_management_internship.Models.LopDto, training-management-internship, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "training_management_internship.Controllers.LopAPIController",
+    "Method": "PostLop",
+    "RelativePath": "api/Lop",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lop",
+        "Type": "training_management_internship.Models.Lop",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "training_management_internship.Models.Lop",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "training_management_internship.Controllers.LopAPIController",
+    "Method": "GetLop",
+    "RelativePath": "api/Lop/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "training_management_internship.Models.LopDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "training_management_internship.Controllers.LopAPIController",
+    "Method": "PutLop",
+    "RelativePath": "api/Lop/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "lop",
+        "Type": "training_management_internship.Models.Lop",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.Controllers.LopAPIController",
+    "Method": "DeleteLop",
+    "RelativePath": "api/Lop/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.Controllers.LopAPIController",
+    "Method": "ChonHocVien",
+    "RelativePath": "api/Lop/ChonHocVien/{lopId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lopId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[training_management_internship.Models.HocVienSelectorViewModel, training-management-internship, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "training_management_internship.Controllers.LopAPIController",
+    "Method": "ThemHocVienVaoLop",
+    "RelativePath": "api/Lop/ThemHocVienVaoLop",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "System.Collections.Generic.List\u00601[[training_management_internship.Models.HocVienSelectorViewModel, training-management-internship, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "lopId",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

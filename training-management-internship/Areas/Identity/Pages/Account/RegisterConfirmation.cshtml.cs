@@ -77,7 +77,6 @@ namespace training_management_internship.Areas.Identity.Pages.Account
                     
                 ");
 
-            // KHÔNG hiển thị link xác nhận trên giao diện nữa
             DisplayConfirmAccountLink = false;
 
             return Page();

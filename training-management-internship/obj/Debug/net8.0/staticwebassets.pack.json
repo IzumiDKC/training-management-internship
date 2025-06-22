@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\light.css"
     },
     {
+      "Id": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
       "Id": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

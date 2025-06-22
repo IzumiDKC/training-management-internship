@@ -1,8 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MIT license.
-#nullable disable
-
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Text.Encodings.Web;
@@ -29,23 +25,11 @@ namespace training_management_internship.Areas.Identity.Pages.Account
             _emailSender = emailSender;
         }
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
         [BindProperty]
         public InputModel Input { get; set; }
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
         public class InputModel
         {
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
             [Required]
             [EmailAddress]
             public string Email { get; set; }
@@ -65,7 +49,7 @@ namespace training_management_internship.Areas.Identity.Pages.Account
             var user = await _userManager.FindByEmailAsync(Input.Email);
             if (user == null)
             {
-                ModelState.AddModelError(string.Empty, "Verification email sent. Please check your email.");
+                ModelState.AddModelError(string.Empty, "Không tìm thấy tài khoản với email này. Vui lòng kiểm tra lại.");
                 return Page();
             }
 
@@ -77,12 +61,27 @@ namespace training_management_internship.Areas.Identity.Pages.Account
                 pageHandler: null,
                 values: new { userId = userId, code = code },
                 protocol: Request.Scheme);
+
+            var emailBody = $@"
+                <p>Xin chào,</p>
+
+                <p>Chúng tôi nhận thấy bạn chưa xác nhận email của mình. Để hoàn tất việc đăng ký tài khoản, vui lòng xác nhận email của bạn bằng cách nhấn vào liên kết dưới đây:</p>
+
+                <p><a href='{HtmlEncoder.Default.Encode(callbackUrl)}' target='_blank' style='color: #1a73e8;'>Xác nhận tài khoản</a></p>
+
+                <p>Nếu bạn không thực hiện yêu cầu này, vui lòng bỏ qua email này.</p>
+
+                <br/>
+                <p>Trân trọng,</p>
+                <p><strong>Ban quản trị Hệ thống Đào tạo</strong></p>
+            ";
+
             await _emailSender.SendEmailAsync(
                 Input.Email,
-                "Confirm your email",
-                $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                "Xác nhận email của bạn - Hệ thống Quản lý Đào tạo",
+                emailBody);
 
-            ModelState.AddModelError(string.Empty, "Verification email sent. Please check your email.");
+            ModelState.AddModelError(string.Empty, "Email xác nhận đã được gửi. Vui lòng kiểm tra hộp thư của bạn.");
             return Page();
         }
     }
