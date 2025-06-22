@@ -23,86 +23,86 @@ This document outlines the weekly progress and key milestones of my project deve
 ### 🔧 System Setup Tasks:
 
 - Created and updated core **Models**.
-- Implemented **Responsibility pattern** to manage responsibilities clearly.
+- Implemented **Responsibility Pattern** to manage responsibilities effectively.
 - Integrated **ASP.NET Identity** for authentication and user management.
-- Applied **Entity Framework Migrations** (from Azure DB to local DB).
-- Developed **Razor Pages (UI)** for account-related features.
-- Configured **Identity services and options**.
+- Applied **Entity Framework Migrations** to sync the database from Azure to local.
+- Developed **Razor Pages** for account-related features.
+- Configured **Identity services** and related options.
 - Built a basic **view demo page** to validate UI integration.
 
 ---
 
 ## 🗓️ Week 3: Requirement Changes & Redesign
 
-- Received new project requirements conflicting with the existing system design.
-- Identified major issues in:
+- Received new project requirements that conflicted with the existing system design.
+- Identified critical issues in:
   - Entity relationships
   - Business logic
   - Key constraints (primary/foreign)
 
 ### 🛠️ Solution:
 
-- Decided to **rebuild the system** from the ground up, including:
-  - Redesigning data relationships
-  - Refactoring core logic
-  - Adjusting keys and constraints for consistency
-  - Updating database migrations
+- Decided to **rebuild the system** from the ground up:
+  - Redesigning data relationships.
+  - Refactoring core business logic.
+  - Adjusting keys and constraints for consistency.
+  - Updating database migrations accordingly.
 
 ---
 
 ## 🗓️ Week 4: Model Fixes & Admin Interface
 
-- Fixed required navigation property issues.
-- Validated navigation properties in models.
-- Created an **Admin Interface** to manage data more effectively.
+- Fixed required navigation property issues in the models.
+- Validated navigation properties for correctness.
+- Developed an **Admin Interface** to facilitate data management.
 - Applied **ValidateNever** to the **DangKyKhoaHoc** model.
-- Fixed bugs in the **DangKyKhoaKhoa Controller**.
+- Fixed bugs and improved the **DangKyKhoaHoc Controller**.
 
 ---
 
 ## 🗓️ Week 5: Restructuring, Registration Updates, and New Features
 
-- Restructured the **Lop** model and related views (Detail, Create, etc.).
-- Updated the **DangKyKhoaHoc** system:
-  - Allowed class selection during registration.
+- Restructured the **Lop** model and updated associated views (Detail, Create, etc.).
+- Enhanced the **DangKyKhoaHoc** system:
+  - Enabled class selection during registration.
   - Auto-added users to the **DanhSachHocVien** upon registration.
-- Dropped validation navigation properties in the **ChiTietLop** table.
-- Added the **ChiTietLopController** which operates within the **Lop** context:
-  - **Lop** is required.
-  - The controller does not operate at `/ChiTietLop/index` but at `/ChiTietLop?lop{id}`.
-- Updated **UI/UX** for **ChiTietLop** to improve user experience and visual design.
+- Removed validation navigation properties from the **ChiTietLop** table.
+- Introduced **ChiTietLopController** to manage **Lop** contexts:
+  - **Lop** is now a required parameter.
+  - The controller now works at `/ChiTietLop?lop{id}` instead of `/ChiTietLop/index`.
+- Improved **UI/UX** for **ChiTietLop** to enhance user experience and visual design.
 
 ---
 
 ## 🗓️ Week 6: API Integration, DiemDanh Feature, and Frontend Setup
 
-- Created **API Controller** for **KhoaHoc** with **DTO Models** to return flattened JSON to avoid circular references.
-- Built **DiemDanh** feature:
-  - Processed logic and interface between **DangKyKhoaHoc** and **Lop**.
-  - Built QR code functionality for **DiemDanh**.
-  - Handled error reporting for the DiemDanh process.
-- Implemented **Find user by email** during login:
-  - Checked results in the console.
-- **Reset local user** if account is not bound to **ChiTietLop**, handled **Admin account**.
-- Reconfigured **DbInitializer.cs** to receive the **Admin Account** during initialization.
-- Removed **User Controller** and merged it into the **Admin Controller** with **[Authorize]** annotation.
+- Developed the **API Controller** for **KhoaHoc**, utilizing **DTO Models** to return a flattened JSON structure, preventing circular reference issues.
+- Implemented the **DiemDanh** feature:
+  - Integrated logic and interfaces between **DangKyKhoaHoc** and **Lop**.
+  - Built **QR Code** functionality for **DiemDanh** check-ins.
+  - Improved error handling and reporting for the **DiemDanh** process.
+- Implemented user search functionality by email for login:
+  - Validated login results using console outputs.
+- Managed **local user reset** when the account is not bound to **ChiTietLop**, with specific handling for **Admin accounts**.
+- Reconfigured **DbInitializer.cs** to ensure **Admin Account** initialization during system startup.
+- Merged the **User Controller** into the **Admin Controller** with **[Authorize]** access control.
 - Updated system logic for role management:
-  - By default, account registration will assign the role **HocVien**.
-  - Admin can change role between **HocVien** and **GiangVien**.
-  - Adjusted filtering logic for admin.
-  - Added and updated display interfaces when changing the role in the **Admin** panel.
-- Configured **Swagger** for testing the API endpoints.
-- Added **DTOs** for various models and APIs.
-  - Updated **KhoaHocController** (Razor Page) and **KhoaHocAPIController** (JSON via `/api/{Model}`).
-  - Managed **ModelState** validation for **KhoaHocAPI**.
-- Updated **Home Interface** and **Account DTO** for API usage.
-- Created **AccountAPI** with **RegisterConfirmation** logic.
-- Added **CORS** for frontend API calls (with cookies and **AllowCredentials**).
-- Optimized unused code across the project.
-- Updated **email sending logic**:
-  - For cases such as **ConfirmEmail**, **ForgotPassword**, **ResendEmailConfirmation**, etc.
-- Updated **Login**, **AccessDenied**, **_Layout**, and **_ManageNav** interface with detailed error reporting and user-friendly designs.
-- React frontend setup started, with successful API integrations for some features.
+  - By default, user registration assigns the role of **HocVien**.
+  - Admins can toggle between **HocVien** and **GiangVien** roles.
+  - Refined filtering logic for **admin** operations.
+  - Enhanced interfaces for role changes in the **Admin Panel**.
+- Configured **Swagger** for API testing and documentation.
+- Developed and added **DTOs** for various models:
+  - Updated **KhoaHocController** for Razor Pages and **KhoaHocAPIController** for JSON-based API endpoints.
+  - Implemented **ModelState** validation for the **KhoaHocAPI**.
+- Improved the **Home Interface** and implemented **Account DTO** for better API integration.
+- Created the **AccountAPI** for **RegisterConfirmation** processes.
+- Added **CORS** support for frontend API calls, ensuring compatibility with cookies and **AllowCredentials**.
+- Optimized the codebase by removing unused code and improving overall performance.
+- Updated **email sending workflows** for various operations:
+  - ConfirmEmail, ForgotPassword, ResendEmailConfirmation, etc.
+- Refined the **Login**, **AccessDenied**, **_Layout**, and **_ManageNav** interfaces with more detailed error reporting.
+- Started the React frontend setup, successfully integrating the frontend with several API endpoints.
 
 ---
 
