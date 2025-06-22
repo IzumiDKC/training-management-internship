@@ -7,11 +7,11 @@ namespace training_management_internship.ControllersAPI
 {
     [Route("api/KhoaHoc")]
     [ApiController]
-    public class KhoaHocApiController : ControllerBase
+    public class KhoaHocAPIController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
 
-        public KhoaHocApiController(ApplicationDbContext context)
+        public KhoaHocAPIController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -22,6 +22,7 @@ namespace training_management_internship.ControllersAPI
         {
             var result = await _context.KhoaHocs
                 .Include(k => k.ChuongTrinhDaoTao)
+                .Include(k => k.Lops) // 👈 include lớp
                 .Select(k => new KhoaHocDetailDto
                 {
                     KhoaHocId = k.KhoaHocId,
@@ -30,10 +31,19 @@ namespace training_management_internship.ControllersAPI
                     {
                         ChuongTrinhDaoTaoId = k.ChuongTrinhDaoTao.ChuongTrinhDaoTaoId,
                         TenChuongTrinh = k.ChuongTrinhDaoTao.TenChuongTrinh
-                    }
+                    },
+                    Lops = k.Lops.Select(l => new LopDto
+                    {
+                        LopId = l.LopId,
+                        TenLop = l.TenLop,
+                        NgayBatDauDuKien = l.NgayBatDauDuKien,
+                        NgayKetThucDuKien = l.NgayKetThucDuKien,
+                        SoGio = l.SoGio,
+                        SoGioQuyDoi = l.SoGioQuyDoi,
+                        CoDanhSachHocVien = l.CoDanhSachHocVien
+                    }).ToList()
                 })
-                .ToListAsync();
-
+                    .ToListAsync();
             return Ok(result);
         }
 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vXCDDA3qb8iDcMQx6RFHgTCajMDUq/BWhKndKDl0jcs=",
+  "Hash": "wkNDlvQdF/Dfhq0YP86XPkOmPjYJCWLLfca1OSEw/2k=",
   "Source": "training-management-internship",
   "BasePath": "_content/training-management-internship",
   "Mode": "Default",
@@ -1250,6 +1250,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\light.css"
+    },
+    {
+      "Identity": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\login.css",
+      "SourceId": "training-management-internship",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\training-management-internship\\training-management-internship\\wwwroot\\",
+      "BasePath": "_content/training-management-internship",
+      "RelativePath": "css/login.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
       "Identity": "F:\\training-management-internship\\training-management-internship\\wwwroot\\css\\site.css",

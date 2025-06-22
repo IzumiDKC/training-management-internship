@@ -1,4 +1,6 @@
-﻿namespace training_management_internship.Dtos
+﻿using training_management_internship.Models;
+
+namespace training_management_internship.Dtos
 {
     public class KhoaHocDetailDto
     {
@@ -6,6 +8,9 @@
         public string TenKhoaHoc { get; set; }
 
         public ChuongTrinhShortDto ChuongTrinhDaoTao { get; set; }
+
+        public List<LopDto> Lops { get; set; } 
+
     }
 
     public class ChuongTrinhShortDto
