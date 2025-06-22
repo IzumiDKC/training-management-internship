@@ -56,7 +56,7 @@ This document outlines the weekly progress and key milestones of my project deve
 - Validated navigation properties in models.
 - Created an **Admin Interface** to manage data more effectively.
 - Applied **ValidateNever** to the **DangKyKhoaHoc** model.
-- Fixed bugs in the **DangKyKhoaHoc Controller**.
+- Fixed bugs in the **DangKyKhoaKhoa Controller**.
 
 ---
 
@@ -71,6 +71,38 @@ This document outlines the weekly progress and key milestones of my project deve
   - **Lop** is required.
   - The controller does not operate at `/ChiTietLop/index` but at `/ChiTietLop?lop{id}`.
 - Updated **UI/UX** for **ChiTietLop** to improve user experience and visual design.
+
+---
+
+## 🗓️ Week 6: API Integration, DiemDanh Feature, and Frontend Setup
+
+- Created **API Controller** for **KhoaHoc** with **DTO Models** to return flattened JSON to avoid circular references.
+- Built **DiemDanh** feature:
+  - Processed logic and interface between **DangKyKhoaHoc** and **Lop**.
+  - Built QR code functionality for **DiemDanh**.
+  - Handled error reporting for the DiemDanh process.
+- Implemented **Find user by email** during login:
+  - Checked results in the console.
+- **Reset local user** if account is not bound to **ChiTietLop**, handled **Admin account**.
+- Reconfigured **DbInitializer.cs** to receive the **Admin Account** during initialization.
+- Removed **User Controller** and merged it into the **Admin Controller** with **[Authorize]** annotation.
+- Updated system logic for role management:
+  - By default, account registration will assign the role **HocVien**.
+  - Admin can change role between **HocVien** and **GiangVien**.
+  - Adjusted filtering logic for admin.
+  - Added and updated display interfaces when changing the role in the **Admin** panel.
+- Configured **Swagger** for testing the API endpoints.
+- Added **DTOs** for various models and APIs.
+  - Updated **KhoaHocController** (Razor Page) and **KhoaHocAPIController** (JSON via `/api/{Model}`).
+  - Managed **ModelState** validation for **KhoaHocAPI**.
+- Updated **Home Interface** and **Account DTO** for API usage.
+- Created **AccountAPI** with **RegisterConfirmation** logic.
+- Added **CORS** for frontend API calls (with cookies and **AllowCredentials**).
+- Optimized unused code across the project.
+- Updated **email sending logic**:
+  - For cases such as **ConfirmEmail**, **ForgotPassword**, **ResendEmailConfirmation**, etc.
+- Updated **Login**, **AccessDenied**, **_Layout**, and **_ManageNav** interface with detailed error reporting and user-friendly designs.
+- React frontend setup started, with successful API integrations for some features.
 
 ---
 
