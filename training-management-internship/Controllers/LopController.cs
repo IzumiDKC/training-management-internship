@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using training_management_internship.Dtos;
 using training_management_internship.Models;
 
 namespace training_management_internship.Controllers
@@ -102,10 +103,11 @@ namespace training_management_internship.Controllers
         public async Task<IActionResult> ChonHocVien(int lopId)
         {
             var hocViens = await _userManager.GetUsersInRoleAsync("HocVien");
-            var model = hocViens.Select(u => new HocVienSelectorViewModel
+            var model = hocViens.Select(u => new HocVienSelector
             {
                 UserId = u.Id,
                 HoTen = u.HoTen,
+                SoCanCuoc = u.SoCanCuoc, 
                 IsSelected = false
             }).ToList();
 
@@ -114,7 +116,7 @@ namespace training_management_internship.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> ThemHocVienVaoLop(List<HocVienSelectorViewModel> model, int lopId)
+        public async Task<IActionResult> ThemHocVienVaoLop(List<HocVienSelector> model, int lopId)
         {
             foreach (var item in model.Where(m => m.IsSelected))
             {

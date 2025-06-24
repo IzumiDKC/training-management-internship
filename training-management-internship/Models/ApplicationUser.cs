@@ -14,7 +14,6 @@ namespace training_management_internship.Models
         public string SoCanCuoc { get; set; }
         public string? HocHamHocVi { get; set; }
         public bool ThuocBenhVien { get; set; }
-
         public HocVien? HocVien { get; set; }
         public GiangVien? GiangVien { get; set; }
     }
