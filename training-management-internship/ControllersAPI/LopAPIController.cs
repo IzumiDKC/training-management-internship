@@ -5,6 +5,7 @@ using training_management_internship.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using training_management_internship.Dtos;
 
 namespace training_management_internship.Controllers
 {
@@ -97,7 +98,7 @@ namespace training_management_internship.Controllers
 
             if (lop.CoDanhSachHocVien)
             {
-                return Ok(new { message = "Lớp đã được tạo và chuyển đến trang chọn học viên." });
+                return Ok(new { lopId = lop.LopId });
             }
 
             return CreatedAtAction(nameof(GetLop), new { id = lop.LopId }, lop);
@@ -155,22 +156,30 @@ namespace training_management_internship.Controllers
 
         // GET: api/Lop/ChonHocVien/5
         [HttpGet("ChonHocVien/{lopId}")]
-        public async Task<ActionResult<IEnumerable<HocVienSelectorViewModel>>> ChonHocVien(int lopId)
+        public async Task<ActionResult<IEnumerable<HocVienSelector>>> ChonHocVien(int lopId)
         {
-            var hocViens = await _userManager.GetUsersInRoleAsync("HocVien");
-            var model = hocViens.Select(u => new HocVienSelectorViewModel
-            {
-                UserId = u.Id,
-                HoTen = u.HoTen,
-                IsSelected = false
-            }).ToList();
+            var users = await _userManager.GetUsersInRoleAsync("HocVien");
 
-            return Ok(model);
+            var userIds = users.Select(u => u.Id).ToList();
+
+            var hocVienWithUser = await _context.HocViens
+                .Include(hv => hv.User)
+                .Where(hv => userIds.Contains(hv.UserId))
+                .Select(hv => new HocVienSelector
+                {
+                    UserId = hv.User.Id,
+                    HoTen = hv.User.HoTen,
+                    SoCanCuoc = hv.User.SoCanCuoc,
+                    IsSelected = false
+                }).ToListAsync();
+
+            return Ok(hocVienWithUser);
         }
+
 
         // POST: api/Lop/ThemHocVienVaoLop
         [HttpPost("ThemHocVienVaoLop")]
-        public async Task<IActionResult> ThemHocVienVaoLop([FromBody] List<HocVienSelectorViewModel> model, int lopId)
+        public async Task<IActionResult> ThemHocVienVaoLop([FromBody] List<HocVienSelector> model, int lopId)
         {
             foreach (var item in model.Where(m => m.IsSelected))
             {
