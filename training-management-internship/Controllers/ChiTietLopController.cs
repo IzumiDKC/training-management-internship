@@ -135,7 +135,7 @@ namespace training_management_internship.Controllers
 
             ViewData["GiangVienId"] = new SelectList(giangViens, "GiangVienId", "User.HoTen", chiTietLop.GiangVienId);
 
-            return View(chiTietLop); // load binding từ DB
+            return View(chiTietLop);
         }
 
 
