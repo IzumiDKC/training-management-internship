@@ -126,7 +126,7 @@ namespace training_management_internship.Controllers
             var qrGenerator = new QRCodeGenerator();
             var qrCodeData = qrGenerator.CreateQrCode(url, QRCodeGenerator.ECCLevel.Q);
             var qrCode = new Base64QRCode(qrCodeData);
-            var base64Image = qrCode.GetGraphic(20); // đây là chuỗi base64 PNG
+            var base64Image = qrCode.GetGraphic(20); 
 
             return Json(new
             {
@@ -134,7 +134,108 @@ namespace training_management_internship.Controllers
             });
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetCheckIn(int chiTietLopId, int hocVienId)
+        {
+            var diemDanh = await _context.DiemDanhs
+                .FirstOrDefaultAsync(d => d.ChiTietLopId == chiTietLopId &&
+                                          d.HocVienId == hocVienId &&
+                                          d.NgayCheck.Date == DateTime.Now.Date);
 
+            if (diemDanh != null)
+            {
+                diemDanh.CheckIn = TimeSpan.Zero; 
+                _context.Update(diemDanh);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToAction("DiemDanh", new { chiTietLopId });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetCheckOut(int chiTietLopId, int hocVienId)
+        {
+            var diemDanh = await _context.DiemDanhs
+                .FirstOrDefaultAsync(d => d.ChiTietLopId == chiTietLopId &&
+                                          d.HocVienId == hocVienId &&
+                                          d.NgayCheck.Date == DateTime.Now.Date);
+
+            if (diemDanh != null)
+            {
+                diemDanh.CheckOut = TimeSpan.Zero; 
+                _context.Update(diemDanh);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToAction("DiemDanh", new { chiTietLopId });
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetAllCheckIn(int chiTietLopId)
+        {
+            var diemDanhs = await _context.DiemDanhs
+                .Where(d => d.ChiTietLopId == chiTietLopId && d.NgayCheck.Date == DateTime.Now.Date)
+                .ToListAsync();
+
+            foreach (var diemDanh in diemDanhs)
+            {
+                diemDanh.CheckIn = TimeSpan.Zero;
+            }
+
+            _context.UpdateRange(diemDanhs);
+            await _context.SaveChangesAsync();
+
+            return Ok();
+        }
+
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetAllCheckOut(int chiTietLopId)
+        {
+            var diemDanhs = await _context.DiemDanhs
+                .Where(d => d.ChiTietLopId == chiTietLopId && d.NgayCheck.Date == DateTime.Now.Date)
+                .ToListAsync();
+
+            foreach (var diemDanh in diemDanhs)
+            {
+                diemDanh.CheckOut = TimeSpan.Zero;
+            }
+
+            _context.UpdateRange(diemDanhs);
+            await _context.SaveChangesAsync();
+
+            return Ok();
+        }
+
+
+
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetDiemDanh(int chiTietLopId, int hocVienId)
+        {
+            var diemDanh = await _context.DiemDanhs
+                .FirstOrDefaultAsync(d => d.ChiTietLopId == chiTietLopId &&
+                                          d.HocVienId == hocVienId &&
+                                          d.NgayCheck.Date == DateTime.Now.Date);
+
+            if (diemDanh != null)
+            {
+                diemDanh.CheckIn = TimeSpan.Zero;
+                diemDanh.CheckOut = TimeSpan.Zero;
+                _context.Update(diemDanh);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToAction("DiemDanh", new { chiTietLopId });
+        }
 
 
 
@@ -150,7 +251,7 @@ namespace training_management_internship.Controllers
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
-                return Challenge(); // chuyển hướng về đăng nhập nếu chưa đăng nhập
+                return Challenge(); 
             }
 
             var hocVien = await _context.HocViens.Include(h => h.User)
@@ -206,7 +307,7 @@ namespace training_management_internship.Controllers
 
             await _context.SaveChangesAsync();
 
-            return View("Success"); // Tạo view này báo “Điểm danh thành công”
+            return View("Success");
         }
     }
 }
