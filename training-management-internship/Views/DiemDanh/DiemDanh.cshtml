@@ -30,8 +30,14 @@
                     <tr>
                         <th>Học viên</th>
                         <th>Số CCCD</th>
-                        <th>Check-in</th>
-                        <th>Check-out</th>
+                        <th>
+                            Check-in
+                            <button class="btn btn-sm btn-outline-danger ms-2" onclick="resetAllCheckIn()">❌ Reset</button>
+                        </th>
+                        <th>
+                            Check-out
+                            <button class="btn btn-sm btn-outline-danger ms-2" onclick="resetAllCheckOut()">❌ Reset</button>
+                        </th>
                         <th>Thao tác</th>
                     </tr>
                 </thead>
@@ -42,8 +48,13 @@
                         <tr>
                             <td>@hv.HocVien.User.HoTen</td>
                             <td>@hv.HocVien.User.SoCanCuoc</td>
-                            <td>@(dd?.CheckIn.ToString(@"hh\:mm") ?? "--")</td>
-                            <td>@(dd?.CheckOut.ToString(@"hh\:mm") ?? "--")</td>
+                            <td>
+                                @(dd?.CheckIn.ToString(@"hh\:mm") ?? "--")
+                            </td>
+                            <td>
+                                @(dd?.CheckOut.ToString(@"hh\:mm") ?? "--")
+ 
+                            </td>
                             <td>
                                 <form asp-action="DiemDanhSubmit" method="post" class="d-inline">
                                     <input type="hidden" name="chiTietLopId" value="@chiTiet.ChiTietLopId" />
@@ -102,6 +113,44 @@
                         }
                     }, 1000);
                 });
+        }
+
+        function resetAllCheckIn() {
+            if (confirm('Bạn có chắc chắn muốn reset toàn bộ Check-in?')) {
+                const chiTietLopId = '@chiTiet.ChiTietLopId';
+                fetch(`/DiemDanh/ResetAllCheckIn?chiTietLopId=${chiTietLopId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        location.reload();
+                    } else {
+                        alert('Có lỗi xảy ra khi reset check-in.');
+                    }
+                });
+            }
+        }
+
+        function resetAllCheckOut() {
+            if (confirm('Bạn có chắc chắn muốn reset toàn bộ Check-out?')) {
+                const chiTietLopId = '@chiTiet.ChiTietLopId';
+                fetch(`/DiemDanh/ResetAllCheckOut?chiTietLopId=${chiTietLopId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        location.reload();
+                    } else {
+                        alert('Có lỗi xảy ra khi reset check-out.');
+                    }
+                });
+            }
         }
     </script>
 }
