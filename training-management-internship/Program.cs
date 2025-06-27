@@ -101,7 +101,7 @@ app.MapControllerRoute(
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    await DbInitializer.SeedAdminAsync(services);
+    await DbInitializer.SeedAccountsAsync(services);
 }
 
 
