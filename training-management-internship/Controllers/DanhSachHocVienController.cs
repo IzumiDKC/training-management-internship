@@ -18,14 +18,12 @@ namespace training_management_internship.Controllers
             _context = context;
         }
 
-        // GET: DanhSachHocViens
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.DanhSachHocViens.Include(d => d.HocVien).Include(d => d.Lop);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: DanhSachHocViens/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -45,7 +43,6 @@ namespace training_management_internship.Controllers
             return View(danhSachHocVien);
         }
 
-        // GET: DanhSachHocViens/Create
         public IActionResult Create()
         {
             ViewData["HocVienId"] = new SelectList(_context.HocViens, "HocVienId", "HocVienId");
@@ -53,9 +50,6 @@ namespace training_management_internship.Controllers
             return View();
         }
 
-        // POST: DanhSachHocViens/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("DanhSachHocVienId,LopId,HocVienId")] DanhSachHocVien danhSachHocVien)
@@ -71,7 +65,6 @@ namespace training_management_internship.Controllers
             return View(danhSachHocVien);
         }
 
-        // GET: DanhSachHocViens/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -89,9 +82,6 @@ namespace training_management_internship.Controllers
             return View(danhSachHocVien);
         }
 
-        // POST: DanhSachHocViens/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("DanhSachHocVienId,LopId,HocVienId")] DanhSachHocVien danhSachHocVien)
@@ -126,7 +116,6 @@ namespace training_management_internship.Controllers
             return View(danhSachHocVien);
         }
 
-        // GET: DanhSachHocViens/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -146,7 +135,6 @@ namespace training_management_internship.Controllers
             return View(danhSachHocVien);
         }
 
-        // POST: DanhSachHocViens/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
