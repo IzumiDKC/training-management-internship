@@ -144,5 +144,38 @@ This document outlines the weekly progress and key milestones of my project deve
 
 --
 
+## 🗓️ Week 8: JWT Configuration, DiemDanh API, and Frontend Updates (30/6 -> present)
+
+- **Configured JWT** for account management to resolve 401 errors on the frontend:
+  - Set up JWT **Key**, **Issuer**, **Audience**, and **Subject** for secure authentication.
+  - Added **Role** to the token to ensure proper transmission and reception of role-based data between APIs.
+
+- **Configured Swagger** to authenticate with the JWT token for API operations, enabling secure and functional API testing.
+
+- Updated **authorization** and **query logic** for specific APIs to ensure proper access control and functionality.
+
+- Removed all authorizations in the backend temporarily for testing purposes.
+
+- **DiemDanhAPI**:
+  - Changed the **Route** to accept **LopId** for retrieving the student list.
+  - Configured proper **authorization** for the API routes instead of using general permissions.
+  - Set up **QR generation** for the frontend to run on **port 3000**, eliminating the need to return a backend view.
+
+- **AccountAPI**:
+  - Implemented **authorization checks** for API requests.
+  - After login, the **JWT token** will be logged and used for checking in through the API.
+  - Removed Razor-based login from the backend to streamline API usage.
+
+- **Frontend Issue**: 
+  - Faced problems with running two protocols (HTTP and HTTPS) on different ports.
+  - **Solution**:
+    - Installed **openssl** via **chocolatey** on local machines.
+    - Configured **SSL certificates** in the frontend (FE) with the use of **3 .pem** files.
+    - Updated configurations to enable frontend to run on **both HTTP and HTTPS**.
+    - The configuration is still maintained for SSL, but now the frontend runs on **no-SSL** protocol for better flexibility.
+
+
+--
+
 
 > 📌 *This README summarizes weekly progress, technical decisions, and structural changes in the project.*
