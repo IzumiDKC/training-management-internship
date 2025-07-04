@@ -142,7 +142,7 @@ This document outlines the weekly progress and key milestones of my project deve
   
 - **QR processing** for **DiemDanh** is still in progress, with ongoing improvements.
 
---
+---
 
 ## 🗓️ Week 8: JWT Configuration, DiemDanh API, and Frontend Updates (30/6 -> present)
 
@@ -175,7 +175,7 @@ This document outlines the weekly progress and key milestones of my project deve
     - The configuration is still maintained for SSL, but now the frontend runs on **no-SSL** protocol for better flexibility.
 
 
---
+---
 
 
 > 📌 *This README summarizes weekly progress, technical decisions, and structural changes in the project.*
