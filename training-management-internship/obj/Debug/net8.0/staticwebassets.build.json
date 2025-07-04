@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wkNDlvQdF/Dfhq0YP86XPkOmPjYJCWLLfca1OSEw/2k=",
+  "Hash": "pjaI8T8NRUbTh52zC8Y1O/GNBn8vWikKrG3QQrb9waI=",
   "Source": "training-management-internship",
   "BasePath": "_content/training-management-internship",
   "Mode": "Default",
@@ -2428,6 +2428,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "F:\\training-management-internship\\training-management-internship\\wwwroot\\swagger\\customSwagger.js",
+      "SourceId": "training-management-internship",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\training-management-internship\\training-management-internship\\wwwroot\\",
+      "BasePath": "_content/training-management-internship",
+      "RelativePath": "swagger/customSwagger.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\swagger\\customSwagger.js"
     }
   ]
 }

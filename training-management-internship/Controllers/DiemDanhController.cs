@@ -11,8 +11,8 @@ using training_management_internship.Services;
 
 namespace training_management_internship.Controllers
 {
-    [Authorize(Roles = "Admin, GiangVien")]
-    public class DiemDanhController : Controller
+/*     [Authorize(Roles = "Admin, GiangVien")]
+*/    public class DiemDanhController : Controller
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
@@ -22,6 +22,7 @@ namespace training_management_internship.Controllers
             _context = context;
             _userManager = userManager;
         }
+
         public async Task<IActionResult> DiemDanh(int chiTietLopId)
         {
             var chiTietLop = await _context.ChiTietLops
@@ -44,13 +45,10 @@ namespace training_management_internship.Controllers
             return View();
         }
 
-        /* =============================================================== */
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DiemDanhSubmit(int chiTietLopId, int hocVienId, string type, string note)
         {
-            Console.WriteLine($"Note received: {note}");
             var now = DateTime.Now;
 
             var chiTietLop = await _context.ChiTietLops.FirstOrDefaultAsync(c => c.ChiTietLopId == chiTietLopId);
@@ -88,15 +86,12 @@ namespace training_management_internship.Controllers
             return RedirectToAction("DiemDanh", new { chiTietLopId });
         }
 
-        /* =============================================================== */
-
         [HttpGet]
         public async Task<IActionResult> GenerateQRBase64(int chiTietLopId, string type)
         {
             type = type.ToLower();
             var qrType = type == "checkin" ? QRCodeTemp.QRCodeType.CheckIn : QRCodeTemp.QRCodeType.CheckOut;
 
-            // Check hiệu lực QR
             var expiredThreshold = DateTime.Now.AddSeconds(-120);
             var existing = await _context.QRCodeTemps
                 .Where(q => q.ChiTietLopId == chiTietLopId && q.Type == qrType && q.CreatedAt >= expiredThreshold)
@@ -131,9 +126,6 @@ namespace training_management_internship.Controllers
             return Json(new { image = $"data:image/png;base64,{base64Image}" });
         }
 
-        /* =============================================================== */
-
-        [HttpGet]
         public async Task<IActionResult> Scan(Guid token)
         {
             var qr = await _context.QRCodeTemps.FirstOrDefaultAsync(q => q.Token == token);
@@ -145,32 +137,17 @@ namespace training_management_internship.Controllers
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
-                return Challenge();
+                return Challenge(); 
             }
 
             var hocVien = await _context.HocViens.Include(h => h.User)
-                                    .FirstOrDefaultAsync(h => h.UserId == user.Id);
+                                        .FirstOrDefaultAsync(h => h.UserId == user.Id);
 
             if (hocVien == null)
             {
                 hocVien = new HocVien { UserId = user.Id };
                 _context.HocViens.Add(hocVien);
                 await _context.SaveChangesAsync();
-            }
-
-            // Tự động thêm vào lớp nếu chưa có trong danh sách
-            var chiTietLop = await _context.ChiTietLops.FirstOrDefaultAsync(c => c.ChiTietLopId == qr.ChiTietLopId);
-            var lopId = chiTietLop.LopId;
-
-            var exists = await _context.DanhSachHocViens
-                .AnyAsync(d => d.LopId == lopId && d.HocVienId == hocVien.HocVienId);
-            if (!exists)
-            {
-                _context.DanhSachHocViens.Add(new DanhSachHocVien
-                {
-                    LopId = lopId,
-                    HocVienId = hocVien.HocVienId
-                });
             }
 
             var now = DateTime.Now;
@@ -202,86 +179,6 @@ namespace training_management_internship.Controllers
             await _context.SaveChangesAsync();
 
             return View("Success");
-        }
-
-        /* =============================================================== */
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ResetCheckIn(int chiTietLopId, int hocVienId)
-        {
-            var diemDanh = await _context.DiemDanhs
-                .FirstOrDefaultAsync(d => d.ChiTietLopId == chiTietLopId && d.HocVienId == hocVienId && d.NgayCheck.Date == DateTime.Now.Date);
-
-            if (diemDanh != null)
-            {
-                diemDanh.CheckIn = TimeSpan.Zero;
-                _context.Update(diemDanh);
-                await _context.SaveChangesAsync();
-            }
-
-            return RedirectToAction("DiemDanh", new { chiTietLopId });
-        }
-
-        /* =============================================================== */
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ResetCheckOut(int chiTietLopId, int hocVienId)
-        {
-            var diemDanh = await _context.DiemDanhs
-                .FirstOrDefaultAsync(d => d.ChiTietLopId == chiTietLopId && d.HocVienId == hocVienId && d.NgayCheck.Date == DateTime.Now.Date);
-
-            if (diemDanh != null)
-            {
-                diemDanh.CheckOut = TimeSpan.Zero;
-                _context.Update(diemDanh);
-                await _context.SaveChangesAsync();
-            }
-
-            return RedirectToAction("DiemDanh", new { chiTietLopId });
-        }
-
-        /* =============================================================== */
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ResetAllCheckIn(int chiTietLopId)
-        {
-            var diemDanhs = await _context.DiemDanhs
-                .Where(d => d.ChiTietLopId == chiTietLopId && d.NgayCheck.Date == DateTime.Now.Date)
-                .ToListAsync();
-
-            foreach (var diemDanh in diemDanhs)
-            {
-                diemDanh.CheckIn = TimeSpan.Zero;
-            }
-
-            _context.UpdateRange(diemDanhs);
-            await _context.SaveChangesAsync();
-
-            return Ok();
-        }
-
-        /* =============================================================== */
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ResetAllCheckOut(int chiTietLopId)
-        {
-            var diemDanhs = await _context.DiemDanhs
-                .Where(d => d.ChiTietLopId == chiTietLopId && d.NgayCheck.Date == DateTime.Now.Date)
-                .ToListAsync();
-
-            foreach (var diemDanh in diemDanhs)
-            {
-                diemDanh.CheckOut = TimeSpan.Zero;
-            }
-
-            _context.UpdateRange(diemDanhs);
-            await _context.SaveChangesAsync();
-
-            return Ok();
         }
     }
 }

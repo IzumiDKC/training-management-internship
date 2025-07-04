@@ -1,52 +1,80 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using training_management_internship.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using QRCoder;
+using training_management_internship.Models;
+using training_management_internship.Services;
+using System.Threading.Tasks;
+using System.Linq;
+using System;
+using System.Collections.Generic;
+
 namespace training_management_internship.ControllersAPI
 {
     [ApiController]
+    [Authorize] 
     [Route("api/DiemDanh")]
-    [Authorize(Roles = "Admin, GiangVien")]
     public class DiemDanhAPIController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public DiemDanhAPIController(ApplicationDbContext context)
+        public DiemDanhAPIController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
-        [HttpGet("GetDiemDanhByChiTietLopId/{chiTietLopId}")]
-        public async Task<ActionResult<IEnumerable<DiemDanhDto>>> GetDiemDanhByChiTietLopId(int chiTietLopId)
+        [HttpGet("GetDiemDanhByChiTietLopId/{lopId}/{chiTietLopId}")]
+        public async Task<ActionResult<IEnumerable<DiemDanhDto>>> GetDiemDanhByChiTietLopId(int lopId, int chiTietLopId)
         {
+            var chiTietLop = await _context.ChiTietLops
+                .Where(c => c.ChiTietLopId == chiTietLopId && c.LopId == lopId)
+                .FirstOrDefaultAsync();
+
+            if (chiTietLop == null)
+            {
+                return NotFound(new { message = "Không tìm thấy chi tiết lớp hoặc lớp không đúng." });
+            }
+
             var diemDanhs = await _context.DiemDanhs
                 .Where(d => d.ChiTietLopId == chiTietLopId)
                 .Include(d => d.HocVien)
                 .Select(d => new DiemDanhDto
                 {
                     DiemDanhId = d.DiemDanhId,
-                    NgayCheck = d.NgayCheck.Date,  
-                    CheckIn = d.CheckIn == TimeSpan.Zero ? (TimeSpan?)null : d.CheckIn, 
-                    CheckOut = d.CheckOut == TimeSpan.Zero ? (TimeSpan?)null : d.CheckOut, 
+                    NgayCheck = d.NgayCheck.Date,
+                    CheckIn = d.CheckIn == TimeSpan.Zero ? (TimeSpan?)null : d.CheckIn,
+                    CheckOut = d.CheckOut == TimeSpan.Zero ? (TimeSpan?)null : d.CheckOut,
                     HocVienId = d.HocVienId,
                     Note = d.Note,
                     HocVienName = d.HocVien.User.HoTen,
                     SoCanCuoc = d.HocVien.User.SoCanCuoc,
-                    ChiTietLopId = d.ChiTietLopId  
+                    ChiTietLopId = d.ChiTietLopId
                 })
                 .ToListAsync();
 
-            if (diemDanhs == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(diemDanhs);
+            return Ok(diemDanhs);  
         }
+
+
 
         [HttpPost("DiemDanhSubmit")]
         public async Task<ActionResult> DiemDanhSubmit([FromBody] DiemDanhDto diemDanhDto)
         {
+            var chiTietLop = await _context.ChiTietLops.FirstOrDefaultAsync(c => c.ChiTietLopId == diemDanhDto.ChiTietLopId);
+            if (chiTietLop == null)
+            {
+                return BadRequest("ChiTietLopId không hợp lệ.");
+            }
+
+            var hocVien = await _context.HocViens.FirstOrDefaultAsync(h => h.HocVienId == diemDanhDto.HocVienId);
+            if (hocVien == null)
+            {
+                return BadRequest("HocVienId không hợp lệ.");
+            }
+
             var diemDanh = await _context.DiemDanhs
                 .FirstOrDefaultAsync(d => d.ChiTietLopId == diemDanhDto.ChiTietLopId &&
                                           d.HocVienId == diemDanhDto.HocVienId &&
@@ -60,23 +88,25 @@ namespace training_management_internship.ControllersAPI
                     HocVienId = diemDanhDto.HocVienId,
                     NgayCheck = diemDanhDto.NgayCheck,
                     CheckIn = diemDanhDto.CheckIn ?? TimeSpan.Zero,
-                    CheckOut = diemDanhDto.CheckOut ?? TimeSpan.Zero, 
+                    CheckOut = diemDanhDto.CheckOut ?? TimeSpan.Zero,
                     Note = diemDanhDto.Note
                 };
                 _context.DiemDanhs.Add(diemDanh);
             }
             else
             {
-                diemDanh.CheckIn = diemDanhDto.CheckIn ?? TimeSpan.Zero;   
-                diemDanh.CheckOut = diemDanhDto.CheckOut ?? TimeSpan.Zero;
+                
+                diemDanh.CheckIn = diemDanhDto.CheckIn ?? diemDanh.CheckIn;
+                diemDanh.CheckOut = diemDanhDto.CheckOut ?? diemDanh.CheckOut;
                 diemDanh.Note = diemDanhDto.Note;
             }
 
             await _context.SaveChangesAsync();
-
             return Ok(new { message = "Điểm danh thành công" });
         }
 
+
+        [Authorize(Roles = "Admin, GiangVien")]
         [HttpPost("ResetCheckIn")]
         public async Task<ActionResult> ResetCheckIn([FromBody] DiemDanhDto diemDanhDto)
         {
@@ -90,36 +120,12 @@ namespace training_management_internship.ControllersAPI
                 diemDanh.CheckIn = TimeSpan.Zero;
                 _context.Update(diemDanh);
                 await _context.SaveChangesAsync();
+                return Ok(new { message = "Reset Check-in thành công" });
             }
-
-            return Ok(new { message = "Reset Check-in thành công" });
+            return NotFound("Không tìm thấy điểm danh để reset.");
         }
 
-
-        [HttpPost("ResetAllCheckIn")]
-        public async Task<ActionResult> ResetAllCheckIn([FromBody] int chiTietLopId)
-        {
-            var diemDanhs = await _context.DiemDanhs
-                .Where(d => d.ChiTietLopId == chiTietLopId)
-                .ToListAsync();
-
-            if (diemDanhs == null || diemDanhs.Count == 0)
-            {
-                return NotFound("Không có điểm danh nào trong buổi học này.");
-            }
-
-            foreach (var diemDanh in diemDanhs)
-            {
-                diemDanh.CheckIn = TimeSpan.Zero;
-            }
-
-            _context.UpdateRange(diemDanhs);
-            await _context.SaveChangesAsync();
-
-            return Ok(new { message = "Reset toàn bộ CheckIn thành công" });
-        }
-
-
+        [Authorize(Roles = "Admin, GiangVien")]
         [HttpPost("ResetCheckOut")]
         public async Task<ActionResult> ResetCheckOut([FromBody] DiemDanhDto diemDanhDto)
         {
@@ -133,32 +139,117 @@ namespace training_management_internship.ControllersAPI
                 diemDanh.CheckOut = TimeSpan.Zero;
                 _context.Update(diemDanh);
                 await _context.SaveChangesAsync();
+                return Ok(new { message = "Reset Check-out thành công" });
             }
-            return Ok(new { message = "Reset Check-out thành công" });
+            return NotFound("Không tìm thấy điểm danh để reset.");
         }
 
-
-        [HttpPost("ResetAllCheckOut")]
-        public async Task<ActionResult> ResetAllCheckOut([FromBody] int chiTietLopId)
+        [Authorize(Roles = "Admin, GiangVien")]
+        [HttpGet("GenerateQRBase64")]
+        public async Task<IActionResult> GenerateQRBase64(int chiTietLopId, string type)
         {
-            var diemDanhs = await _context.DiemDanhs
-                .Where(d => d.ChiTietLopId == chiTietLopId)
-                .ToListAsync();
+            type = type.ToLower();
+            var qrType = type == "checkin" ? QRCodeTemp.QRCodeType.CheckIn : QRCodeTemp.QRCodeType.CheckOut;
 
-            if (diemDanhs == null || diemDanhs.Count == 0)
+            var expiredThreshold = DateTime.Now.AddSeconds(-120);
+            var existing = await _context.QRCodeTemps
+                .Where(q => q.ChiTietLopId == chiTietLopId && q.Type == qrType && q.CreatedAt >= expiredThreshold)
+                .OrderByDescending(q => q.CreatedAt)
+                .FirstOrDefaultAsync();
+
+            Guid token;
+            if (existing != null)
             {
-                return NotFound("Không có điểm danh nào trong buổi học này.");
+                token = existing.Token;
+            }
+            else
+            {
+                token = Guid.NewGuid();
+                var qrEntry = new QRCodeTemp
+                {
+                    Token = token,
+                    CreatedAt = DateTime.Now,
+                    ChiTietLopId = chiTietLopId,
+                    Type = qrType
+                };
+                _context.QRCodeTemps.Add(qrEntry);
+                await _context.SaveChangesAsync();
             }
 
-            foreach (var diemDanh in diemDanhs)
+            var frontendUrl = $"http://localhost:3000/qr-scan/{token}";
+
+            var qrGenerator = new QRCodeGenerator();
+            var qrCodeData = qrGenerator.CreateQrCode(frontendUrl, QRCodeGenerator.ECCLevel.Q);
+            var qrCode = new Base64QRCode(qrCodeData);
+            var base64Image = qrCode.GetGraphic(20);
+
+            return Ok(new { image = $"data:image/png;base64,{base64Image}" });
+        }
+
+        // Phương thức xử lý quét mã QR và điểm danh
+        [Authorize]
+        [HttpGet("Scan")]
+        public async Task<IActionResult> Scan(Guid token)
+        {
+            var qr = await _context.QRCodeTemps.FirstOrDefaultAsync(q => q.Token == token);
+            if (qr == null || (DateTime.Now - qr.CreatedAt).TotalSeconds > 120)
             {
-                diemDanh.CheckOut = TimeSpan.Zero;  
+                return Unauthorized(new { success = false, message = "QR code đã hết hạn hoặc không hợp lệ." });
             }
-            _context.UpdateRange(diemDanhs);
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return Challenge();  // Nếu người dùng chưa đăng nhập, yêu cầu đăng nhập
+            }
+
+            var hocVien = await _context.HocViens.Include(h => h.User)
+                                                  .FirstOrDefaultAsync(h => h.UserId == user.Id);
+
+            if (hocVien == null)
+            {
+                hocVien = new HocVien { UserId = user.Id };
+                _context.HocViens.Add(hocVien);
+                await _context.SaveChangesAsync();
+            }
+
+            var now = DateTime.Now;
+
+            var diemDanh = await _context.DiemDanhs.FirstOrDefaultAsync(d =>
+                d.ChiTietLopId == qr.ChiTietLopId &&
+                d.HocVienId == hocVien.HocVienId &&
+                d.NgayCheck.Date == now.Date);  // Kiểm tra theo ngày học và học viên
+
+            if (diemDanh == null)
+            {
+                diemDanh = new DiemDanh
+                {
+                    ChiTietLopId = qr.ChiTietLopId,
+                    HocVienId = hocVien.HocVienId,
+                    NgayCheck = now.Date,
+                    CheckIn = qr.Type == QRCodeTemp.QRCodeType.CheckIn ? now.TimeOfDay : default,
+                    CheckOut = qr.Type == QRCodeTemp.QRCodeType.CheckOut ? now.TimeOfDay : default
+                };
+                _context.DiemDanhs.Add(diemDanh);
+            }
+            else
+            {
+                if (qr.Type == QRCodeTemp.QRCodeType.CheckIn)
+                    diemDanh.CheckIn = now.TimeOfDay;
+                else if (qr.Type == QRCodeTemp.QRCodeType.CheckOut)
+                    diemDanh.CheckOut = now.TimeOfDay;
+            }
+
             await _context.SaveChangesAsync();
 
-            return Ok(new { message = "Reset toàn bộ CheckOut thành công" });
+            return Ok(new
+            {
+                success = true,
+                message = "Điểm danh thành công",
+                checkInTime = diemDanh.CheckIn.ToString(@"hh\:mm"),
+                checkOutTime = diemDanh.CheckOut.ToString(@"hh\:mm"),
+                date = diemDanh.NgayCheck.ToString("dd/MM/yyyy")
+            });
         }
-
-    }
 }
+    }

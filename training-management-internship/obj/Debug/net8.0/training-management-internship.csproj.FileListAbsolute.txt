@@ -485,3 +485,4 @@ F:\training-management-internship\training-management-internship\bin\Debug\net8.
 F:\training-management-internship\training-management-internship\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 F:\training-management-internship\training-management-internship\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 F:\training-management-internship\training-management-internship\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+F:\training-management-internship\training-management-internship\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -21,10 +21,10 @@ namespace training_management_internship.ControllersAPI
             _context = context;
         }
 
-        // Lấy danh sách học viên theo lớp (LopId)
         [HttpGet("GetByLopId/{lopId}")]
         public async Task<ActionResult<IEnumerable<DanhSachHocVienDto>>> GetByLopId(int lopId)
         {
+
             var danhSachHocViens = await _context.DanhSachHocViens
                 .Where(d => d.LopId == lopId)
                 .Include(d => d.HocVien)
@@ -48,7 +48,6 @@ namespace training_management_internship.ControllersAPI
             return Ok(danhSachHocViens);
         }
 
-        // Thêm học viên vào danh sách lớp
         [HttpPost("AddHocVienToLop")]
         public async Task<ActionResult> AddHocVienToLop([FromBody] DanhSachHocVienDto dto)
         {
@@ -69,7 +68,6 @@ namespace training_management_internship.ControllersAPI
             return Ok(new { message = "Học viên đã được thêm vào lớp thành công." });
         }
 
-        // Cập nhật thông tin học viên trong lớp
         [HttpPut("UpdateDanhSachHocVien/{id}")]
         public async Task<ActionResult> UpdateDanhSachHocVien(int id, [FromBody] DanhSachHocVienDto dto)
         {
@@ -88,7 +86,6 @@ namespace training_management_internship.ControllersAPI
             return Ok(new { message = "Thông tin học viên đã được cập nhật thành công." });
         }
 
-        // Xóa học viên khỏi lớp
         [HttpDelete("DeleteDanhSachHocVien/{id}")]
         public async Task<ActionResult> DeleteDanhSachHocVien(int id)
         {
