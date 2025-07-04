@@ -265,6 +265,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "F:\\training-management-internship\\training-management-internship\\wwwroot\\swagger\\customSwagger.js",
+      "PackagePath": "staticwebassets\\swagger\\customSwagger.js"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.training-management-internship.props",
       "PackagePath": "build\\training-management-internship.props"
     },

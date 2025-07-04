@@ -1,6 +1,16 @@
 [
   {
     "ContainingType": "training_management_internship.ControllersAPI.AccountAPIController",
+    "Method": "CheckToken",
+    "RelativePath": "api/account/check-token",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.AccountAPIController",
     "Method": "ConfirmEmail",
     "RelativePath": "api/account/confirm-email",
     "HttpMethod": "GET",
@@ -18,6 +28,16 @@
         "IsRequired": false
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.AccountAPIController",
+    "Method": "GetUserInfo",
+    "RelativePath": "api/account/GetUserInfo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -317,6 +337,85 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "training_management_internship.ControllersAPI.DanhSachHocVienAPIController",
+    "Method": "AddHocVienToLop",
+    "RelativePath": "api/DanhSachHocVien/AddHocVienToLop",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "training_management_internship.Dtos.DanhSachHocVienDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.DanhSachHocVienAPIController",
+    "Method": "DeleteDanhSachHocVien",
+    "RelativePath": "api/DanhSachHocVien/DeleteDanhSachHocVien/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.DanhSachHocVienAPIController",
+    "Method": "GetByLopId",
+    "RelativePath": "api/DanhSachHocVien/GetByLopId/{lopId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lopId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[training_management_internship.Dtos.DanhSachHocVienDto, training-management-internship, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.DanhSachHocVienAPIController",
+    "Method": "UpdateDanhSachHocVien",
+    "RelativePath": "api/DanhSachHocVien/UpdateDanhSachHocVien/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "training_management_internship.Dtos.DanhSachHocVienDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "training_management_internship.ControllersAPI.DiemDanhAPIController",
     "Method": "DiemDanhSubmit",
     "RelativePath": "api/DiemDanh/DiemDanhSubmit",
@@ -334,12 +433,38 @@
   },
   {
     "ContainingType": "training_management_internship.ControllersAPI.DiemDanhAPIController",
-    "Method": "GetDiemDanhByChiTietLopId",
-    "RelativePath": "api/DiemDanh/GetDiemDanhByChiTietLopId/{chiTietLopId}",
+    "Method": "GenerateQRBase64",
+    "RelativePath": "api/DiemDanh/GenerateQRBase64",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
+      {
+        "Name": "chiTietLopId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.DiemDanhAPIController",
+    "Method": "GetDiemDanhByChiTietLopId",
+    "RelativePath": "api/DiemDanh/GetDiemDanhByChiTietLopId/{lopId}/{chiTietLopId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lopId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
       {
         "Name": "chiTietLopId",
         "Type": "System.Int32",
@@ -357,38 +482,6 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "training_management_internship.ControllersAPI.DiemDanhAPIController",
-    "Method": "ResetAllCheckIn",
-    "RelativePath": "api/DiemDanh/ResetAllCheckIn",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "chiTietLopId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "training_management_internship.ControllersAPI.DiemDanhAPIController",
-    "Method": "ResetAllCheckOut",
-    "RelativePath": "api/DiemDanh/ResetAllCheckOut",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "chiTietLopId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
   },
   {
     "ContainingType": "training_management_internship.ControllersAPI.DiemDanhAPIController",
@@ -423,80 +516,17 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "training_management_internship.ControllersAPI.DanhSachHocVienAPIController",
-    "Method": "AddHocVienToLop",
-    "RelativePath": "api/DSHV/AddHocVienToLop",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "training_management_internship.Dtos.DanhSachHocVienDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "training_management_internship.ControllersAPI.DanhSachHocVienAPIController",
-    "Method": "DeleteDanhSachHocVien",
-    "RelativePath": "api/DSHV/DeleteDanhSachHocVien/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "training_management_internship.ControllersAPI.DanhSachHocVienAPIController",
-    "Method": "GetByLopId",
-    "RelativePath": "api/DSHV/GetByLopId/{lopId}",
+    "ContainingType": "training_management_internship.ControllersAPI.DiemDanhAPIController",
+    "Method": "Scan",
+    "RelativePath": "api/DiemDanh/Scan",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "lopId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[training_management_internship.Dtos.DanhSachHocVienDto, training-management-internship, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "training_management_internship.ControllersAPI.DanhSachHocVienAPIController",
-    "Method": "UpdateDanhSachHocVien",
-    "RelativePath": "api/DSHV/UpdateDanhSachHocVien/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "dto",
-        "Type": "training_management_internship.Dtos.DanhSachHocVienDto",
-        "IsRequired": true
+        "Name": "token",
+        "Type": "System.Guid",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

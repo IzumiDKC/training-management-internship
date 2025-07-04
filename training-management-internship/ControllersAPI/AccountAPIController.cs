@@ -6,6 +6,10 @@ using training_management_internship.Dtos;
 using Microsoft.AspNetCore.WebUtilities;
 using System.Text;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
 
 namespace training_management_internship.ControllersAPI
 {
@@ -18,19 +22,22 @@ namespace training_management_internship.ControllersAPI
         private readonly ApplicationDbContext _context;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IEmailSender _emailSender;
+        private readonly IConfiguration _configuration;
 
         public AccountAPIController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             ApplicationDbContext context,
             IEmailSender emailSender,
-            RoleManager<IdentityRole> roleManager)
+            RoleManager<IdentityRole> roleManager,
+            IConfiguration configuration)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _context = context;
             _emailSender = emailSender;
             _roleManager = roleManager;
+            _configuration = configuration;
         }
 
         // POST: api/account/register
@@ -94,7 +101,6 @@ namespace training_management_internship.ControllersAPI
         }
 
 
-        // POST: api/account/login
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto model)
         {
@@ -102,33 +108,115 @@ namespace training_management_internship.ControllersAPI
 
             if (result.Succeeded)
             {
-                return Ok(new { message = "Đăng nhập thành công" });
+                var user = await _userManager.FindByEmailAsync(model.Email);
+                var token = GenerateJwtToken(user); 
+
+                // AspNetUserTokens
+                var existingToken = await _context.Set<IdentityUserToken<string>>()
+                                                   .FirstOrDefaultAsync(t => t.UserId == user.Id && t.LoginProvider == "JWT" && t.Name == "access_token");
+
+                if (existingToken != null)
+                {
+                    existingToken.Value = token;  // Cập nhật token
+                    _context.Update(existingToken);
+                }
+                else
+                {
+                    var userToken = new IdentityUserToken<string>
+                    {
+                        UserId = user.Id,
+                        LoginProvider = "JWT",
+                        Name = "access_token",
+                        Value = token
+                    };
+                    _context.Add(userToken);
+                }
+
+                await _context.SaveChangesAsync();
+
+                return Ok(new
+                {
+                    message = "Đăng nhập thành công",
+                    token
+                });
             }
 
             return Unauthorized(new { error = "Tài khoản hoặc mật khẩu không đúng" });
         }
 
-        // POST: api/account/logout
+
+        private string GenerateJwtToken(ApplicationUser user)
+        {
+            var claims = new List<Claim>
+    {
+        new Claim(JwtRegisteredClaimNames.Sub, user.Id),
+        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+        new Claim(ClaimTypes.Name, user.UserName),
+    };
+
+            var roles = _userManager.GetRolesAsync(user).Result;
+            foreach (var role in roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
+
+            var jwtConfig = _configuration.GetSection("Jwt");
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtConfig["Key"]));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var token = new JwtSecurityToken(
+                issuer: jwtConfig["Issuer"],
+                audience: jwtConfig["Audience"],
+                claims: claims,
+                expires: DateTime.Now.AddHours(1),
+                signingCredentials: creds
+            );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+
+
+
         [HttpPost("logout")]
         public async Task<IActionResult> Logout()
         {
-            await _signInManager.SignOutAsync();
-            return Ok(new { message = "Đăng xuất thành công" });
+            await _signInManager.SignOutAsync(); 
+
+            var user = await _userManager.GetUserAsync(User); 
+            if (user != null)
+            {
+                var token = await _context.Set<IdentityUserToken<string>>()
+                    .FirstOrDefaultAsync(t => t.UserId == user.Id && t.LoginProvider == "JWT" && t.Name == "access_token");
+
+                if (token != null)
+                {
+                    _context.Set<IdentityUserToken<string>>().Remove(token); 
+                    await _context.SaveChangesAsync();
+                }
+            }
+
+            return Ok(new { message = "Đã đăng xuất thành công" });
         }
+
 
         // GET: api/account/me
         [Authorize]
         [HttpGet("me")]
         public async Task<IActionResult> GetCurrentUser()
         {
-            Console.WriteLine($" Identity.Name: {User.Identity?.Name}");
-            Console.WriteLine($" IsAuthenticated: {User.Identity?.IsAuthenticated}");
-
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
-                Console.WriteLine("Không tìm thấy user.");
                 return Unauthorized();
+            }
+
+            var token = await _context.Set<IdentityUserToken<string>>()
+                                        .FirstOrDefaultAsync(t => t.UserId == user.Id && t.LoginProvider == "JWT" && t.Name == "access_token");
+
+            if (token == null)
+            {
+                return Unauthorized(new { error = "Không tìm thấy token" });
             }
 
             var roles = await _userManager.GetRolesAsync(user);
@@ -140,10 +228,55 @@ namespace training_management_internship.ControllersAPI
                 user.Email,
                 user.HoTen,
                 user.SoCanCuoc,
-                Roles = roles
+                Roles = roles,
+             //   Token = token.Value 
             });
         }
 
+
+        [Authorize]
+        [HttpGet("GetUserInfo")]
+        public async Task<IActionResult> GetUserInfo()
+        {
+            var token = Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
+            Console.WriteLine("Received Token: " + token);
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return Unauthorized(new { message = "Token không hợp lệ!" });
+            }
+
+            return Ok(new { message = "Token hợp lệ!", userId = user.Id });
+        }
+
+        [Authorize]  
+        [HttpGet("check-token")]
+        public IActionResult CheckToken()
+        {
+            var token = Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
+
+            if (string.IsNullOrEmpty(token))
+            {
+                return Unauthorized(new { message = "Token không hợp lệ!" });
+            }
+
+            try
+            {
+                var jwtToken = new JwtSecurityTokenHandler().ReadJwtToken(token);
+
+                if (jwtToken.ValidTo < DateTime.UtcNow)
+                {
+                    return Unauthorized(new { message = "Token đã hết hạn!" });
+                }
+
+                return Ok(new { message = "Token hợp lệ!" });
+            }
+            catch (Exception ex)
+            {
+                return Unauthorized(new { message = "Token không hợp lệ!" });
+            }
+        }
 
 
         [HttpGet("confirm-email")]

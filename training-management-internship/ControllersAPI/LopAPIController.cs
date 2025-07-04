@@ -39,10 +39,10 @@ namespace training_management_internship.Controllers
                     SoGioQuyDoi = l.SoGioQuyDoi,
                     CoDanhSachHocVien = l.CoDanhSachHocVien,
                     KhoaHocId = l.KhoaHocId,
-                    KhoaHocName = l.KhoaHoc.TenKhoaHoc, // Lấy tên khóa học
+                    KhoaHocName = l.KhoaHoc.TenKhoaHoc, 
                     LoaiLopId = l.LoaiLopId,
-                    LoaiLopName = l.LoaiLop.TenLoaiLop, // Lấy tên loại lớp
-                    DanhSachHocVienIds = l.DanhSachHocViens.Select(dshv => dshv.HocVienId).ToList() // Lấy danh sách ID học viên
+                    LoaiLopName = l.LoaiLop.TenLoaiLop,
+                    DanhSachHocVienIds = l.DanhSachHocViens.Select(dshv => dshv.HocVienId).ToList()
                 })
                 .ToListAsync();
 
