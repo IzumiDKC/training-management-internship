@@ -4,7 +4,7 @@ This document outlines the weekly progress and key milestones of my project deve
 
 ---
 
-## 🗓️ Week 1: Project Kickoff
+## 🗓️ Week 1: Project Kickoff (12/5 -> 18/5)
 
 - Attended project briefing meetings.
 - Received official project assignment.
@@ -14,7 +14,7 @@ This document outlines the weekly progress and key milestones of my project deve
 
 ---
 
-## 🗓️ Week 2: Planning & Initial Setup
+## 🗓️ Week 2: Planning & Initial Setup (19/5 -> 25/5)
 
 - Organized online team meetings for planning.
 - Reached consensus on the technologies and tools to be used.
@@ -32,7 +32,7 @@ This document outlines the weekly progress and key milestones of my project deve
 
 ---
 
-## 🗓️ Week 3: Requirement Changes & Redesign
+## 🗓️ Week 3: Requirement Changes & Redesign (26/5 -> 1/6)
 
 - Received new project requirements that conflicted with the existing system design.
 - Identified critical issues in:
@@ -50,7 +50,7 @@ This document outlines the weekly progress and key milestones of my project deve
 
 ---
 
-## 🗓️ Week 4: Model Fixes & Admin Interface
+## 🗓️ Week 4: Model Fixes & Admin Interface (2/6 -> 8/6)
 
 - Fixed required navigation property issues in the models.
 - Validated navigation properties for correctness.
@@ -60,7 +60,7 @@ This document outlines the weekly progress and key milestones of my project deve
 
 ---
 
-## 🗓️ Week 5: Restructuring, Registration Updates, and New Features
+## 🗓️ Week 5: Restructuring, Registration Updates, and New Features (9/6 -> 15/6)
 
 - Restructured the **Lop** model and updated associated views (Detail, Create, etc.).
 - Enhanced the **DangKyKhoaHoc** system:
@@ -74,7 +74,7 @@ This document outlines the weekly progress and key milestones of my project deve
 
 ---
 
-## 🗓️ Week 6: API Integration, DiemDanh Feature, and Frontend Setup
+## 🗓️ Week 6: API Integration, DiemDanh Feature, and Frontend Setup (16/6 -> 22/6)
 
 - Developed the **API Controller** for **KhoaHoc**, utilizing **DTO Models** to return a flattened JSON structure, preventing circular reference issues.
 - Implemented the **DiemDanh** feature:
@@ -105,5 +105,44 @@ This document outlines the weekly progress and key milestones of my project deve
 - Started the React frontend setup, successfully integrating the frontend with several API endpoints.
 
 ---
+
+
+## 🗓️ Week 7: Class API, DiemDanh Updates, and Bug Fixes (23/6 -> 29/6)
+
+- Created **ClassAPI** for managing class-related data:
+  - Refactored and enhanced **ClassAPI**:
+    - Added functionality to display more information.
+    - Synchronized processing for more reliable data handling.
+  - Renamed and reorganized the **HocVienSelector** model into **Dtos** for better management.
+  - Created global variables for **Dtos** to standardize and optimize the process.
+
+- Added **ChiTietLopController** to manage detailed class information.
+  
+- Made significant changes to the **DiemDanh Controller**:
+  - Improved interface and handling for more efficient data processing.
+  
+- Fixed several bugs in the **update-DiemDanhAPI** branch:
+  - Updated the **Note** field in the **DiemDanh** table.
+  - Resolved issues related to missing entries in the **GiangVien** and **HocVien** tables:
+    - Ensured that users are correctly recorded in these tables even when the roles are present.
+    - Added **GiangVien** and **HocVien** test accounts for validation.
+    - Updated passwords for the 3 default accounts.
+  - Synchronized changes in **Program.cs** to reflect the updates.
+  
+- Enhanced the **QR scanning** process for **DiemDanh**:
+  - Displayed time when a QR scan is successful.
+  - Added a **Note** field in **DiemDanh** and fixed bugs:
+    - Corrected issues where the **Note** field was not displaying the correct value.
+    - Resolved foreign key errors when verifying the **Note** field.
+  - Deleted the **DiemDanhAPI** for testing, synchronization, and will update again later.
+  
+- Created the **DanhSachHocVien API** to provide class attendance data:
+  - Developed new **DTOs** for **DiemDanh** and **DanhSachHocVien** to improve API communication.
+  - Modified the **DiemDanh** API to handle different display behavior when no attendance is taken (null).
+  
+- **QR processing** for **DiemDanh** is still in progress, with ongoing improvements.
+
+--
+
 
 > 📌 *This README summarizes weekly progress, technical decisions, and structural changes in the project.*
