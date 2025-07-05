@@ -485,15 +485,15 @@
   },
   {
     "ContainingType": "training_management_internship.ControllersAPI.DiemDanhAPIController",
-    "Method": "ResetCheckIn",
-    "RelativePath": "api/DiemDanh/ResetCheckIn",
+    "Method": "ResetAllCheckIn",
+    "RelativePath": "api/DiemDanh/ResetAllCheckIn/{chiTietLopId}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "diemDanhDto",
-        "Type": "training_management_internship.Models.DiemDanhDto",
+        "Name": "chiTietLopId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -501,15 +501,15 @@
   },
   {
     "ContainingType": "training_management_internship.ControllersAPI.DiemDanhAPIController",
-    "Method": "ResetCheckOut",
-    "RelativePath": "api/DiemDanh/ResetCheckOut",
+    "Method": "ResetAllCheckOut",
+    "RelativePath": "api/DiemDanh/ResetAllCheckOut/{chiTietLopId}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "diemDanhDto",
-        "Type": "training_management_internship.Models.DiemDanhDto",
+        "Name": "chiTietLopId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

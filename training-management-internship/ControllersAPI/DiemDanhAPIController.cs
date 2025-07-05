@@ -107,42 +107,45 @@ namespace training_management_internship.ControllersAPI
 
 
         [Authorize(Roles = "Admin, GiangVien")]
-        [HttpPost("ResetCheckIn")]
-        public async Task<ActionResult> ResetCheckIn([FromBody] DiemDanhDto diemDanhDto)
+        [HttpPost("ResetAllCheckIn/{chiTietLopId}")]
+        public async Task<IActionResult> ResetAllCheckIn([FromRoute] int chiTietLopId)
         {
-            var diemDanh = await _context.DiemDanhs
-                .FirstOrDefaultAsync(d => d.ChiTietLopId == diemDanhDto.ChiTietLopId &&
-                                          d.HocVienId == diemDanhDto.HocVienId &&
-                                          d.NgayCheck.Date == diemDanhDto.NgayCheck.Date);
+            var list = await _context.DiemDanhs
+                .Where(d => d.ChiTietLopId == chiTietLopId)
+                .ToListAsync();
 
-            if (diemDanh != null)
+            foreach (var diemDanh in list)
             {
                 diemDanh.CheckIn = TimeSpan.Zero;
-                _context.Update(diemDanh);
-                await _context.SaveChangesAsync();
-                return Ok(new { message = "Reset Check-in thành công" });
             }
-            return NotFound("Không tìm thấy điểm danh để reset.");
+
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = $"Đã reset {list.Count} bản ghi Check-in" });
         }
+
+
+
 
         [Authorize(Roles = "Admin, GiangVien")]
-        [HttpPost("ResetCheckOut")]
-        public async Task<ActionResult> ResetCheckOut([FromBody] DiemDanhDto diemDanhDto)
+        [HttpPost("ResetAllCheckOut/{chiTietLopId}")]
+        public async Task<IActionResult> ResetAllCheckOut([FromRoute] int chiTietLopId)
         {
-            var diemDanh = await _context.DiemDanhs
-                .FirstOrDefaultAsync(d => d.ChiTietLopId == diemDanhDto.ChiTietLopId &&
-                                          d.HocVienId == diemDanhDto.HocVienId &&
-                                          d.NgayCheck.Date == diemDanhDto.NgayCheck.Date);
+            var list = await _context.DiemDanhs
+                .Where(d => d.ChiTietLopId == chiTietLopId)
+                .ToListAsync();
 
-            if (diemDanh != null)
+            foreach (var diemDanh in list)
             {
                 diemDanh.CheckOut = TimeSpan.Zero;
-                _context.Update(diemDanh);
-                await _context.SaveChangesAsync();
-                return Ok(new { message = "Reset Check-out thành công" });
             }
-            return NotFound("Không tìm thấy điểm danh để reset.");
+
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = $"Đã reset {list.Count} bản ghi Check-out" });
         }
+
+
 
         [Authorize(Roles = "Admin, GiangVien")]
         [HttpGet("GenerateQRBase64")]
@@ -186,7 +189,6 @@ namespace training_management_internship.ControllersAPI
             return Ok(new { image = $"data:image/png;base64,{base64Image}" });
         }
 
-        // Phương thức xử lý quét mã QR và điểm danh
         [Authorize]
         [HttpGet("Scan")]
         public async Task<IActionResult> Scan(Guid token)
@@ -200,7 +202,7 @@ namespace training_management_internship.ControllersAPI
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
-                return Challenge();  // Nếu người dùng chưa đăng nhập, yêu cầu đăng nhập
+                return Challenge();
             }
 
             var hocVien = await _context.HocViens.Include(h => h.User)
