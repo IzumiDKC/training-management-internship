@@ -220,7 +220,7 @@ namespace training_management_internship.ControllersAPI
             var diemDanh = await _context.DiemDanhs.FirstOrDefaultAsync(d =>
                 d.ChiTietLopId == qr.ChiTietLopId &&
                 d.HocVienId == hocVien.HocVienId &&
-                d.NgayCheck.Date == now.Date);  // Kiểm tra theo ngày học và học viên
+                d.NgayCheck.Date == now.Date);
 
             if (diemDanh == null)
             {

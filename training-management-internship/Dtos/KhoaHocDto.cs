@@ -4,5 +4,6 @@
     {
         public int KhoaHocId { get; set; }
         public string TenKhoaHoc { get; set; }
+        public int ChuongTrinhDaoTaoId { get; set; } 
     }
 }

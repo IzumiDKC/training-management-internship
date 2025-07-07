@@ -22,7 +22,7 @@ namespace training_management_internship.ControllersAPI
         {
             var result = await _context.KhoaHocs
                 .Include(k => k.ChuongTrinhDaoTao)
-                .Include(k => k.Lops) // 👈 include lớp
+                .Include(k => k.Lops) 
                 .Select(k => new KhoaHocDetailDto
                 {
                     KhoaHocId = k.KhoaHocId,
