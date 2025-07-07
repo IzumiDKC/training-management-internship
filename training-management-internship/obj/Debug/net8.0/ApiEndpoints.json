@@ -32,6 +32,22 @@
   },
   {
     "ContainingType": "training_management_internship.ControllersAPI.AccountAPIController",
+    "Method": "ForgotPassword",
+    "RelativePath": "api/account/forgot-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "training_management_internship.Dtos.ForgotPasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.AccountAPIController",
     "Method": "GetUserInfo",
     "RelativePath": "api/account/GetUserInfo",
     "HttpMethod": "GET",
@@ -87,6 +103,38 @@
       {
         "Name": "model",
         "Type": "training_management_internship.Dtos.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.AccountAPIController",
+    "Method": "ResendEmailConfirmation",
+    "RelativePath": "api/account/resend-confirmation",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "training_management_internship.Dtos.ResendEmailDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.AccountAPIController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/account/reset-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "ResetPasswordDto",
         "IsRequired": true
       }
     ],

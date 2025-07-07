@@ -18,12 +18,14 @@ namespace training_management_internship.Areas.Identity.Pages.Account
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IEmailSender _emailSender;
         private readonly ILogger<ForgotPasswordModel> _logger;
+        private readonly IConfiguration _configuration;
 
-        public ForgotPasswordModel(UserManager<ApplicationUser> userManager, IEmailSender emailSender, ILogger<ForgotPasswordModel> logger)
+        public ForgotPasswordModel(UserManager<ApplicationUser> userManager, IEmailSender emailSender, ILogger<ForgotPasswordModel> logger, IConfiguration configuration)
         {
             _userManager = userManager;
             _emailSender = emailSender;
             _logger = logger;
+            _configuration = configuration;
         }
 
         [BindProperty]
@@ -58,11 +60,9 @@ namespace training_management_internship.Areas.Identity.Pages.Account
 
                     var code = await _userManager.GeneratePasswordResetTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
-                    var callbackUrl = Url.Page(
-                        "/Account/ResetPassword",
-                        pageHandler: null,
-                        values: new { area = "Identity", code },
-                        protocol: Request.Scheme);
+
+                    var frontendUrl = _configuration["Frontend:BaseUrl"];
+                    var callbackUrl = $"{frontendUrl}/reset-password?code={code}&email={Input.Email}";
 
                     await _emailSender.SendEmailAsync(
                         Input.Email,

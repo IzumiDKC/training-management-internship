@@ -10,6 +10,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Encodings.Web;
 
 namespace training_management_internship.ControllersAPI
 {
@@ -92,7 +93,8 @@ namespace training_management_internship.ControllersAPI
             var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
             code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
 
-            var callbackUrl = $"https://localhost:7247/api/account/confirm-email?userId={user.Id}&code={code}";
+            var frontendUrl = _configuration["Frontend:BaseUrl"];
+            var callbackUrl = $"{frontendUrl}/confirm-email?userId={user.Id}&code={code}";
 
             await _emailSender.SendEmailAsync(model.Email, "Xác nhận đăng ký",
                 $"Vui lòng xác nhận tài khoản bằng cách nhấn vào link sau: <a href='{callbackUrl}'>Xác nhận</a>");
@@ -109,15 +111,22 @@ namespace training_management_internship.ControllersAPI
             if (result.Succeeded)
             {
                 var user = await _userManager.FindByEmailAsync(model.Email);
-                var token = GenerateJwtToken(user); 
 
-                // AspNetUserTokens
+                if (user == null)
+                {
+                    return Unauthorized(new { error = "Không tìm thấy người dùng." });
+                }
+
+                var roles = await _userManager.GetRolesAsync(user);
+
+                var token = GenerateJwtToken(user);
+
                 var existingToken = await _context.Set<IdentityUserToken<string>>()
-                                                   .FirstOrDefaultAsync(t => t.UserId == user.Id && t.LoginProvider == "JWT" && t.Name == "access_token");
+                                                  .FirstOrDefaultAsync(t => t.UserId == user.Id && t.LoginProvider == "JWT" && t.Name == "access_token");
 
                 if (existingToken != null)
                 {
-                    existingToken.Value = token;  // Cập nhật token
+                    existingToken.Value = token;
                     _context.Update(existingToken);
                 }
                 else
@@ -137,12 +146,14 @@ namespace training_management_internship.ControllersAPI
                 return Ok(new
                 {
                     message = "Đăng nhập thành công",
-                    token
+                    token,
+                    roles = roles.ToList() 
                 });
             }
 
             return Unauthorized(new { error = "Tài khoản hoặc mật khẩu không đúng" });
         }
+
 
 
         private string GenerateJwtToken(ApplicationUser user)
@@ -296,6 +307,103 @@ namespace training_management_internship.ControllersAPI
                 return Ok(new { message = "Xác nhận email thành công." });
 
             return BadRequest(new { error = "Xác nhận thất bại." });
+        }
+
+        [HttpPost("forgot-password")]
+        public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDto model)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null)
+            {
+                return BadRequest(new { error = "Email không tồn tại trong hệ thống." });
+            }
+
+            if (!await _userManager.IsEmailConfirmedAsync(user))
+            {
+                return BadRequest(new { error = "Email chưa được xác nhận. Vui lòng xác nhận email trước." });
+            }
+
+            var code = await _userManager.GeneratePasswordResetTokenAsync(user);
+            code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+
+            var frontendUrl = _configuration["Frontend:BaseUrl"]; 
+            var callbackUrl = $"{frontendUrl}/reset-password?email={model.Email}&code={code}";
+
+            await _emailSender.SendEmailAsync(
+                model.Email,
+                "Yêu cầu đặt lại mật khẩu",
+                $@"
+                    <p>Xin chào,</p>
+                    <p>Bạn đã yêu cầu đặt lại mật khẩu. Vui lòng nhấn vào liên kết dưới đây để tiếp tục:</p>
+                    <p><a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>Đặt lại mật khẩu</a></p>
+                    <p>Nếu bạn không thực hiện yêu cầu này, bạn có thể bỏ qua email này.</p>
+                    <br/>
+                    <p>Trân trọng,</p>
+                    <p><strong>Hệ thống Quản lý Đào tạo</strong></p>
+                "
+            );
+
+            return Ok(new { message = "Yêu cầu đặt lại mật khẩu đã được gửi. Vui lòng kiểm tra email của bạn." });
+        }
+
+        [HttpPost("reset-password")]
+        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDto model)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null)
+                return BadRequest(new { error = "Người dùng không tồn tại." });
+
+            var decodedCode = Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(model.Code));
+            var result = await _userManager.ResetPasswordAsync(user, decodedCode, model.Password);
+
+            if (result.Succeeded)
+                return Ok(new { message = "Đặt lại mật khẩu thành công!" });
+
+            return BadRequest(new { error = string.Join(", ", result.Errors.Select(e => e.Description)) });
+        }
+
+        [HttpPost("resend-confirmation")]
+        public async Task<IActionResult> ResendEmailConfirmation([FromBody] ResendEmailDto model)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null)
+            {
+                return BadRequest(new { error = "Không tìm thấy tài khoản với email này." });
+            }
+
+            if (user.EmailConfirmed)
+            {
+                return BadRequest(new { error = "Email đã được xác nhận." });
+            }
+
+            var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+
+            var frontendUrl = _configuration["Frontend:BaseUrl"];
+            var callbackUrl = $"{frontendUrl}/confirm-email?userId={user.Id}&code={code}";
+
+            var emailBody = $@"
+                <p>Xin chào,</p>
+
+                <p>Bạn chưa xác nhận email của mình. Vui lòng nhấn vào liên kết sau để xác nhận tài khoản:</p>
+
+                <p><a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>Xác nhận tài khoản</a></p>
+
+                <p>Nếu bạn không yêu cầu điều này, bạn có thể bỏ qua email này.</p>
+
+                <p><strong>Hệ thống Quản lý Đào tạo</strong></p>";
+
+            await _emailSender.SendEmailAsync(model.Email, "Xác nhận email của bạn", emailBody);
+            return Ok(new { message = "Email xác nhận đã được gửi. Vui lòng kiểm tra hộp thư của bạn." });
         }
 
     }
