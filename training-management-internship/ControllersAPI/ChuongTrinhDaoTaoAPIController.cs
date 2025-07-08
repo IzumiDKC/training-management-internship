@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using training_management_internship.Dtos;
 using training_management_internship.Models;
@@ -7,6 +8,7 @@ namespace training_management_internship.ControllersAPI
 {
     [Route("api/ChuongTrinhDaoTao")]
     [ApiController]
+
     public class ChuongTrinhDaoTaoAPIController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -66,6 +68,7 @@ namespace training_management_internship.ControllersAPI
 
         // POST: api/ChuongTrinhDaoTao
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<ChuongTrinhDto>> Create([FromBody] ChuongTrinhDaoTao model)
         {
             if (!ModelState.IsValid)
@@ -79,13 +82,13 @@ namespace training_management_internship.ControllersAPI
                 ChuongTrinhDaoTaoId = model.ChuongTrinhDaoTaoId,
                 TenChuongTrinh = model.TenChuongTrinh,
                 MoTa = model.MoTa,
-                KhoaHocs = new List<KhoaHocDto>() // mặc định chưa có
+                KhoaHocs = new List<KhoaHocDto>()
             };
 
             return CreatedAtAction(nameof(GetById), new { id = dto.ChuongTrinhDaoTaoId }, dto);
         }
 
-        // PUT: api/ChuongTrinhDaoTao/5
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] ChuongTrinhDaoTao model)
         {
@@ -110,6 +113,7 @@ namespace training_management_internship.ControllersAPI
 
         // DELETE: api/ChuongTrinhDaoTao/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             var entity = await _context.ChuongTrinhDaoTaos.FindAsync(id);

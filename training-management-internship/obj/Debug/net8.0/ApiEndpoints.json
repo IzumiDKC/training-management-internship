@@ -141,6 +141,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "training_management_internship.ControllersAPI.AdminAPIController",
+    "Method": "ChangeRole",
+    "RelativePath": "api/Admin/ChangeRole/{userId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.AdminAPIController",
+    "Method": "GetPagedUsers",
+    "RelativePath": "api/Admin/Users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "training_management_internship.Controllers.ChiTietLopAPIController",
     "Method": "Create",
     "RelativePath": "api/ChiTietLop",
