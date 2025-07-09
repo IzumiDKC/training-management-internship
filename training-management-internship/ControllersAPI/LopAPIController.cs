@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using training_management_internship.Dtos;
+using Microsoft.AspNetCore.Authorization;
 
 namespace training_management_internship.Controllers
 {
@@ -51,6 +52,8 @@ namespace training_management_internship.Controllers
 
         // GET: api/Lop/5
         [HttpGet("{id}")]
+        [Authorize]
+
         public async Task<ActionResult<LopDto>> GetLop(int id)
         {
             var lop = await _context.Lops
@@ -86,6 +89,8 @@ namespace training_management_internship.Controllers
 
         // POST: api/Lop
         [HttpPost]
+        [Authorize(Roles = "Admin, GiangVien")]
+
         public async Task<ActionResult<Lop>> PostLop([FromBody] Lop lop)
         {
             if (!ModelState.IsValid)
@@ -106,6 +111,8 @@ namespace training_management_internship.Controllers
 
         // PUT: api/Lop/5
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin, GiangVien")]
+
         public async Task<IActionResult> PutLop(int id, [FromBody] Lop lop)
         {
             if (id != lop.LopId)
@@ -140,6 +147,8 @@ namespace training_management_internship.Controllers
 
         // DELETE: api/Lop/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin, GiangVien")]
+
         public async Task<IActionResult> DeleteLop(int id)
         {
             var lop = await _context.Lops.FindAsync(id);
@@ -156,6 +165,8 @@ namespace training_management_internship.Controllers
 
         // GET: api/Lop/ChonHocVien/5
         [HttpGet("ChonHocVien/{lopId}")]
+        [Authorize(Roles = "Admin, GiangVien")]
+
         public async Task<ActionResult<IEnumerable<HocVienSelector>>> ChonHocVien(int lopId)
         {
             var users = await _userManager.GetUsersInRoleAsync("HocVien");
@@ -179,6 +190,8 @@ namespace training_management_internship.Controllers
 
         // POST: api/Lop/ThemHocVienVaoLop
         [HttpPost("ThemHocVienVaoLop")]
+        [Authorize(Roles = "Admin, GiangVien")]
+
         public async Task<IActionResult> ThemHocVienVaoLop([FromBody] List<HocVienSelector> model, int lopId)
         {
             foreach (var item in model.Where(m => m.IsSelected))
