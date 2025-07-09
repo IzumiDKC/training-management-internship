@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using training_management_internship.Models;
 
@@ -83,6 +84,7 @@ namespace training_management_internship.Controllers
 
         // PUT: api/ChiTietLopAPI/5
         [HttpPut("{id}")]
+
         public async Task<IActionResult> Update(int id, [FromBody] ChiTietLop chiTietLop)
         {
             if (id != chiTietLop.ChiTietLopId)
@@ -107,6 +109,7 @@ namespace training_management_internship.Controllers
 
         // DELETE: api/ChiTietLopAPI/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             var chiTietLop = await _context.ChiTietLops.FindAsync(id);

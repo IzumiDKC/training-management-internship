@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using training_management_internship.Dtos;
 using training_management_internship.Models;
@@ -7,6 +8,7 @@ namespace training_management_internship.ControllersAPI
 {
     [Route("api/KhoaHoc")]
     [ApiController]
+
     public class KhoaHocAPIController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -74,6 +76,7 @@ namespace training_management_internship.ControllersAPI
 
         // POST: api/KhoaHoc
         [HttpPost]
+        [Authorize(Roles = "Admin, GiangVien")]
         public async Task<ActionResult<KhoaHocDto>> Create([FromBody] KhoaHoc model)
         {
             if (!ModelState.IsValid)
@@ -109,6 +112,7 @@ namespace training_management_internship.ControllersAPI
 
         // PUT: api/KhoaHoc/5
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin, GiangVien")]
         public async Task<IActionResult> Update(int id, [FromBody] KhoaHoc model)
         {
             if (id != model.KhoaHocId)
@@ -148,6 +152,7 @@ namespace training_management_internship.ControllersAPI
 
         // DELETE: api/KhoaHoc/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             var khoaHoc = await _context.KhoaHocs.FindAsync(id);

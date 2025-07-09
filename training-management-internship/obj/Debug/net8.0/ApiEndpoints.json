@@ -422,6 +422,101 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "training_management_internship.ControllersAPI.DangKyKhoaHocAPIController",
+    "Method": "GetAll",
+    "RelativePath": "api/DangKyKhoaHoc",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.DangKyKhoaHocAPIController",
+    "Method": "Create",
+    "RelativePath": "api/DangKyKhoaHoc",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "training_management_internship.Dtos.DangKyRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.DangKyKhoaHocAPIController",
+    "Method": "GetById",
+    "RelativePath": "api/DangKyKhoaHoc/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.DangKyKhoaHocAPIController",
+    "Method": "Update",
+    "RelativePath": "api/DangKyKhoaHoc/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "model",
+        "Type": "training_management_internship.Models.DangKyKhoaHoc",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.DangKyKhoaHocAPIController",
+    "Method": "Delete",
+    "RelativePath": "api/DangKyKhoaHoc/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.DangKyKhoaHocAPIController",
+    "Method": "GetLopByKhoaHoc",
+    "RelativePath": "api/DangKyKhoaHoc/LopByKhoaHoc",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "khoaHocId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "training_management_internship.ControllersAPI.DanhSachHocVienAPIController",
     "Method": "AddHocVienToLop",
     "RelativePath": "api/DanhSachHocVien/AddHocVienToLop",

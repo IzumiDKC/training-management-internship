@@ -88,8 +88,8 @@ namespace training_management_internship.ControllersAPI
             return CreatedAtAction(nameof(GetById), new { id = dto.ChuongTrinhDaoTaoId }, dto);
         }
 
-        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Update(int id, [FromBody] ChuongTrinhDaoTao model)
         {
             if (id != model.ChuongTrinhDaoTaoId)
