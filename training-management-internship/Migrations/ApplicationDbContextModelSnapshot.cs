@@ -22,6 +22,51 @@ namespace training_management_internship.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("DanhGia", b =>
+                {
+                    b.Property<int>("DanhGiaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DanhGiaId"));
+
+                    b.Property<int?>("DangKyKhoaHocId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("HocVienId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LoaiDanhGia")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("LopId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("NgayDanhGia")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("NguoiDanhGiaId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("NoiDung")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("DanhGiaId");
+
+                    b.HasIndex("DangKyKhoaHocId");
+
+                    b.HasIndex("HocVienId");
+
+                    b.HasIndex("LopId");
+
+                    b.HasIndex("NguoiDanhGiaId");
+
+                    b.ToTable("DanhGias");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -327,33 +372,42 @@ namespace training_management_internship.Migrations
                     b.ToTable("DangKyKhoaHocs");
                 });
 
-            modelBuilder.Entity("training_management_internship.Models.DanhGia", b =>
+            modelBuilder.Entity("training_management_internship.Models.DanhGiaTheoNam", b =>
                 {
-                    b.Property<int>("DanhGiaId")
+                    b.Property<int>("DanhGiaTheoNamId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DanhGiaId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DanhGiaTheoNamId"));
 
-                    b.Property<int>("DangKyKhoaHocId")
+                    b.Property<int>("HocVienId")
                         .HasColumnType("int");
 
                     b.Property<string>("LoaiDanhGia")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Nam")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("NgayDanhGia")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("NguoiDanhGiaId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("NoiDung")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("DanhGiaId");
+                    b.HasKey("DanhGiaTheoNamId");
 
-                    b.HasIndex("DangKyKhoaHocId");
+                    b.HasIndex("HocVienId");
 
-                    b.ToTable("DanhGias");
+                    b.HasIndex("NguoiDanhGiaId");
+
+                    b.ToTable("DanhGiaTheoNams");
                 });
 
             modelBuilder.Entity("training_management_internship.Models.DanhSachHocVien", b =>
@@ -509,6 +563,9 @@ namespace training_management_internship.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LopId"));
 
+                    b.Property<int>("ChuongTrinhDaoTaoId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("CoDanhSachHocVien")
                         .HasColumnType("bit");
 
@@ -535,6 +592,8 @@ namespace training_management_internship.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("LopId");
+
+                    b.HasIndex("ChuongTrinhDaoTaoId");
 
                     b.HasIndex("KhoaHocId");
 
@@ -566,6 +625,37 @@ namespace training_management_internship.Migrations
                     b.HasKey("QRCodeTempId");
 
                     b.ToTable("QRCodeTemps");
+                });
+
+            modelBuilder.Entity("DanhGia", b =>
+                {
+                    b.HasOne("training_management_internship.Models.DangKyKhoaHoc", null)
+                        .WithMany("DanhGias")
+                        .HasForeignKey("DangKyKhoaHocId");
+
+                    b.HasOne("training_management_internship.Models.HocVien", "HocVien")
+                        .WithMany()
+                        .HasForeignKey("HocVienId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("training_management_internship.Models.Lop", "Lop")
+                        .WithMany()
+                        .HasForeignKey("LopId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("training_management_internship.Models.ApplicationUser", "NguoiDanhGia")
+                        .WithMany()
+                        .HasForeignKey("NguoiDanhGiaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("HocVien");
+
+                    b.Navigation("Lop");
+
+                    b.Navigation("NguoiDanhGia");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -662,15 +752,23 @@ namespace training_management_internship.Migrations
                     b.Navigation("Lop");
                 });
 
-            modelBuilder.Entity("training_management_internship.Models.DanhGia", b =>
+            modelBuilder.Entity("training_management_internship.Models.DanhGiaTheoNam", b =>
                 {
-                    b.HasOne("training_management_internship.Models.DangKyKhoaHoc", "DangKyKhoaHoc")
-                        .WithMany("DanhGias")
-                        .HasForeignKey("DangKyKhoaHocId")
+                    b.HasOne("training_management_internship.Models.HocVien", "HocVien")
+                        .WithMany()
+                        .HasForeignKey("HocVienId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("DangKyKhoaHoc");
+                    b.HasOne("training_management_internship.Models.ApplicationUser", "NguoiDanhGia")
+                        .WithMany()
+                        .HasForeignKey("NguoiDanhGiaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("HocVien");
+
+                    b.Navigation("NguoiDanhGia");
                 });
 
             modelBuilder.Entity("training_management_internship.Models.DanhSachHocVien", b =>
@@ -746,6 +844,12 @@ namespace training_management_internship.Migrations
 
             modelBuilder.Entity("training_management_internship.Models.Lop", b =>
                 {
+                    b.HasOne("training_management_internship.Models.ChuongTrinhDaoTao", "ChuongTrinhDaoTao")
+                        .WithMany()
+                        .HasForeignKey("ChuongTrinhDaoTaoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("training_management_internship.Models.KhoaHoc", "KhoaHoc")
                         .WithMany("Lops")
                         .HasForeignKey("KhoaHocId")
@@ -757,6 +861,8 @@ namespace training_management_internship.Migrations
                         .HasForeignKey("LoaiLopId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("ChuongTrinhDaoTao");
 
                     b.Navigation("KhoaHoc");
 

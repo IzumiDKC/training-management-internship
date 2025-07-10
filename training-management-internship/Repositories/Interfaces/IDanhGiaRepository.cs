@@ -11,4 +11,5 @@ namespace training_management_internship.Repositories.Interfaces
         Task DeleteAsync(int id);
         Task<bool> ExistsAsync(int id);
     }
+
 }

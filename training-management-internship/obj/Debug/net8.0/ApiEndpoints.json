@@ -517,6 +517,90 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "training_management_internship.ControllersAPI.DanhGiaAPIController",
+    "Method": "Create",
+    "RelativePath": "api/DanhGia",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "training_management_internship.Dtos.DanhGiaCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.DanhGiaAPIController",
+    "Method": "GetAll",
+    "RelativePath": "api/DanhGia",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.DanhGiaAPIController",
+    "Method": "Delete",
+    "RelativePath": "api/DanhGia/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.DanhGiaAPIController",
+    "Method": "GetByYear",
+    "RelativePath": "api/DanhGia/theo-nam",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nam",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.DanhGiaTheoNamAPIController",
+    "Method": "Create",
+    "RelativePath": "api/DanhGiaTheoNam",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "training_management_internship.Dtos.DanhGiaTheoNamCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.DanhGiaTheoNamAPIController",
+    "Method": "GetAll",
+    "RelativePath": "api/DanhGiaTheoNam",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "training_management_internship.ControllersAPI.DanhSachHocVienAPIController",
     "Method": "AddHocVienToLop",
     "RelativePath": "api/DanhSachHocVien/AddHocVienToLop",

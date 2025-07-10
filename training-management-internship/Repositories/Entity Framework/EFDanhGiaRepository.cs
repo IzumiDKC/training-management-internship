@@ -16,23 +16,21 @@ namespace training_management_internship.Repositories
         public async Task<IEnumerable<DanhGia>> GetAllAsync()
         {
             return await _context.DanhGias
-                .Include(dg => dg.DangKyKhoaHoc)
-                    .ThenInclude(dk => dk.HocVien)
-                .Include(dg => dg.DangKyKhoaHoc)
-                    .ThenInclude(dk => dk.KhoaHoc)
+                .Include(dg => dg.HocVien)
+                    .ThenInclude(hv => hv.User)
+                .Include(dg => dg.Lop)
+                .Include(dg => dg.NguoiDanhGia)
                 .ToListAsync();
         }
-
 
         public async Task<DanhGia?> GetByIdAsync(int id)
         {
             return await _context.DanhGias
-                .Include(dg => dg.DangKyKhoaHoc)
-                    .ThenInclude(dk => dk.HocVien)
-                .Include(dg => dg.DangKyKhoaHoc)
-                    .ThenInclude(dk => dk.KhoaHoc)
+                .Include(dg => dg.HocVien)
+                    .ThenInclude(hv => hv.User)
+                .Include(dg => dg.Lop)
+                .Include(dg => dg.NguoiDanhGia)
                 .FirstOrDefaultAsync(dg => dg.DanhGiaId == id);
-
         }
 
         public async Task AddAsync(DanhGia danhGia)
