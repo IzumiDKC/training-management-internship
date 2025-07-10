@@ -22,6 +22,7 @@ namespace training_management_internship.Models
         public DbSet<DiemDanh> DiemDanhs { get; set; }
         public DbSet<DanhSachHocVien> DanhSachHocViens { get; set; }
         public DbSet<QRCodeTemp> QRCodeTemps { get; set; }
+        public DbSet<DanhGiaTheoNam> DanhGiaTheoNams { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

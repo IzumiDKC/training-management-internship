@@ -53,31 +53,38 @@ namespace training_management_internship.Controllers
         // GET: api/Lop/5
         [HttpGet("{id}")]
         [Authorize]
-
         public async Task<ActionResult<LopDto>> GetLop(int id)
         {
-            var lop = await _context.Lops
-                .Include(l => l.KhoaHoc)
-                .Include(l => l.LoaiLop)
-                .Include(l => l.DanhSachHocViens)
-                    .ThenInclude(ds => ds.HocVien)
-                .Where(l => l.LopId == id)
-                .Select(l => new LopDto
-                {
-                    LopId = l.LopId,
-                    TenLop = l.TenLop,
-                    NgayBatDauDuKien = l.NgayBatDauDuKien,
-                    NgayKetThucDuKien = l.NgayKetThucDuKien,
-                    SoGio = l.SoGio,
-                    SoGioQuyDoi = l.SoGioQuyDoi,
-                    CoDanhSachHocVien = l.CoDanhSachHocVien,
-                    KhoaHocId = l.KhoaHocId,
-                    KhoaHocName = l.KhoaHoc.TenKhoaHoc,
-                    LoaiLopId = l.LoaiLopId,
-                    LoaiLopName = l.LoaiLop.TenLoaiLop,
-                    DanhSachHocVienIds = l.DanhSachHocViens.Select(dshv => dshv.HocVienId).ToList()
-                })
-                .FirstOrDefaultAsync();
+            // linq
+            var lop = await (from l in _context.Lops
+                             join kh in _context.KhoaHocs on l.KhoaHocId equals kh.KhoaHocId
+                             join ct in _context.ChuongTrinhDaoTaos on kh.ChuongTrinhDaoTaoId equals ct.ChuongTrinhDaoTaoId
+                             join ll in _context.LoaiLops on l.LoaiLopId equals ll.LoaiLopId
+                             where l.LopId == id
+                             select new LopDto
+                             {
+                                 LopId = l.LopId,
+                                 TenLop = l.TenLop,
+                                 NgayBatDauDuKien = l.NgayBatDauDuKien,
+                                 NgayKetThucDuKien = l.NgayKetThucDuKien,
+                                 SoGio = l.SoGio,
+                                 SoGioQuyDoi = l.SoGioQuyDoi,
+                                 CoDanhSachHocVien = l.CoDanhSachHocVien,
+
+                                 KhoaHocId = kh.KhoaHocId,
+                                 KhoaHocName = kh.TenKhoaHoc,
+
+                                 ChuongTrinhDaoTaoId = ct.ChuongTrinhDaoTaoId,
+                                 ChuongTrinhName = ct.TenChuongTrinh,
+
+                                 LoaiLopId = ll.LoaiLopId,
+                                 LoaiLopName = ll.TenLoaiLop,
+
+                                 DanhSachHocVienIds = _context.DanhSachHocViens
+                                     .Where(ds => ds.LopId == l.LopId)
+                                     .Select(ds => ds.HocVienId)
+                                     .ToList()
+                             }).FirstOrDefaultAsync();
 
             if (lop == null)
             {
@@ -86,6 +93,7 @@ namespace training_management_internship.Controllers
 
             return Ok(lop);
         }
+
 
         // POST: api/Lop
         [HttpPost]
