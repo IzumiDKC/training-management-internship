@@ -91,11 +91,6 @@ namespace training_management_internship.ControllersAPI
             return Ok(new { message = "Đăng ký thành công" });
         }
 
-
-
-
-
-
         [HttpPut("{id}")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Update(int id, [FromBody] DangKyKhoaHoc model)
@@ -134,7 +129,7 @@ namespace training_management_internship.ControllersAPI
             return NoContent();
         }
 
-        [HttpGet("LopByKhoaHoc")]
+        [HttpGet("LopByKhoaHoc")] // FE
         public async Task<IActionResult> GetLopByKhoaHoc([FromQuery] int khoaHocId)
         {
             var lops = await _context.Lops

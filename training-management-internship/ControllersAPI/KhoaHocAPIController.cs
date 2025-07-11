@@ -8,7 +8,6 @@ namespace training_management_internship.ControllersAPI
 {
     [Route("api/KhoaHoc")]
     [ApiController]
-
     public class KhoaHocAPIController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -51,6 +50,7 @@ namespace training_management_internship.ControllersAPI
 
         // GET: api/KhoaHoc/5
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<KhoaHocDetailDto>> GetById(int id)
         {
             var khoaHoc = await _context.KhoaHocs

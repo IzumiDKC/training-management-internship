@@ -7,6 +7,7 @@ namespace training_management_internship.Controllers
 {
     [Route("api/ChiTietLop")]
     [ApiController]
+    [Authorize]
     public class ChiTietLopAPIController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -71,6 +72,7 @@ namespace training_management_internship.Controllers
 
         // POST: api/ChiTietLopAPI
         [HttpPost]
+        [Authorize(Roles = "Admin, GiangVien")]
         public async Task<ActionResult<ChiTietLop>> Create([FromBody] ChiTietLop chiTietLop)
         {
             if (!ModelState.IsValid)
@@ -84,7 +86,7 @@ namespace training_management_internship.Controllers
 
         // PUT: api/ChiTietLopAPI/5
         [HttpPut("{id}")]
-
+        [Authorize(Roles = "Admin, GiangVien")]
         public async Task<IActionResult> Update(int id, [FromBody] ChiTietLop chiTietLop)
         {
             if (id != chiTietLop.ChiTietLopId)
@@ -109,7 +111,7 @@ namespace training_management_internship.Controllers
 
         // DELETE: api/ChiTietLopAPI/5
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, GiangVien")]
         public async Task<IActionResult> Delete(int id)
         {
             var chiTietLop = await _context.ChiTietLops.FindAsync(id);
@@ -123,7 +125,7 @@ namespace training_management_internship.Controllers
         }
 
         // GET: api/ChiTietLop/giangviens
-        [HttpGet("giangvien")]
+        [HttpGet("giangvien")] // Dùng ở Create FE
         public async Task<ActionResult<IEnumerable<object>>> GetGiangViens()
         {
             var giangViens = await _context.GiangViens
@@ -136,7 +138,5 @@ namespace training_management_internship.Controllers
 
             return Ok(giangViens);
         }
-
-
     }
 }
