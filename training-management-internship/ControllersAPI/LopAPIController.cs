@@ -12,6 +12,8 @@ namespace training_management_internship.Controllers
 {
     [Route("api/Lop")]
     [ApiController]
+    [Authorize]
+
     public class LopAPIController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -52,7 +54,6 @@ namespace training_management_internship.Controllers
 
         // GET: api/Lop/5
         [HttpGet("{id}")]
-        [Authorize]
         public async Task<ActionResult<LopDto>> GetLop(int id)
         {
             // linq
@@ -155,7 +156,7 @@ namespace training_management_internship.Controllers
 
         // DELETE: api/Lop/5
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Admin, GiangVien")]
+        [Authorize(Roles = "Admin")]
 
         public async Task<IActionResult> DeleteLop(int id)
         {

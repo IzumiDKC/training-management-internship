@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using training_management_internship.Dtos;
 using training_management_internship.Models;
@@ -33,6 +34,7 @@ namespace training_management_internship.ControllersAPI
 
         // GET: api/LoaiLop/5
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<LoaiLopDto>> GetById(int id)
         {
             var loaiLop = await _context.LoaiLops
@@ -52,6 +54,8 @@ namespace training_management_internship.ControllersAPI
 
         // POST: api/LoaiLop
         [HttpPost]
+        [Authorize(Roles = "Admin, GiangVien")]
+
         public async Task<ActionResult<LoaiLopDto>> Create([FromBody] LoaiLopDto dto)
         {
             if (!ModelState.IsValid)
@@ -72,6 +76,7 @@ namespace training_management_internship.ControllersAPI
 
         // PUT: api/LoaiLop/5
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin, GiangVien")]
         public async Task<IActionResult> Update(int id, [FromBody] LoaiLopDto dto)
         {
             if (id != dto.LoaiLopId)
@@ -89,6 +94,7 @@ namespace training_management_internship.ControllersAPI
 
         // DELETE: api/LoaiLop/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             var entity = await _context.LoaiLops.FindAsync(id);

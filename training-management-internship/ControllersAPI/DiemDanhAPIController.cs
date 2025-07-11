@@ -27,6 +27,7 @@ namespace training_management_internship.ControllersAPI
         }
 
         [HttpGet("GetDiemDanhByChiTietLopId/{lopId}/{chiTietLopId}")]
+        [Authorize(Roles = "Admin, GiangVien")]
         public async Task<ActionResult<IEnumerable<DiemDanhDto>>> GetDiemDanhByChiTietLopId(int lopId, int chiTietLopId)
         {
             var chiTietLop = await _context.ChiTietLops
@@ -57,8 +58,6 @@ namespace training_management_internship.ControllersAPI
 
             return Ok(diemDanhs);  
         }
-
-
 
         [HttpPost("DiemDanhSubmit")]
         public async Task<ActionResult> DiemDanhSubmit([FromBody] DiemDanhDto diemDanhDto)
@@ -105,9 +104,9 @@ namespace training_management_internship.ControllersAPI
             return Ok(new { message = "Điểm danh thành công" });
         }
 
-
-        [Authorize(Roles = "Admin, GiangVien")]
         [HttpPost("ResetAllCheckIn/{chiTietLopId}")]
+        [Authorize(Roles = "Admin, GiangVien")]
+
         public async Task<IActionResult> ResetAllCheckIn([FromRoute] int chiTietLopId)
         {
             var list = await _context.DiemDanhs
@@ -124,11 +123,8 @@ namespace training_management_internship.ControllersAPI
             return Ok(new { message = $"Đã reset {list.Count} bản ghi Check-in" });
         }
 
-
-
-
-        [Authorize(Roles = "Admin, GiangVien")]
         [HttpPost("ResetAllCheckOut/{chiTietLopId}")]
+        [Authorize(Roles = "Admin, GiangVien")]
         public async Task<IActionResult> ResetAllCheckOut([FromRoute] int chiTietLopId)
         {
             var list = await _context.DiemDanhs
@@ -144,8 +140,6 @@ namespace training_management_internship.ControllersAPI
 
             return Ok(new { message = $"Đã reset {list.Count} bản ghi Check-out" });
         }
-
-
 
         [Authorize(Roles = "Admin, GiangVien")]
         [HttpGet("GenerateQRBase64")]
@@ -189,7 +183,6 @@ namespace training_management_internship.ControllersAPI
             return Ok(new { image = $"data:image/png;base64,{base64Image}" });
         }
 
-        [Authorize]
         [HttpGet("Scan")]
         public async Task<IActionResult> Scan(Guid token)
         {

@@ -8,7 +8,6 @@ namespace training_management_internship.ControllersAPI
 {
     [Route("api/ChuongTrinhDaoTao")]
     [ApiController]
-
     public class ChuongTrinhDaoTaoAPIController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -42,6 +41,7 @@ namespace training_management_internship.ControllersAPI
 
         // GET: api/ChuongTrinhDaoTao/5
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<ChuongTrinhDto>> GetById(int id)
         {
             var item = await _context.ChuongTrinhDaoTaos
@@ -68,7 +68,7 @@ namespace training_management_internship.ControllersAPI
 
         // POST: api/ChuongTrinhDaoTao
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, GiangVien")]
         public async Task<ActionResult<ChuongTrinhDto>> Create([FromBody] ChuongTrinhDaoTao model)
         {
             if (!ModelState.IsValid)
@@ -89,7 +89,7 @@ namespace training_management_internship.ControllersAPI
         }
 
         [HttpPut("{id}")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, GiangVien")]
         public async Task<IActionResult> Update(int id, [FromBody] ChuongTrinhDaoTao model)
         {
             if (id != model.ChuongTrinhDaoTaoId)
