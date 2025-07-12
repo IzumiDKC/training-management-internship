@@ -94,6 +94,32 @@
   },
   {
     "ContainingType": "training_management_internship.ControllersAPI.AccountAPIController",
+    "Method": "GetProfile",
+    "RelativePath": "api/account/profile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.AccountAPIController",
+    "Method": "UpdateProfile",
+    "RelativePath": "api/account/profile",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "training_management_internship.Dtos.UpdateProfileDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.AccountAPIController",
     "Method": "Register",
     "RelativePath": "api/account/register",
     "HttpMethod": "POST",
