@@ -406,5 +406,48 @@ namespace training_management_internship.ControllersAPI
             return Ok(new { message = "Email xác nhận đã được gửi. Vui lòng kiểm tra hộp thư của bạn." });
         }
 
+        [Authorize]
+        [HttpGet("profile")]
+        public async Task<IActionResult> GetProfile()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return Unauthorized();
+
+            return Ok(new
+            {
+                user.HoTen,
+                user.NgaySinh,
+                user.NoiCongTac,
+                user.HocHamHocVi,
+                user.ThuocBenhVien
+            });
+        }
+
+
+
+        [Authorize]
+        [HttpPut("profile")]
+        public async Task<IActionResult> UpdateProfile([FromBody] UpdateProfileDto model)
+        {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return Unauthorized();
+
+            user.HoTen = model.HoTen;
+            user.NgaySinh = model.NgaySinh;
+            user.NoiCongTac = model.NoiCongTac;
+            user.HocHamHocVi = model.HocHamHocVi;
+            user.ThuocBenhVien = model.ThuocBenhVien;
+
+            var result = await _userManager.UpdateAsync(user);
+            if (!result.Succeeded)
+                return BadRequest(result.Errors);
+
+            return Ok(new { message = "Cập nhật thành công" });
+        }
+
+
+
     }
 }

@@ -1,0 +1,38 @@
+﻿@page
+@model training_management_internship.Areas.Identity.Pages.Account.Manage.EditModel
+@{
+    ViewData["Title"] = "Cập nhật thông tin cá nhân";
+}
+
+<h3>@ViewData["Title"]</h3>
+
+<form method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Input.HoTen"></label>
+        <input asp-for="Input.HoTen" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Input.NoiCongTac"></label>
+        <input asp-for="Input.NoiCongTac" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Input.NgaySinh"></label>
+        <input asp-for="Input.NgaySinh" class="form-control" type="date" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Input.HocHamHocVi"></label>
+        <input asp-for="Input.HocHamHocVi" class="form-control" />
+    </div>
+
+    <div class="form-group form-check">
+        <input asp-for="Input.ThuocBenhVien" class="form-check-input" />
+        <label asp-for="Input.ThuocBenhVien" class="form-check-label"></label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+</form>
