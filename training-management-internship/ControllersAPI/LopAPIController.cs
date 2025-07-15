@@ -200,9 +200,16 @@ namespace training_management_internship.Controllers
         // POST: api/Lop/ThemHocVienVaoLop
         [HttpPost("ThemHocVienVaoLop")]
         [Authorize(Roles = "Admin, GiangVien")]
-
         public async Task<IActionResult> ThemHocVienVaoLop([FromBody] List<HocVienSelector> model, int lopId)
         {
+            var lop = await _context.Lops.FindAsync(lopId);
+            if (lop == null)
+            {
+                return NotFound();
+            }
+
+            bool daThem = false;
+
             foreach (var item in model.Where(m => m.IsSelected))
             {
                 var hocVien = await _context.HocViens.FirstOrDefaultAsync(h => h.UserId == item.UserId);
@@ -214,7 +221,14 @@ namespace training_management_internship.Controllers
                         HocVienId = hocVien.HocVienId
                     };
                     _context.DanhSachHocViens.Add(danhSach);
+                    daThem = true;
                 }
+            }
+
+            if (daThem && !lop.CoDanhSachHocVien)
+            {
+                lop.CoDanhSachHocVien = true;
+                _context.Lops.Update(lop);
             }
 
             await _context.SaveChangesAsync();
@@ -225,5 +239,6 @@ namespace training_management_internship.Controllers
         {
             return _context.Lops.Any(e => e.LopId == id);
         }
+
     }
 }
