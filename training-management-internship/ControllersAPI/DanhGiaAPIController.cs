@@ -54,6 +54,7 @@ namespace training_management_internship.ControllersAPI
                 .GroupBy(d => d.HocVienId)
                 .Select(g => new
                 {
+                    HocVienId = g.Key, 
                     Nam = nam,
                     HoTen = g.First().HocVien.User.HoTen,
                     SoCanCuoc = g.First().HocVien.User.SoCanCuoc,
@@ -69,6 +70,7 @@ namespace training_management_internship.ControllersAPI
 
             return Ok(result);
         }
+
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
