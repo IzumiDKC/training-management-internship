@@ -1194,5 +1194,25 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.ThongKeAPIController",
+    "Method": "GetHocVienMoiTheoThang",
+    "RelativePath": "api/ThongKe/HocVienMoiTheoThang",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "training_management_internship.ControllersAPI.ThongKeAPIController",
+    "Method": "GetOverview",
+    "RelativePath": "api/ThongKe/overview",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

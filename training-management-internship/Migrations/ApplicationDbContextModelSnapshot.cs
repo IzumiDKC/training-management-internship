@@ -216,6 +216,9 @@ namespace training_management_internship.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -496,6 +499,9 @@ namespace training_management_internship.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HocVienId"));
 
+                    b.Property<int>("LopId")
+                        .HasColumnType("int");
+
                     b.Property<int>("TongKhoaHoc")
                         .HasColumnType("int");
 
@@ -503,6 +509,8 @@ namespace training_management_internship.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("HocVienId");
+
+                    b.HasIndex("LopId");
 
                     b.HasIndex("UserId")
                         .IsUnique()
@@ -563,9 +571,6 @@ namespace training_management_internship.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LopId"));
 
-                    b.Property<int>("ChuongTrinhDaoTaoId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("CoDanhSachHocVien")
                         .HasColumnType("bit");
 
@@ -592,8 +597,6 @@ namespace training_management_internship.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("LopId");
-
-                    b.HasIndex("ChuongTrinhDaoTaoId");
 
                     b.HasIndex("KhoaHocId");
 
@@ -820,9 +823,17 @@ namespace training_management_internship.Migrations
 
             modelBuilder.Entity("training_management_internship.Models.HocVien", b =>
                 {
+                    b.HasOne("training_management_internship.Models.Lop", "Lop")
+                        .WithMany()
+                        .HasForeignKey("LopId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("training_management_internship.Models.ApplicationUser", "User")
                         .WithOne("HocVien")
                         .HasForeignKey("training_management_internship.Models.HocVien", "UserId");
+
+                    b.Navigation("Lop");
 
                     b.Navigation("User");
                 });
@@ -844,12 +855,6 @@ namespace training_management_internship.Migrations
 
             modelBuilder.Entity("training_management_internship.Models.Lop", b =>
                 {
-                    b.HasOne("training_management_internship.Models.ChuongTrinhDaoTao", "ChuongTrinhDaoTao")
-                        .WithMany()
-                        .HasForeignKey("ChuongTrinhDaoTaoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("training_management_internship.Models.KhoaHoc", "KhoaHoc")
                         .WithMany("Lops")
                         .HasForeignKey("KhoaHocId")
@@ -861,8 +866,6 @@ namespace training_management_internship.Migrations
                         .HasForeignKey("LoaiLopId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("ChuongTrinhDaoTao");
 
                     b.Navigation("KhoaHoc");
 
