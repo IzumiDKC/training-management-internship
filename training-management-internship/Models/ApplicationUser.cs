@@ -16,6 +16,7 @@ namespace training_management_internship.Models
         public bool ThuocBenhVien { get; set; }
         public HocVien? HocVien { get; set; }
         public GiangVien? GiangVien { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
 
 }
