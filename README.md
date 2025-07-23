@@ -144,7 +144,7 @@ This document outlines the weekly progress and key milestones of my project deve
 
 ---
 
-## 🗓️ Week 8: JWT Configuration, DiemDanh API, and Frontend Updates (30/6 -> present)
+## 🗓️ Week 8: JWT Configuration, DiemDanh API, and Frontend Updates (30/6 -> 6/7)
 
 - **Configured JWT** for account management to resolve 401 errors on the frontend:
   - Set up JWT **Key**, **Issuer**, **Audience**, and **Subject** for secure authentication.
@@ -174,8 +174,38 @@ This document outlines the weekly progress and key milestones of my project deve
     - Updated configurations to enable frontend to run on **both HTTP and HTTPS**.
     - The configuration is still maintained for SSL, but now the frontend runs on **no-SSL** protocol for better flexibility.
 
-
 ---
 
+## 🗓️ Week 9: JWT Auth, API Updates & Frontend Integration (7/7 → 13/7)
+
+- Configured **JWT** for authentication:
+  - Set `Key`, `Issuer`, `Audience`, `Subject`, and added `Role` to token payload.
+  - Enabled **Swagger** authentication using JWT.
+  - Updated authorization and query logic for specific APIs.
+  - Temporarily removed `[Authorize]` attributes for testing purposes.
+
+- **DiemDanhAPI**:
+  - Changed route to accept `LopId` parameter.
+  - Applied route-specific `[Authorize]` controls.
+  - Enabled QR generation for frontend at `localhost:3000`, no backend view rendering needed.
+
+- **AccountAPI**:
+  - Added authorization checks for protected endpoints.
+  - Deprecated Razor-based login; all login flows now via API with JWT.
+
+- **ChiTietLop**:
+  - Changed `ResetCheckIn/Out` to use `[FromRoute]` with `ChiTietLopId`.
+  - Enabled adding students after class creation.
+
+- **Frontend HTTP/HTTPS issue**:
+  - Resolved dual-protocol running issue:
+    - Installed `openssl` via `choco`.
+    - Configured 3 `.pem` SSL cert files in frontend.
+    - Updated settings to support both HTTP and HTTPS.
+    - Currently defaulting to HTTP (non-SSL) for development flexibility.
+
+> ✅ Focus: Secure and flexible API authentication, improved QR attendance flow, and smoother FE–BE integration.
+
+---
 
 > 📌 *This README summarizes weekly progress, technical decisions, and structural changes in the project.*
