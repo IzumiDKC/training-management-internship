@@ -210,5 +210,23 @@ This document outlines the weekly progress and key milestones of my project deve
 
 ---
 
+## 🗓️ Week 10 → Present: Yearly Review & Statistics API (21/7 → Present)
+
+- **Yearly Evaluation**:
+  - Added API for yearly student performance review (`DanhGiaTheoNam`).
+
+- **Statistics API**:
+  - Developed 2 new APIs for system-wide statistics.
+  - Implemented multi-task queries to support dashboard-level analytics.
+
+- **User Metadata**:
+  - Added `CreatedAt` property to `ApplicationUser`:
+    - Updated EF model and migration.
+    - Applied database changes to store account creation timestamps.
+
+> ✅ Focus: Enabling data analytics, annual evaluation features, and improved tracking of user registration.
+
+---
+
 
 > 📌 *This README summarizes weekly progress, technical decisions, and structural changes in the project.*
