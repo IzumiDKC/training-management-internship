@@ -144,67 +144,43 @@ This document outlines the weekly progress and key milestones of my project deve
 
 ---
 
-## 🗓️ Week 8: JWT Configuration, DiemDanh API, and Frontend Updates (30/6 -> 6/7)
+## 🗓️ Week 8: JWT Auth, API Integration & Frontend Fixes (30/6 → 13/7)
 
-- **Configured JWT** for account management to resolve 401 errors on the frontend:
-  - Set up JWT **Key**, **Issuer**, **Audience**, and **Subject** for secure authentication.
-  - Added **Role** to the token to ensure proper transmission and reception of role-based data between APIs.
-
-- **Configured Swagger** to authenticate with the JWT token for API operations, enabling secure and functional API testing.
-
-- Updated **authorization** and **query logic** for specific APIs to ensure proper access control and functionality.
-
-- Removed all authorizations in the backend temporarily for testing purposes.
+- **JWT Authentication**:
+  - Configured `Key`, `Issuer`, `Audience`, `Subject` for secure token generation.
+  - Added `Role` claim to enable role-based API communication.
+  - Enabled JWT authentication in **Swagger** for secure API testing.
+  - Updated `[Authorize]` logic across multiple APIs; temporarily disabled for testing.
 
 - **DiemDanhAPI**:
-  - Changed the **Route** to accept **LopId** for retrieving the student list.
-  - Configured proper **authorization** for the API routes instead of using general permissions.
-  - Set up **QR generation** for the frontend to run on **port 3000**, eliminating the need to return a backend view.
+  - Updated route to accept `LopId` parameter.
+  - Applied route-specific authorization.
+  - Enabled QR code generation for frontend (`localhost:3000`), no backend view needed.
+  - Added `Note` field handling and bug fixes related to foreign keys.
 
 - **AccountAPI**:
-  - Implemented **authorization checks** for API requests.
-  - After login, the **JWT token** will be logged and used for checking in through the API.
-  - Removed Razor-based login from the backend to streamline API usage.
+  - Added token-based authorization checks.
+  - Deprecated Razor login; token is now logged after login and reused in API calls.
 
-- **Frontend Issue**: 
-  - Faced problems with running two protocols (HTTP and HTTPS) on different ports.
-  - **Solution**:
-    - Installed **openssl** via **chocolatey** on local machines.
-    - Configured **SSL certificates** in the frontend (FE) with the use of **3 .pem** files.
-    - Updated configurations to enable frontend to run on **both HTTP and HTTPS**.
-    - The configuration is still maintained for SSL, but now the frontend runs on **no-SSL** protocol for better flexibility.
+- **ChiTietLop**:
+  - Changed `ResetCheckIn/Out` to receive `ChiTietLopId` from route.
+  - Allowed adding students after class creation.
+
+- **Frontend (HTTP/HTTPS Issue)**:
+  - Resolved dual-protocol conflict:
+    - Installed `openssl` via `choco`.
+    - Configured 3 `.pem` files for SSL.
+    - Frontend now supports both `HTTP` and `HTTPS`.
+    - Default mode is `HTTP` (non-SSL) for development flexibility.
+
+> ✅ Focus: Securing authentication, improving QR/Check-in flows, and unifying FE–BE communication.
+
 
 ---
 
-## 🗓️ Week 9: JWT Auth, API Updates & Frontend Integration (7/7 → 13/7)
+## 🗓️ Week 9: (7/7 → 13/7)
 
-- Configured **JWT** for authentication:
-  - Set `Key`, `Issuer`, `Audience`, `Subject`, and added `Role` to token payload.
-  - Enabled **Swagger** authentication using JWT.
-  - Updated authorization and query logic for specific APIs.
-  - Temporarily removed `[Authorize]` attributes for testing purposes.
 
-- **DiemDanhAPI**:
-  - Changed route to accept `LopId` parameter.
-  - Applied route-specific `[Authorize]` controls.
-  - Enabled QR generation for frontend at `localhost:3000`, no backend view rendering needed.
-
-- **AccountAPI**:
-  - Added authorization checks for protected endpoints.
-  - Deprecated Razor-based login; all login flows now via API with JWT.
-
-- **ChiTietLop**:
-  - Changed `ResetCheckIn/Out` to use `[FromRoute]` with `ChiTietLopId`.
-  - Enabled adding students after class creation.
-
-- **Frontend HTTP/HTTPS issue**:
-  - Resolved dual-protocol running issue:
-    - Installed `openssl` via `choco`.
-    - Configured 3 `.pem` SSL cert files in frontend.
-    - Updated settings to support both HTTP and HTTPS.
-    - Currently defaulting to HTTP (non-SSL) for development flexibility.
-
-> ✅ Focus: Secure and flexible API authentication, improved QR attendance flow, and smoother FE–BE integration.
 
 ---
 
