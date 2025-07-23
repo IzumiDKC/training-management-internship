@@ -175,13 +175,40 @@ This document outlines the weekly progress and key milestones of my project deve
 
 > ✅ Focus: Securing authentication, improving QR/Check-in flows, and unifying FE–BE communication.
 
+---
+
+## 🗓️ Week 9: API Expansion, Authorization & Account Management (14/7 → 20/7)
+
+- **KhoaHoc API**:
+  - Updated `KhoaHoc` model and `KhoaHocAPIController`.
+  - Added `[Authorize]` to secure access to course-related APIs.
+
+- **Account API Enhancements**:
+  - Migrated account workflows to frontend portal:
+    - `ConfirmEmail`, `ForgotPassword`, `ResendEmailConfirmation`, `ResetPassword`.
+  - Updated `AccountAPI` for better integration and editing:
+    - Created `Edit.cs` / `Edit.cshtml` for `ApplicationUser`.
+    - Added editing API in `AccountAPIController`.
+
+- **Registration (DangKyKhoaHocAPI)**:
+  - Introduced `DangKyRequestDto` and `DangKyKhoaHocDto` to prevent circular references.
+  - Created new API controller for course registration.
+
+- **Evaluation (DanhGia & DanhGiaTheoNam)**:
+  - Updated models and related repositories (interface + EF repo).
+  - Extended `ApplicationDbContext` and updated `LopDto` for API compatibility.
+  - Added corresponding API endpoints for both evaluation types.
+
+- **LopAPI Update**:
+  - Used LINQ join to fetch `ChuongTrinhDaoTao.TenChuongTrinh` directly.
+  - Avoided navigation properties to fix cascade delete issues.
+
+- **Authorization**:
+  - Reviewed and updated permissions for various API routes to enforce proper access control.
+
+> ✅ Focus: Strengthening backend structure, securing APIs, and fully transitioning account and course operations to frontend.
 
 ---
 
-## 🗓️ Week 9: (7/7 → 13/7)
-
-
-
----
 
 > 📌 *This README summarizes weekly progress, technical decisions, and structural changes in the project.*
