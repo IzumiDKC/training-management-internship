@@ -144,7 +144,7 @@ This document outlines the weekly progress and key milestones of my project deve
 
 ---
 
-## 🗓️ Week 8: JWT Auth, API Integration & Frontend Fixes (30/6 → 13/7)
+## 🗓️ Week 8: JWT Auth, API Integration & Frontend Fixes (30/6 → 06/7)
 
 - **JWT Authentication**:
   - Configured `Key`, `Issuer`, `Audience`, `Subject` for secure token generation.
@@ -177,7 +177,7 @@ This document outlines the weekly progress and key milestones of my project deve
 
 ---
 
-## 🗓️ Week 9: API Expansion, Authorization & Account Management (14/7 → 20/7)
+## 🗓️ Week 9: API Expansion, Authorization & Account Management (07/7 → 13/7)
 
 - **KhoaHoc API**:
   - Updated `KhoaHoc` model and `KhoaHocAPIController`.
@@ -210,7 +210,7 @@ This document outlines the weekly progress and key milestones of my project deve
 
 ---
 
-## 🗓️ Week 10 → Present: Yearly Review & Statistics API (21/7 → Present)
+## 🗓️ Week 10 → Present: Yearly Review & Statistics API (14/7 → Present)
 
 - **Yearly Evaluation**:
   - Added API for yearly student performance review (`DanhGiaTheoNam`).
