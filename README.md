@@ -210,7 +210,7 @@ This document outlines the weekly progress and key milestones of my project deve
 
 ---
 
-## 🗓️ Week 10 → Present: Yearly Review & Statistics API (14/7 → Present)
+## 🗓️ Week 10 → Present: Yearly Review & Statistics API (14/7 → 20/7)
 
 - **Yearly Evaluation**:
   - Added API for yearly student performance review (`DanhGiaTheoNam`).
