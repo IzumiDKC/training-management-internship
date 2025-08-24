@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using System;
 using System.Collections.Generic;
+using training_management_internship.Dtos;
 
 namespace training_management_internship.ControllersAPI
 {
@@ -60,53 +61,48 @@ namespace training_management_internship.ControllersAPI
         }
 
         [HttpPost("DiemDanhSubmit")]
-        public async Task<ActionResult> DiemDanhSubmit([FromBody] DiemDanhDto diemDanhDto)
+        public async Task<ActionResult> DiemDanhSubmit([FromBody] DiemDanhSubmitDto dto)
         {
-            var chiTietLop = await _context.ChiTietLops.FirstOrDefaultAsync(c => c.ChiTietLopId == diemDanhDto.ChiTietLopId);
+            var chiTietLop = await _context.ChiTietLops.FirstOrDefaultAsync(c => c.ChiTietLopId == dto.ChiTietLopId);
             if (chiTietLop == null)
-            {
                 return BadRequest("ChiTietLopId không hợp lệ.");
-            }
 
-            var hocVien = await _context.HocViens.FirstOrDefaultAsync(h => h.HocVienId == diemDanhDto.HocVienId);
+            var hocVien = await _context.HocViens.FirstOrDefaultAsync(h => h.HocVienId == dto.HocVienId);
             if (hocVien == null)
-            {
                 return BadRequest("HocVienId không hợp lệ.");
-            }
 
             var diemDanh = await _context.DiemDanhs
-                .FirstOrDefaultAsync(d => d.ChiTietLopId == diemDanhDto.ChiTietLopId &&
-                                          d.HocVienId == diemDanhDto.HocVienId &&
-                                          d.NgayCheck.Date == diemDanhDto.NgayCheck.Date);
+                .FirstOrDefaultAsync(d => d.ChiTietLopId == dto.ChiTietLopId &&
+                                          d.HocVienId == dto.HocVienId &&
+                                          d.NgayCheck.Date == dto.NgayCheck.Date);
 
             if (diemDanh == null)
             {
                 diemDanh = new DiemDanh
                 {
-                    ChiTietLopId = diemDanhDto.ChiTietLopId,
-                    HocVienId = diemDanhDto.HocVienId,
-                    NgayCheck = diemDanhDto.NgayCheck,
-                    CheckIn = diemDanhDto.CheckIn ?? TimeSpan.Zero,
-                    CheckOut = diemDanhDto.CheckOut ?? TimeSpan.Zero,
-                    Note = diemDanhDto.Note
+                    ChiTietLopId = dto.ChiTietLopId,
+                    HocVienId = dto.HocVienId,
+                    NgayCheck = dto.NgayCheck,
+                    CheckIn = dto.CheckIn ?? TimeSpan.Zero,
+                    CheckOut = dto.CheckOut ?? TimeSpan.Zero,
+                    Note = dto.Note
                 };
                 _context.DiemDanhs.Add(diemDanh);
             }
             else
             {
-                
-                diemDanh.CheckIn = diemDanhDto.CheckIn ?? diemDanh.CheckIn;
-                diemDanh.CheckOut = diemDanhDto.CheckOut ?? diemDanh.CheckOut;
-                diemDanh.Note = diemDanhDto.Note;
+                diemDanh.CheckIn = dto.CheckIn ?? diemDanh.CheckIn;
+                diemDanh.CheckOut = dto.CheckOut ?? diemDanh.CheckOut;
+                diemDanh.Note = dto.Note;
             }
 
             await _context.SaveChangesAsync();
             return Ok(new { message = "Điểm danh thành công" });
         }
 
+
         [HttpPost("ResetAllCheckIn/{chiTietLopId}")]
         [Authorize(Roles = "Admin, GiangVien")]
-
         public async Task<IActionResult> ResetAllCheckIn([FromRoute] int chiTietLopId)
         {
             var list = await _context.DiemDanhs
