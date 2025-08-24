@@ -714,8 +714,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "diemDanhDto",
-        "Type": "training_management_internship.Models.DiemDanhDto",
+        "Name": "dto",
+        "Type": "training_management_internship.Dtos.DiemDanhSubmitDto",
         "IsRequired": true
       }
     ],
@@ -763,7 +763,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[training_management_internship.Models.DiemDanhDto, training-management-internship, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[training_management_internship.Dtos.DiemDanhDto, training-management-internship, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

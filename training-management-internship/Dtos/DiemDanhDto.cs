@@ -1,4 +1,4 @@
-﻿namespace training_management_internship.Models
+﻿namespace training_management_internship.Dtos
 {
     public class DiemDanhDto
     {
